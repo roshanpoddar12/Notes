@@ -1,0 +1,52 @@
+createdAt: "2020-05-05T17:02:47.922Z"
+updatedAt: "2020-05-06T15:14:17.484Z"
+type: "SNIPPET_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "14.Aggregation Pipelinr:unwinding and projecting"
+tags: []
+description: "14.Aggregation Pipelinr:unwinding and projecting"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "getMonthlyTours.js"
+    mode: "JavaScript"
+    content: '''
+      exports.getMonthlyPlan = async (req, res) => {
+        try {
+          const year = req.params.year * 1;
+          const stats = await Tour.aggregate([
+            {
+              $unwind: '$startDates'
+            },
+            {
+              $match: {
+                startDates: {
+                  $gte: new Date(`${year}-01-01`),
+                  $lte: new Date(`${year}-12-12`)
+                }
+              }
+            },
+            {
+              $group: {
+                _id: { $month: '$startDates' },
+                numTourStarts: { $sum: 1 },
+                tours: { $push: '$name' }
+              }
+            },
+            {
+              $addFields: { month: '_id' }
+            },
+            {
+              $project: { _id: 0 }
+            },
+            {
+              $sort: { numTourStarts: -1 }
+            },
+            {
+              $limit: 12
+            }
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

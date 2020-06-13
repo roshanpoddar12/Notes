@@ -1,0 +1,51 @@
+createdAt: "2020-04-12T22:42:06.487Z"
+updatedAt: "2020-04-12T23:00:00.336Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "2.A modern setup: Configuring Webpack"
+tags: []
+content: '''
+  # 2.A modern setup: Configuring Webpack
+  - in webpack there are 4 core concept
+  - entry point
+  - output
+  - loaders
+  - plugin
+  # Steps
+  - Installed webpack and babel
+  - Configured webpack.config.js
+  # webpack.config.js
+  module.exports = {
+      entry: './src/js/index.js',
+      output: {
+          path:path.resolve(__dirname,'dist/js'),
+          filename: 'bundle.js'
+      },
+      mode: 'development' //this we can add in package.json 
+      };
+    # package.json
+    {
+    "name": "starter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production",
+      "start": "webpack-dev-server --mode development --open"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "html-webpack-plugin": "^3.2.0",
+      "webpack": "^4.20.2",
+      "webpack-cli": "^3.1.1",
+      
+    - Edited index.html in dist folder to test in
+    - exported from test.js and imported in index.js in src folder to test
+      
+    
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

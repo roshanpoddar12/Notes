@@ -1,0 +1,66 @@
+createdAt: "2020-04-11T07:22:33.437Z"
+updatedAt: "2020-04-11T07:58:06.412Z"
+type: "SNIPPET_NOTE"
+folder: "c19e83a1679ed0fb1302"
+title: "Creating object function constructor"
+tags: []
+description: "Creating object function constructor"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "function_constructor.js"
+    mode: "JavaScript"
+    content: '''
+      // Lecture: Function constructor
+      
+      var john = {
+          name: 'John',
+          yearOfBirth: 1990,
+          job: 'teacher'
+      };
+      var Person = function(name, yearOfBirth, job) {
+          this.name = name;
+          this.yearOfBirth = yearOfBirth;
+          this.job = job;
+      }
+      Person.prototype.calculateAge  = function() {
+          console.log(2016 - this.yearOfBirth);
+      };
+      Person.prototype.lastName = 'Smith';
+      var john = new Person('John', 1990, 'teacher');
+      var jane = new Person('Jane', 1969, 'designer');
+      var mark = new Person('Mark', 1948, 'retired');
+      john.calculateAge();
+      jane.calculateAge();
+      mark.calculateAge();
+      console.log(john.lastName);
+      console.log(jane.lastName);
+      console.log(mark.lastName);
+      
+      //we create a function constructor named as person and we are creating multiple instances of the function constructor like john ,jsne.
+      //CalculateAge and lastname is not the part of function constructor. it is It is attached to the object prototype property.
+      //>John
+      Person {name: "John", yearOfBirth: 1990, job: "teacher"}
+      name: "John"
+      yearOfBirth: 1990
+      job: "teacher"
+      __proto__:
+      calculateAge: ƒ ()
+      lastName: "Smith"
+      constructor: ƒ (name, yearOfBirth, job)
+      __proto__: Object
+      //>Person.prototype
+      {lastName: "Smith", calculateAge: ƒ, constructor: ƒ}
+      calculateAge: ƒ ()
+      lastName: "Smith"
+      constructor: ƒ (name, yearOfBirth, job)
+      __proto__: Object
+      //to check John prototype is infact the prototype property of the person we can do
+      john.__proto__ === Person.prototype
+      true
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

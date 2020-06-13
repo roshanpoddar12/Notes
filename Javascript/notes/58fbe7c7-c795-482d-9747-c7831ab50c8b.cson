@@ -1,0 +1,39 @@
+createdAt: "2020-04-12T23:00:28.003Z"
+updatedAt: "2020-04-13T00:03:20.279Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "3.Webpack dev server"
+tags: []
+content: '''
+  # 3.Webpack dev server
+  - webpack also provides a development server which will bundle all our js files and then it load the app in browser whenever we change a file 
+  - npm install webpack-dev-server --save-dev
+  - Add devServer in webpack.config.js
+  
+  - devServer: {
+          contentBase: "./dist"
+      },
+  - Add start in package.json
+  -  "start": "webpack-dev-server --mode development --open"
+  -  --open :automatically open the page in the browser automatically
+  # Plugins
+  -  Suppose i want to copy the html file to dist and inject the script tag into it automatically as their is no script tag in src/index.html
+  -  webpack allows us to do that very easily by using plugins
+  -  webpack.config.js
+  -  plugins : allows us to do complex processing of our input files in this case it is index.html file
+  -  So we want to use a htmlwebpackplugin 
+  -  npm install html-webpack-plugin --save -dev  
+  -  Plugin basically recieves an array of all the plugins that we are using 
+  -  plugins: [
+          new HtmlWebpackPlugin({
+              filename: 'index.html',
+              template: './src/index.html' //starting html file
+          })
+      ], 
+      
+  - when we are using the dev server it will not save the file on dist it will simply scream that to the server 
+  - If we do npm run dev than we can see the index.html in dist folder.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

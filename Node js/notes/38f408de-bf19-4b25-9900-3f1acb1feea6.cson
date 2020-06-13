@@ -1,0 +1,57 @@
+createdAt: "2020-05-08T13:55:30.429Z"
+updatedAt: "2020-05-08T14:00:24.210Z"
+type: "SNIPPET_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "17.1"
+tags: []
+description: "17.1"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "validator.js"
+    mode: "JavaScript"
+    content: '''
+      // Validators
+          name: {
+            type: String,
+            required: [true, 'A tour must have a name'],
+            unique: true,
+            maxlength: [40, 'A tour name must have less or equal then 40 characters'],
+            minlength: [10, 'A tour name must have more or equal then 10 characters']
+            // validate: [validator.isAlpha, 'Tour name must only contain characters']
+          },
+       difficulty: {
+            type: String,
+            required: [true, 'A tour must have a difficulty'],
+            enum: {
+              values: ['easy', 'medium', 'difficult'],
+              message: 'Difficulty is either: easy, medium, difficult'
+            }
+          },
+          ratingsAverage: {
+            type: Number,
+            default: 4.5,
+            min: [1, 'Rating must be above 1.0'],
+            max: [5, 'Rating must be below 5.0']
+          },
+          //Similarly we can have custom validators
+           priceDiscount: {
+            type: Number,
+            validate: {
+              validator: function(val) {
+                // this only points to current doc on NEW document creation
+                return val < this.price;
+              },
+              message: 'Discount price ({VALUE}) should be below regular price'
+            }
+            // There are also validators npm packages are present
+            
+            ## validator.js
+            
+              // validate: [validator.isAlpha, 'Tour name must only contain characters']
+          
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

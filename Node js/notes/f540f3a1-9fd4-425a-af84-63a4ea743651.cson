@@ -1,0 +1,20 @@
+createdAt: "2020-04-22T22:24:48.913Z"
+updatedAt: "2020-04-22T22:49:17.242Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "7.Besides this 4 callback queues there are actually 2 other queues"
+tags: []
+content: '''
+  # 7.Besides this 4 callback queues there are actually 2 other queues 
+   1.The Process.nextTick() Queue
+   2.Other microtasks queue
+  - If there are any callback in one of this 2 queue to be processed they will be executed right after the current phase of the event loop finishes instead of waiting the entire loop to finish 
+  - After each of this phases of there are any callbacks in this 2 special queues they will be executed right away
+  - process.nextTick() we can use when we really really need to execute certain callback right after the current eventloop phase
+  - ![other2phase.png](:storage/f540f3a1-9fd4-425a-af84-63a4ea743651/7fe38bb2.png)
+  # What happens one cycle of event loop completes
+  ![loop.png](:storage/f540f3a1-9fd4-425a-af84-63a4ea743651/c4da99b3.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,45 @@
+createdAt: "2020-04-27T01:21:09.750Z"
+updatedAt: "2020-04-27T01:24:48.668Z"
+type: "SNIPPET_NOTE"
+folder: "3b4e100b76286074a898"
+title: "7.Refactoring"
+tags: []
+description: "7.Refactoring"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "Refactoring.js"
+    mode: "JavaScript"
+    content: '''
+      # REFACTORING
+      app.get('/api/v1/tours',(req,res)=>{
+          res.status(200).json({
+              status:"success",
+              result: tours.length,
+              data:{
+                  tours
+              }
+          })
+      })
+      //TO
+      
+      const getTour = 
+      (req,res)=>{
+          res.status(200).json({
+              status:"success",
+              result: tours.length,
+              data:{
+                  tours
+              }
+          })
+      }
+      app.get('/api/v1/tours'getTour)
+      //To
+      
+      app.route('/api/v1/tours').get(getTour).post(createTour)
+      similarly
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

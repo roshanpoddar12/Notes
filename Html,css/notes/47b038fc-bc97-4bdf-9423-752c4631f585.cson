@@ -1,0 +1,32 @@
+createdAt: "2020-05-16T08:58:50.244Z"
+updatedAt: "2020-05-16T09:20:07.484Z"
+type: "MARKDOWN_NOTE"
+folder: "1ec2f35df0ac37630db4"
+title: "ELEMENTS"
+tags: []
+content: '''
+  ## ELEMENTS
+  ```html
+  <heade></header>
+  ```
+  - It is just the way of telling the browser that this is the header element
+  ```html
+  <nav></nav>
+  ```
+  - It tells the browser that it is the navigation section of the web page
+  - DIFFERENCE BETWEEN DIV AND SPAN
+  - Div element is block element that will appear in the seperate line than the content
+  ```html
+  content
+  -- Div --
+  content
+  ```
+  - Span : Is an inline element and appears inline with the content element
+  ```html
+  content. span content
+  ```
+  - This 2 can be used any time when we want to group together html either has no meaning or has no html tag to describe the meaning
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

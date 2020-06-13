@@ -1,0 +1,53 @@
+createdAt: "2020-04-12T23:53:45.593Z"
+updatedAt: "2020-04-13T00:49:36.442Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "4.BABEL SETUP"
+tags: []
+content: '''
+  # 4.BABEL SETUP
+  # Step 1
+  # Loaders
+  - loader : A loader in webpack allow us to import or load all types of different files and more importantly to also process them like converting sass to css ,or ES6 to ES5.So for that we are going to use babel loader 
+    module:{
+          rules:[{
+              exclude:/node_modules/,
+              test:/\\.js$/, 
+              //in this regular expression what we want to say is that we want to test for all js files.All of thr javascript file will use babel loader so we use "use"
+              use:{
+                  loader:'babel-loader'
+              } 
+          }]
+      }
+    # Step 2 
+    # babel config file
+    - .babelrc
+     
+        "preset":[ //it is a collection of code transform plugin are like the pieces of code that actually applies the actual transformation of the code .
+        
+        
+    {
+      "presets": [
+          ["env", {
+              "targets": {
+                  "browsers": [
+                      "last 5 versions",
+                      "ie >= 8"
+                  ]
+              }
+          }]
+      ]
+  }
+  
+  # pollyfills
+  - There are somethings which we cannot convert to ES5
+  - They are simply not present in the ES5 version.So there is no way that we can simply convert them back from es6 to es5 so thos needs to be pllyfilled.Things like promises ,methods like Array.from().
+  - But we can write some es5 code that can implements the promise in es5.that is what exactly a pollyfills does.
+  Config
+    - npm install --save babel-polyfill@6
+    - Add it to entry of the webpack.config
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

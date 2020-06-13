@@ -1,0 +1,57 @@
+createdAt: "2020-05-30T05:53:25.352Z"
+updatedAt: "2020-05-30T05:58:31.397Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "1.Thinking in jsx"
+tags: []
+content: '''
+  ## 1.Thinking in jsx
+  ```js
+  import React, { Component } from 'react';
+  import logo from './logo.svg';
+  import './App.css';
+  
+  class  App extends Component {
+   constructor(){
+     super();
+     this.state={
+       'string':"Bhosdiwala"
+     }
+     this.i=0;
+   } 
+    render(){
+      return (
+      // we use className to differentiate between the html class and js class
+      //html class = 'class'
+      //js class = 'className'
+        <div className="App">
+          <header className="App-header">
+          //we use {} to write the js expression
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+             { this.state.string }           
+            </p>
+            <button onClick={()=> {
+              this.i++;
+              console.log(this.i);
+              //when we set the state it agains re render the state with the changes
+              if(this.i%2===1)
+                this.setState({ string:'tm v bhosdi' })
+              else 
+                this.setState({ string:'hm v bhosdi' })
+              }}>Poke me
+            </button>
+          </header>
+        </div>
+      );
+    }
+    
+  }
+  
+  export default App;
+  
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

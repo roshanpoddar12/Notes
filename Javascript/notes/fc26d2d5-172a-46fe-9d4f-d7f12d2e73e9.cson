@@ -1,0 +1,44 @@
+createdAt: "2020-04-19T07:31:58.316Z"
+updatedAt: "2020-04-19T08:00:01.386Z"
+type: "SNIPPET_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "13.Buiding the Recipe controller"
+tags: []
+description: "13.Buiding the Recipe controller"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "index.js"
+    mode: "JavaScript"
+    content: '''
+      - How to read data from the page url
+      - How to respond to hashChange event
+      - How to add the same event listener to multiple events
+      const controlRecipe= async ()=>{
+          //Get ID from url
+          const id = window.location.hash.replace('#','');
+          console.log(id);
+      
+          if(id){
+              //Prepare ui for changes
+              //Create new recipe object
+              state.recipe = new Recipe(id);
+              try{
+                  //Get reciepe data
+              await state.recipe.getRecipe();
+              //Calculate servings and time
+              state.recipe.calcTime();
+              state.recipe.calcServings();
+              //Render recipe
+              console.log(state.recipe);
+              }catch(err){
+                  alert('Something wrong with the search');
+                  clearLoader();
+              }
+              
+          }
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

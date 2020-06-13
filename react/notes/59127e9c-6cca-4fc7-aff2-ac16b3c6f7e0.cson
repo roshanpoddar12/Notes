@@ -1,0 +1,13 @@
+createdAt: "2020-06-01T14:31:03.412Z"
+updatedAt: "2020-06-01T15:17:53.767Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "3.STATE VS PROPS"
+tags: []
+content: '''
+  # 3.STATE VS PROPS
+  - SetState is a asynchronous function call
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

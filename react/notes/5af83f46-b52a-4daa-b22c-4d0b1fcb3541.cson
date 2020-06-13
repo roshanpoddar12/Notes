@@ -1,0 +1,21 @@
+createdAt: "2020-05-30T06:20:51.428Z"
+updatedAt: "2020-06-01T14:37:13.641Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "2.Fetching content"
+tags: []
+content: '''
+  ## 2.Fetching content
+  - componentDidMount()
+  - Difference between the get and fetch method:
+    - Get method returns only one element
+    - Fetch returns the list of the elements.
+  
+  ## WHEN DO WE BREAK THINGS DOWN INTO COMPONENTS?
+  - We will get the flexibility of using the card list in different place in project and even in different projects
+  - Improves the performance
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

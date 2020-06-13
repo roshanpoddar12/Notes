@@ -1,0 +1,26 @@
+createdAt: "2020-05-06T14:25:44.329Z"
+updatedAt: "2020-05-06T15:19:48.528Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "14.1 Aggregation Pipelinr:unwinding and projecting"
+tags: []
+content: '''
+  # 14.1 Aggregation Pipelinr:unwinding and projecting
+  
+  - Q. Implement a function that calculate the busiest month of the year?
+  - By calculating tours start in each of the month of the givrn year.So this is the real company problem so we 
+  - will sove this by using aggregate pipeline.
+  - So there are three date in each tour so we need all the dates should have one tour so that we can find the buisiest month
+  - So there is a stage in aggregation pipeline through which we can do that and that is "unwind"
+  - Stages
+    - unwind: Destructre the array here we have done for the start dates for each tour .Each tour was having array of dates.
+    - match: Match the year we have passed as a year select the particular year
+    - group: Group by the month so that we can get the number of tours in each month.Here we are using a operator called 'month ' used to filter month in start dates
+    - addFields: Adding a field in the table as month
+    - project: We doesnot want to show a particular element like here we doesnot want to show _id .So the fiels we dont want to show we can put 0
+    - sort: WE will sort the result in descending order
+    - 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,50 @@
+createdAt: "2020-05-25T15:22:28.751Z"
+updatedAt: "2020-05-28T13:49:04.846Z"
+type: "MARKDOWN_NOTE"
+folder: "575d5e100c08780cd83b"
+title: "6.COMPONENT"
+tags: []
+content: '''
+  # 6.COMPONENT
+  - Components are the building blocks of any react app
+  -  Components let you split the ui into independent, reusable pieces, and think about each piece in isolation.
+  -  Con=mponentd are like js function. They accept arbitary inputs(called props) and return react elements describing what should appear on the screen.
+  -  Always start component name with a capital letter
+  -  React treats components strating with lowercase letters as DOM tags. For example, <div /> represents an HTML div tag, but <App /> represents a component requires App to be in scope.
+  
+  ## We can define components by two types:
+  # 1. Function Component
+  - It is a js function which accepts a single "props" object argument with data and returns a React Element
+  ```js
+  //Without using Props
+  function func_name(){
+    return React Element;
+  }
+  ex:
+  function student(){
+    return <h1>Hello Rahul</h1> 
+  }
+  const 
+  student = () =>{
+  return <h1>Hello Rahul </h1>
+  }
+  ```
+  Q.When we use class component and when we use function Component?
+  Ans.Class Component provides features like State and Lifecyle Methods which are not available in Function Component
+  ```js
+  //With props
+  function func_name(props){
+  return React Element;
+  }
+  EX:
+  function student(props){
+  return <h1>Hello {props.name}</h1>
+  }
+  const student = (props) => {
+  retuen <h1>Hello {props.name}</h1>
+  }
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

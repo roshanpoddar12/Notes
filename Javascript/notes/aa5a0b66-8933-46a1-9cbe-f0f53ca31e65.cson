@@ -1,0 +1,37 @@
+createdAt: "2020-04-11T11:55:04.918Z"
+updatedAt: "2020-04-11T11:57:05.685Z"
+type: "SNIPPET_NOTE"
+folder: "c19e83a1679ed0fb1302"
+title: "IIFE Code ex"
+tags: []
+description: "IIFE Code ex"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "IIFE.js"
+    mode: "JavaScript"
+    content: '''
+      function game() {
+          var score = Math.random() * 10;
+          console.log(score >= 5);
+      }
+      game();
+      
+      
+      (function () {
+          var score = Math.random() * 10;
+          console.log(score >= 5);
+      })();
+      
+      //console.log(score);
+      
+      
+      (function (goodLuck) {
+          var score = Math.random() * 10;
+          console.log(score >= 5 - goodLuck);
+      })(5);
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

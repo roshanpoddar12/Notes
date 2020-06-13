@@ -1,0 +1,15 @@
+createdAt: "2020-05-08T14:50:14.124Z"
+updatedAt: "2020-05-09T02:15:55.325Z"
+type: "MARKDOWN_NOTE"
+folder: "d8227e3e221c3a074833"
+title: "1.DEBUGGING NODEJS WITH NDB"
+tags: []
+content: '''
+  # 1.DEBUGGING NODEJS WITH NDB
+  - Google recently released a amazing tools .Which we can use to debug which is called ndb
+  - ndb: node Debugger
+  - npm i ndb --save-dev
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

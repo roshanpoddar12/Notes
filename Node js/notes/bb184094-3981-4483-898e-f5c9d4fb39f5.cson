@@ -1,0 +1,29 @@
+createdAt: "2020-05-08T17:29:23.289Z"
+updatedAt: "2020-05-09T07:16:50.092Z"
+type: "MARKDOWN_NOTE"
+folder: "d8227e3e221c3a074833"
+title: "3.IMPLEMENTING A GLOBAL ERROR HANDLING MIDDLEWARE"
+tags: []
+content: '''
+  # 3.IMPLEMENTING A GLOBAL ERROR HANDLING MIDDLEWARE
+  
+  - So it consists of two steps 
+  - 1.Creating a error handling middle ware 
+  - 2.Creating the error
+  
+  app.use((err, req, res, next) => {
+    err.statusCode = err.statusCode || 500;
+    err.status = err.status || 'error';
+  
+    res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message
+    });
+  });
+  
+  Then pass the wrong url it will be catch in this middle ware
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,56 @@
+createdAt: "2020-05-23T15:11:57.992Z"
+updatedAt: "2020-05-23T15:50:28.969Z"
+type: "MARKDOWN_NOTE"
+folder: "575d5e100c08780cd83b"
+title: "3.REQUIREMENTS"
+tags: []
+content: '''
+  ## 3.REQUIREMENTS
+  - NPM: npm is a node package manager which installs and updates the node packages and modules.Its a online repository.
+  - Webpack: It is static module bundler of our modern js application.
+  - Babel: It converts any code above ES5+ to ES5
+  
+  ## Here we are not using ES6 concept, because we dont want to use webpack
+  ```js
+  class App extends React.Component{
+  render(){
+    return React.createElement('div',null,'Hello world')
+  }
+  }
+  ReactDOM.render(
+    React.createElement(App,null),documet.getElementById("root")
+  )
+  ```
+  - Render method is used to return a react element
+  ## React.createElement(type, props, children)
+  - React.createElement(type,props, children): It creates a react element with the given argument
+  - Syntax:- React.createElement(type,props, children)
+    - type: Type of the html element or component(ex: h1,h2,p,button..etc)
+    - props: The properties object
+      - ex: {style:{color:"blue"}} or classname or event handlers etc.
+    - children: abything you pass between the dom elements.
+    -ex React.createElement('div',null, 'hello world')
+    
+  ## render() Method
+  - The render() method is the only required method in a class component. It examines this.props and this states. It returns one of thr following types:
+  - React Element - These are created via jsx(Not required)
+    - For ex: <div/> and <App/> are react element that instruct react tp render a DOM node or another user defined component, respectively.
+  - Arrays and Fragments: It is used to return multiple elements from render.
+  - Portals: It is used to render  children into a different dom subtree.
+  - Strings and number
+  - Bollean or null
+  
+  ## ReactDom.render(element, DOMnode)
+  - ReactDom.render(element, DOMnode)- It take a react element and render it to a DOM node.
+  - Syntax: ReactDom.render(element, DOMnode)
+  - The first argument is which component or elements needs to render in the DOM
+  - The second argument is where to render in the DOM.
+  - Ex:
+  ```js
+   ReactDom.render(<App/>,document.getElementById("root"))
+  ```
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

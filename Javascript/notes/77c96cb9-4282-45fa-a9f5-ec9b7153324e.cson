@@ -1,0 +1,50 @@
+createdAt: "2020-04-12T00:25:12.906Z"
+updatedAt: "2020-04-12T00:32:55.462Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "12.The Spread operator"
+tags: []
+description: "12.The Spread operator"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "spread.js"
+    mode: "JavaScript"
+    content: '''
+      // Lecture: Spread operator
+      
+      //Takes the array and transform into a single value
+      //Spread operator allows an iterable to expand in places where 0+ arguments are expected. It is mostly used in variable array where there is more than 1 values are expected.It allows us the privilege to obtain a list of parameters from an array
+      function addFourAges (a, b, c, d) {
+          return a + b + c + d;
+      }
+      
+      var sum1 = addFourAges(18, 30, 12, 21);
+      console.log(sum1);
+      
+      //ES5
+      var ages = [18, 30, 12, 21];
+      var sum2 = addFourAges.apply(null, ages);
+      console.log(sum2);
+      
+      //ES6
+      const sum3 = addFourAges(...ages);
+      console.log(sum3);
+      
+      
+      const familySmith = ['John', 'Jane', 'Mark'];
+      const familyMiller = ['Mary', 'Bob', 'Ann'];
+      const bigFamily = [...familySmith, 'Lily', ...familyMiller];
+      console.log(bigFamily);
+      
+      
+      const h = document.querySelector('h1');
+      const boxes = document.querySelectorAll('.box');
+      const all = [h, ...boxes];
+      
+      Array.from(all).forEach(cur => cur.style.color = 'purple');
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

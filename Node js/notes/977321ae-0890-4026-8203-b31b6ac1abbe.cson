@@ -1,0 +1,17 @@
+createdAt: "2020-04-22T22:01:07.043Z"
+updatedAt: "2020-04-22T22:16:16.484Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "4.The event loop in details"
+tags: []
+content: '''
+  # 4.The event loop in details 
+  -  When we start our node application event loops starts running right away
+  -  Event loop has multiple phases and each phase has a callback queue which are the callbacks comming from the events that the event loop recieves
+  -  Many places u will read there is only one event queue or callback queue but infact event loop has many phases where each phase has its own callback queue
+  # 4 phases
+    
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

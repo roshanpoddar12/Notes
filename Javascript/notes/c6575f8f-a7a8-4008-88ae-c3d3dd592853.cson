@@ -1,0 +1,15 @@
+createdAt: "2020-04-11T23:07:06.326Z"
+updatedAt: "2020-04-11T23:09:54.963Z"
+type: "MARKDOWN_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "8.Arrow"
+tags: []
+content: '''
+  # 8.Arrow
+  - The biggest adb=vantage of using arrow function is that it shares the surrounding this keyword.
+  - unlike normal function arrow function dont get their own this keyword.
+  - They simply use this keyword of the function they are written in.so we say they have a lexical this variable.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,20 @@
+createdAt: "2020-05-01T13:25:37.732Z"
+updatedAt: "2020-05-01T16:42:11.145Z"
+type: "MARKDOWN_NOTE"
+folder: "002c47ea61b724725b76"
+title: "1.What is MONGODB?"
+tags: []
+content: '''
+  # 1.What is MONGODB?
+  - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need
+  # Key feature
+  - Document based: Mongo DB stored data in documents (field-value pair data structures, NoSQL)
+  - Scalable: Very easy to distribute data across multiple machines as your users and amount of data grows.
+  - Flexible: No document data schema required, so each document can have different number and type of fields.
+  - Performant: Embedded data models,indexing,shrading,flexible docments,native duplication,etc.
+  - Free and open-source, published under the SSPL license
+  - 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

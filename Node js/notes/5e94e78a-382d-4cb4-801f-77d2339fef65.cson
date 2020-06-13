@@ -1,0 +1,45 @@
+createdAt: "2020-05-05T17:02:18.018Z"
+updatedAt: "2020-05-06T14:21:35.220Z"
+type: "SNIPPET_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "13.Aggregation pipeline: Matching and grouping"
+tags: []
+description: "13.Aggregation pipeline: Matching and grouping"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "tourController.js"
+    mode: "JavaScript"
+    content: '''
+      // The idea is basically we define a pipeline that all the documents from a certain collection go through where they are processed step by step in order to transform them in aggregated results
+      // For ex
+      // We can use aggregated pipeline in order to calculate average ,min,max,distances
+      // In aggregate we will pass the array of stages 
+      // The documents will then pass through this stages one by one step by step in the defined sequence as weconst stats = await Tour.aggregate([
+            {
+              $match: { ratingsAverage: { $gte: 4.5 } }
+            },
+            {
+              $group: {
+                _id: { $toUpper: '$difficulty' },
+                numTours: { $sum: 1 },
+                numRating: { $sum: 'ratingsQuantity' },
+                avgRating: { $avg: 'ratingsAverage' },
+                avgPrice: { $avg: '$price' },
+                minPrice: { $min: '$price' },
+                maxPrice: { $max: '$price' }
+              }
+            },
+            {
+              $sort: { avgPrice: 1 }
+            },
+            {
+              $match: { _id: { $ne: 'EASY' } }
+      
+            }
+          ]);
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,19 @@
+createdAt: "2020-04-14T19:28:02.372Z"
+updatedAt: "2020-04-16T15:23:36.249Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "9.The concept of application state"
+tags: []
+content: '''
+  # 9.The concept of application state
+  # A simple way of implementing state
+  
+  - State: Imagine our final app is running with all the search queries recipes the likes the shopping list
+  - so what is the state at any given moment?
+  - Think about what is in the current search queries or whats the current reciepe or how many servings are currently being calculated and whats currently in the shopping list so all of this things in one given moment are the states.So all this data in the current state in the current moment for app.
+  - all this data is the state and we want that to be in 1 center place like one central place ,one central variable like an object
+  - All the data that defines our app in a given moment in 1 place in 1 object  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

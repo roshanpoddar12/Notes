@@ -1,0 +1,35 @@
+createdAt: "2020-04-11T22:48:54.015Z"
+updatedAt: "2020-04-11T22:59:15.350Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "4.Data privacy in ES5 and ES6"
+tags: []
+description: "4.Data privacy in ES5 and ES6"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "iife6.js"
+    mode: "JavaScript"
+    content: '''
+      //New ways to create data privacy or generating iife
+      //By just giving {}
+      // ES6
+      {
+          const a = 1;
+          let b = 2;
+          var c = 3;
+      }
+      
+      //console.log(a + b); //error
+      console.log(c); //3 because for var keywor it doesnot matter wether it is inside block or not.
+      
+      
+      // ES5
+      (function() {
+          var c = 3;
+      })();
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

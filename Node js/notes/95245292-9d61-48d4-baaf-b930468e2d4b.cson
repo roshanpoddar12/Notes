@@ -1,0 +1,23 @@
+createdAt: "2020-04-22T22:15:59.469Z"
+updatedAt: "2020-04-22T22:40:37.352Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "6.2nd phase: IO Polling and execution of io callbacks(io input/output)"
+tags: []
+content: '''
+   # 6.2nd phase: IO Polling and execution of io callbacks(io input/output)
+    - Polling basically means looking for new io events that are ready to be processed and putting them in to the callback queue.
+    - io means mainly stuffed like networking and file access
+    - in this phase 99% of our code gets executed
+  
+    # 3rd Phase : Setimmediate callbacks
+    -  it is a special kind of timer that we can use if we want to process callback immediately after the io polling and execution phase 
+    # 4th Phase : Close callback
+    - In this all close event is processed for ex : when a web server or web socket shuts down
+  
+  ![4phases.png](:storage/95245292-9d61-48d4-baaf-b930468e2d4b/77130079.png)
+  - 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

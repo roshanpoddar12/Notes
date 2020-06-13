@@ -1,0 +1,69 @@
+createdAt: "2020-04-16T15:26:18.915Z"
+updatedAt: "2020-04-19T07:31:42.279Z"
+type: "SNIPPET_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "11. Pagination"
+tags: []
+description: "11. Pagination"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "searchView.js"
+    content: '''
+      - How to use the .closest method for easier event handling
+      - How and why to use data -* attributes in html5
+       export const renderResults = (recipes,page=2,resPerPage=10) =>{
+          let start = (page-1)*resPerPage;
+          let end = start+resPerPage;
+          //recipes.forEach(element => renderRecipe(el)); OR
+      
+          recipes.slice(start,end).forEach(renderRecipe);
+          renderButtons(page,recipes.length,resPerPage);
+      }
+      const renderButtons = (page,numResults,resPerPage)=>{
+          console.log("Buttons");
+          const pages = Math.ceil(numResults/resPerPage)
+          let button;
+          if(page == 1 && pages>1){
+              //then apply button to go to the next page
+              button = createButton(page,'next');
+          }else if(page < pages){
+              //Both button
+              button = `
+              ${createButton(page,'prev')}
+              ${createButton(page,'next')}
+              `
+          }else if(page == pages && pages>1){
+              //Only button to go to the next page
+              button=createButton(page,'prev');
+          }
+          elements.searchResPage.insertAdjacentHTML('afterbegin',button)
+      }
+      const createButton = (page,type)=>`
+          <button class="btn-inline results__btn--${type}" data-goto=${type=='prev'?page-1:page+1}>
+              <svg class="search__icon">
+                  <use href="img/icons.svg#icon-triangle-${type=='prev'?'left':'right'}"></use>
+              </svg>
+              <span>Page ${type=='prev'?page-1:page+1}</span>
+          </button>
+          `;
+    '''
+    mode: "JavaScript"
+  }
+  {
+    name: "index.js"
+    mode: "JavaScript"
+    content: '''
+      elements.searchResPage.addEventListener('click',e=>{
+          const btn = e.target.closest('.btn-inline');
+          const goTo = parseInt(btn.dataset.goto,10);
+          searchView.clearResult();
+          searchView.renderResults(state.search.results,goTo);
+          
+      })
+    '''
+    linesHighlighted: []
+  }
+]
+isStarred: false
+isTrashed: false

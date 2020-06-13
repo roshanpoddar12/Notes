@@ -1,0 +1,18 @@
+createdAt: "2020-04-10T04:51:16.244Z"
+updatedAt: "2020-04-10T18:27:05.521Z"
+type: "MARKDOWN_NOTE"
+folder: "f84744a17b0828a80410"
+title: "1.How our code is executed js parsers and engines"
+tags: []
+content: '''
+  # 1.How our code is executed js parsers and engines
+  - So js is always hosted in some environment that is most typically the browser such as google chrome,safari
+  - the host where the js is hosted has some js engienes that takes our code and execute it
+  - there are many different js engienes are there like google v8 engiene, spider monkey
+  - Our code is parsed by a parser which basically reads our code line by line ,check the syntax we gave is correct  it means parser knows the js rule and how it has to be written to be correct.if anything is incorrect it stops the execution and throws the error.if everything is correct then the parser creates a data structure known as Abstract Syntax Tree.
+  - Which is then translated into machine code .A set of instruction which can be directly executed by the machine processor.
+  ![oie_iEfslLWE9G2i.png](:storage/3fdbe8ed-d4ec-4bb8-aede-7ad6fb468f58/45e348b2.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

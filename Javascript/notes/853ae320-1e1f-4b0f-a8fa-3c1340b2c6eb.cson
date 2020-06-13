@@ -1,0 +1,50 @@
+createdAt: "2020-04-14T19:26:19.001Z"
+updatedAt: "2020-04-14T19:27:28.806Z"
+type: "SNIPPET_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "8.# Building the search model"
+tags: []
+description: '''
+  8.# Building the search model
+  How to build a simple data model using ES6 classes
+'''
+snippets: [
+  {
+    linesHighlighted: []
+    name: "Search.js"
+    mode: "JavaScript"
+    content: '''
+      import axios from 'axios';
+      export default class Search{
+          constructor(query){
+              this.query=query;
+          }
+          async  getResults(){
+              const proxy ='https://cors-anywhere.herokuapp.com/'
+              try{
+                  const res =  await axios(`${proxy}https://forkify-api.herokuapp.com/api/search?q=${this.query}`);
+                  const recipes = res.data.recipes;
+                  console.log(recipes);   
+              }catch(error){
+                  alert(error);
+              }   
+           }
+      }
+      
+      
+       
+    '''
+  }
+  {
+    linesHighlighted: []
+    name: "index.js"
+    mode: "JavaScript"
+    content: '''
+      import Search from './models/Search'
+      const search = new Search('pizza');
+      console.log(search.getResults());
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

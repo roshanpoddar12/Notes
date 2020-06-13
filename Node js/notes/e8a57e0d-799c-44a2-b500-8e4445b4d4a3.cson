@@ -1,0 +1,20 @@
+createdAt: "2020-04-23T21:56:16.910Z"
+updatedAt: "2020-04-23T22:33:29.502Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "13.How requiring modules really works"
+tags: []
+content: '''
+  # 13.How requiring modules really works
+  
+  - Each js file is treated as a seperate module
+  - Node js uses the Common js module system: require(),exports or module.exports
+  - ES module system is used in browser : import/export
+  - There have beet attempts to bring ES modules to node js(.mjs)
+  # Why each and every module get access through the require function in order to import modules in a first place
+  - Its not a standard js function so from where does it comes from and how does it actually works?
+  # next
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

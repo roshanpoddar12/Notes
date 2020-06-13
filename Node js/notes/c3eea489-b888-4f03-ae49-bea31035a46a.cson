@@ -1,0 +1,22 @@
+createdAt: "2020-05-12T12:53:06.128Z"
+updatedAt: "2020-05-12T12:57:09.515Z"
+type: "MARKDOWN_NOTE"
+folder: "9980a104cbe4399cdfd6"
+title: "4.SIGNING UP USERS"
+tags: []
+content: '''
+  # 4.SIGNING UP USERS
+  //  const newUser = await User.create(req.body);
+  
+  - Replace the above code with below code .The biggest difference is that we only allow the data we need to be put into the new user
+  
+  const newUser = await user.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm
+    });
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

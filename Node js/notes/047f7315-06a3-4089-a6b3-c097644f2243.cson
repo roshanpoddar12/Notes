@@ -1,0 +1,15 @@
+createdAt: "2020-05-06T03:29:12.110Z"
+updatedAt: "2020-05-06T14:19:58.485Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "13.1 Aggregation pipeline stages"
+tags: []
+content: '''
+  # 13.1 Aggregation pipeline stages
+  - In this we r going to use match ,group (is the most important one )
+  - There are multiple stages we can implement
+  - We can also repeat the stages
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

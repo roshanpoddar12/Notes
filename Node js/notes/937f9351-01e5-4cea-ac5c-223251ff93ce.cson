@@ -1,0 +1,28 @@
+createdAt: "2020-05-09T02:16:15.080Z"
+updatedAt: "2020-05-09T05:12:26.863Z"
+type: "MARKDOWN_NOTE"
+folder: "d8227e3e221c3a074833"
+title: "2.HANDLING UNHANDELED ROUTE"
+tags: []
+content: '''
+  # 2.HANDLING UNHANDELED ROUTE
+  - Routes that will not be handeled in the tour router and user route will through an error as route not found.
+  - What happens when we search an route it will find a match in tour router then it will go to user router
+  
+  
+  
+  app.use('/api/v1/tours', tourRouter);
+  app.use('/api/v1/users', userRouter);
+  
+  - Here i am using app.all whatever the route might be get,post etc will be handeled
+   
+  app.all('*', (req, res, next) => {
+    res.status(402).json({
+      status: 'fail',
+      message: `Cant find ${req.originalUrl} on this server`
+    });
+  });
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

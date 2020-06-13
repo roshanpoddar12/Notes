@@ -1,0 +1,16 @@
+createdAt: "2020-05-02T22:47:18.613Z"
+updatedAt: "2020-05-02T22:49:36.645Z"
+type: "MARKDOWN_NOTE"
+folder: "002c47ea61b724725b76"
+title: "8.Query params"
+tags: []
+content: '''
+  # 8.Query params
+  - url http://xxxx/tour?duration=5&difficulty=easy
+  - after ? mark it is query and it is separated by the '&'\\
+  - Express already handle it 
+  - console.log(query.params)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

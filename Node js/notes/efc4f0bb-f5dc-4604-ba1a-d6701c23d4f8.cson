@@ -1,0 +1,39 @@
+createdAt: "2020-05-25T00:56:32.744Z"
+updatedAt: "2020-05-27T01:13:10.700Z"
+type: "MARKDOWN_NOTE"
+folder: "9980a104cbe4399cdfd6"
+title: "7.Authorization: User Roles and Permission"
+tags: []
+content: '''
+  ## 7.Authorization: User Roles and Permission
+  ```js
+  //authcontroller.js add a middleware in tourroute
+  exports.restrictTo = (...roles) => {
+    return (req, res, next) => {
+      //roles ['admin','lead-guide']. role='user
+      if (!roles.include(req.user.role)) {
+        return next(
+          new AppError('You do not have permission to perform this task', 403)
+        );
+      }
+      next();
+    };
+  };
+  
+  
+  //tourRoute.js
+  
+  router
+    .route('/:id')
+    .get(tourController.getTour)
+    .patch(tourController.updateTour)
+    .delete(
+      authController.protect,
+     ** authController.restrictTo('admin', 'lead-guide'),
+      tourController.deleteTour
+    );
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

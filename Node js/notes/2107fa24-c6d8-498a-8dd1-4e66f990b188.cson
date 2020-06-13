@@ -1,0 +1,34 @@
+createdAt: "2020-04-22T23:02:06.370Z"
+updatedAt: "2020-04-22T23:42:40.343Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "9.Why setImmediate print before setImmediate even i have given the time 0ms"
+tags: []
+content: '''
+  # 9.Why setImmediate print before setImmediate even i have given the time 0ms
+  - This is not inside event loop
+  setTimeout(()=>console.log("Timer 1 finished"),0);
+  setImmediate(()=>console.log("Immediate 1 finished"));
+  - This is inside eventloop
+  fs.readFile('x.txt',()=>{
+    console.log('xxxxxxxx');
+    setTimeout(()=>console.log("Timer 2 finished"),0);
+    setTimeout(()=>console.log("Timer 3 finished"),3000);
+    setImmediate(()=>console.log("Immediate 2 finished"));
+  })
+  
+  o/p
+  Immediate 1 finished
+  Timer 1 finished
+  xxxxxxxx
+  Immediate 2 finished
+  Timer 2 finished
+  Timer 3 finished
+  -  Eventloop actually waits for stuff to happen in polling phase in that phase io callbacks are handled
+  -  when this queues of callbacks is empty which is the case in our example so we have no io callbacks here all we have is these timers ,then the event loop will wait in this phase until there is an expire timer
+  -  But if we schedule a callback using setImmediate() then that callback is actually executed right away after the polling phases and in before the expired timer.if there is one
+  -  In this case timer expires right away after 0 sec but again event loop actually waits so it pauses in polling phase and so that set immediate callback is actually executed 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

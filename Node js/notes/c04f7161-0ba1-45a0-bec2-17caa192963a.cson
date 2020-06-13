@@ -1,0 +1,20 @@
+createdAt: "2020-04-23T22:46:33.663Z"
+updatedAt: "2020-04-23T23:12:14.388Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "15.Wrapping"
+tags: []
+content: '''
+  # 15.Wrapping
+  - The module code is wrapped into a special function which will give us the access to a couple of special object
+  - Here the actual magic happens here we will get the answer from where does require function actually come from and how do we have access to it
+  - its because node js run time takes the code of our module and put it inside the immediately invoked function expression (IIFE) 
+  - Node not directly executes the code we write into a file but instead the wrapper function that contain our code in its body 
+  - it also passes the exports ,require,module,__filename and __dirname objects into it that is why we automatically have the access to the stuff like require function these are basically like global variables that are injected into each and every module 
+  - By doing this node achieves 2 very important things
+    - Giving developer access to all this variables
+    - It keeps the top level variables that we define in our modules private![require2nd.png](:storage/c04f7161-0ba1-45a0-bec2-17caa192963a/3e2b3138.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

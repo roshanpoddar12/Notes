@@ -1,0 +1,43 @@
+createdAt: "2020-04-19T07:13:30.234Z"
+updatedAt: "2020-04-19T07:29:33.947Z"
+type: "SNIPPET_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "12.DATA-*"
+tags: []
+description: "12.DATA-*"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "index.html"
+    mode: "HTML"
+    content: '''
+      //-- The data-* global attributes form a class of attributes called custom data attributes, that allow proprietary information to be exchanged between the HTML and its DOM representation by scripts
+      <article
+        id="electric-cars"
+        data-columns="3"
+        data-index-number="12314"
+        data-parent="cars">
+      ...
+      </article>
+      
+      .closest
+      - Starting with the Element itself, the closest() method traverses parents (heading toward the document root) of the Element until it finds a node that matches the provided selectorString. Will return itself or the matching ancestor. If no such element exists, it returns null.
+      
+      var closestElement = targetElement.closest(selectors);
+    '''
+  }
+  {
+    linesHighlighted: []
+    name: "index.js"
+    mode: "JavaScript"
+    content: '''
+      const article = document.querySelector('#electric-cars');
+       
+      article.dataset.columns // "3"
+      article.dataset.indexNumber // "12314"
+      article.dataset.parent // "cars"
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

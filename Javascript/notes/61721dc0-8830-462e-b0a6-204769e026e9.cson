@@ -1,0 +1,32 @@
+createdAt: "2020-05-03T04:38:43.283Z"
+updatedAt: "2020-05-12T14:33:52.955Z"
+type: "MARKDOWN_NOTE"
+folder: "6426ad25abcc6829d9eb"
+title: "Quiz APP"
+tags: []
+content: '''
+  # Quiz APP
+  -In this video I will be breaking down the entire process of building a quiz application using JavaScript. We will also be styling the entire application using modern styling practices. This video will not only teach you how to build a quiz application, but it will breakdown the steps you need to take when building any project.
+  
+  We will be using modern JavaScript best practices to create this application. We will also be using CSS variables to make changing our site on demand incredibly easy. By the end of this video you will have an entire quiz application built which can be easily extended and customized.
+  Concepts Covered:
+  
+  - How to dynamically show/hide elements
+    - By removing the class from the classlist we can hide elements
+    - By adding a class in the classList we can show elements
+  - How to remove child elements
+    -  while(answerButtonsElement.firstChild){
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+      }
+  
+  - Array randomization
+    -    while(answerButtonsElement.firstChild){
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+      }
+  
+  - Who the best YouTuber is 😜
+  - CSS variables
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

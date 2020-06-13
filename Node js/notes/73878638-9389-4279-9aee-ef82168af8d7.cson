@@ -1,0 +1,14 @@
+createdAt: "2020-04-23T00:35:00.397Z"
+updatedAt: "2020-04-23T21:56:14.466Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "11.Events and Event-driven Architecture"
+tags: []
+content: '''
+  # 11.Events and Event-driven Architecture
+  - ![Event-driven.png](:storage/73878638-9389-4279-9aee-ef82168af8d7/471e857d.png)
+  - Check even.js in home/roshan/webDevelopment/complete-node-bootcamp/how node js work
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

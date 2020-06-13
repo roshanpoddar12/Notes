@@ -1,0 +1,19 @@
+createdAt: "2020-05-07T06:10:21.959Z"
+updatedAt: "2020-05-07T06:11:13.942Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "16. Mongoose middleware"
+tags: []
+content: '''
+  # 16. Mongoose middleware
+  - Just like express middle are we can also have mongoose middle ware
+  - There are 4 types of middleware in mongoose
+    - 1.document
+      2.query
+      3.aggregate
+      4.model
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

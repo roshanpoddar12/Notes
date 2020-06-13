@@ -1,0 +1,50 @@
+{
+  "folders": [
+    {
+      "key": "28bd03cc4b3ef98da605",
+      "color": "#E8D252",
+      "name": "Basics"
+    },
+    {
+      "key": "f84744a17b0828a80410",
+      "color": "#30D5C8",
+      "name": "How js works behind the scene"
+    },
+    {
+      "key": "e348848af41eee56d4ae",
+      "color": "#FF8E00",
+      "name": "DOM manipilation and event"
+    },
+    {
+      "key": "c19e83a1679ed0fb1302",
+      "color": "#FF8E00",
+      "name": "Object and function"
+    },
+    {
+      "key": "5a0c8d8f45a5e708fc1e",
+      "color": "#E8D252",
+      "name": "ES6"
+    },
+    {
+      "key": "671f471a29ab48d9e7dc",
+      "color": "#E10051",
+      "name": "Async/await"
+    },
+    {
+      "key": "dc2a561bbf1f258a101a",
+      "color": "#E10051",
+      "name": "Babel and webpack"
+    },
+    {
+      "key": "4d6f2e0948fcca1399f3",
+      "color": "#30D5C8",
+      "name": "Budjet app"
+    },
+    {
+      "key": "6426ad25abcc6829d9eb",
+      "color": "#30D5C8",
+      "name": "JS Projects"
+    }
+  ],
+  "version": "1.0"
+}

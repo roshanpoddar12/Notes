@@ -1,0 +1,48 @@
+createdAt: "2020-04-10T03:37:40.071Z"
+updatedAt: "2020-04-10T14:34:33.638Z"
+type: "SNIPPET_NOTE"
+folder: "28bd03cc4b3ef98da605"
+title: "Object and properties"
+tags: []
+description: "Object and properties"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "object.js"
+    mode: "JavaScript"
+    content: '''
+      # Object and properties
+      
+      # Difference between arrays and objects
+        - in arrays order matters a lot
+        - in object order does not maintain
+        
+      var john ={
+        firstname:'john',
+        lastname:"jane"
+      }
+      //We can access by using john.firstname
+      // We can also create oject by using object keyword and new keyword
+      var jane = new Object();
+      jane.name = 'jane';
+      jane['lastName']='john'
+      // We can even attach function to the objects
+      var john ={
+        firstname:'john',
+        lastname:"jane",
+        birthYear:1992,
+        calcAge :   function(){
+          return 2018-this.birthYear; 
+          //this.age = 2018-this.birthYear
+        }
+      }
+      var age = john.calcAge;
+      //or we can set a new property
+      john.age = john.calcAge.
+      //Instead of setting property here we can set inside object itself instead of returning we can assign there only
+      this.age = 2018-this.birthYear
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

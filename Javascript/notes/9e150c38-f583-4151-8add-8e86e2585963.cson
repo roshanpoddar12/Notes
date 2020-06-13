@@ -1,0 +1,22 @@
+createdAt: "2020-04-10T14:54:05.381Z"
+updatedAt: "2020-06-13T02:27:07.540Z"
+type: "MARKDOWN_NOTE"
+folder: "f84744a17b0828a80410"
+title: "3.Execution Contexts in Detail: Creation and execution phases and hoisting"
+tags: []
+content: '''
+  
+  # 3.Execution Contexts in Detail: Creation and execution phases and hoisting
+  
+  - Executioin context object has 3 properties
+  - Variable object : Which will contain function argument ,inner variable declaration, as well as function declaration.
+  - Scope chain : Which contains the current variable objects as well as the variable objects of its parents.
+  - This variable.
+  - How this is actually created?
+  - When a function is called a new execution context is pushed in top of the execution stack. This happens in two phases.
+  - ![execution-context.png](:storage/9e150c38-f583-4151-8add-8e86e2585963/d13ac7e5.png)
+  ![var.png](:storage/9e150c38-f583-4151-8add-8e86e2585963/56679024.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,95 @@
+createdAt: "2020-04-22T23:49:32.319Z"
+updatedAt: "2020-04-23T00:34:24.884Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "10.ThreadPool example"
+tags: []
+content: '''
+  # 10.ThreadPool example
+  - SET THE THREAD POOL SIZE SYNTAX:
+    - process.env.UV_THREADPOOL_SIZE = 4;
+    
+    
+  - code with 4 threads and we are running 4 instances of crypto means it will use 4 threads and we have assigned 4 threads and by default also it have 4 thread
+    - const fs = require("fs");
+  const crypto = require("crypto");
+  const start = Date.now();
+  // We can specify the number of threads in thread pool
+  process.env.UV_THREADPOOL_SIZE = 4;
+  setTimeout(() => console.log("Timer 1 finished"), 0);
+  setImmediate(() => console.log("Immediate 1 finished"));
+  fs.readFile("test-file.txt", () => {
+    console.log("I/O finished");
+    console.log("----------------");
+    setTimeout(() => console.log("Timer 2 finished"), 0);
+    setTimeout(() => console.log("Timer 3 finished"), 3000);
+    setImmediate(() => console.log("Immediate 2 finished"));
+    process.nextTick(() => console.log("Process.nextTick"));
+    crypto.pbkdf2("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+  });
+  console.log("Hello from the top-level code");
+  
+  - Output
+    - Hello from the top-level code
+  Timer 1 finished
+  Immediate 1 finished
+  I/O finished
+  Process.nextTick
+  Immediate 2 finished
+  Timer 2 finished
+  1183 Password encrypted
+  1186 Password encrypted
+  1186 Password encrypted
+  1187 Password encrypted
+  Timer 3 finished
+  -------------------------------------------
+  - With one thread
+    - - const fs = require("fs");
+  const crypto = require("crypto");
+  const start = Date.now();
+  // We can specify the number of threads in thread pool
+  process.env.UV_THREADPOOL_SIZE = 4;
+  setTimeout(() => console.log("Timer 1 finished"), 0);
+  setImmediate(() => console.log("Immediate 1 finished"));
+  fs.readFile("test-file.txt", () => {
+    console.log("I/O finished");
+    console.log("----------------");
+    setTimeout(() => console.log("Timer 2 finished"), 0);
+    setTimeout(() => console.log("Timer 3 finished"), 3000);
+    setImmediate(() => console.log("Immediate 2 finished"));
+    process.nextTick(() => console.log("Process.nextTick"));
+    crypto.pbkdf2Sync("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2Sync("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2Sync("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+    crypto.pbkdf2Sync("password", "salt", 100000, 1024, "sha512");
+    console.log(Date.now() - start, "Password encrypted");
+  });
+  console.log("Hello from the top-level code");
+  
+  - Output
+    - ello from the top-level code
+  Timer 1 finished
+  Immediate 1 finished
+  I/O finished
+  Process.nextTick
+  Immediate 2 finished
+  Timer 2 finished
+  1182 Password encrypted
+  2335 Password encrypted
+  Timer 3 finished
+  3504 Password encrypted
+  4745 Password encrypted
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

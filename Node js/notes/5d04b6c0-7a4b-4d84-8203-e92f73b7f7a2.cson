@@ -1,0 +1,28 @@
+createdAt: "2020-05-02T13:13:17.387Z"
+updatedAt: "2020-05-02T13:17:28.244Z"
+type: "SNIPPET_NOTE"
+folder: "002c47ea61b724725b76"
+title: "6.How to create a document"
+tags: []
+description: "6.How to create a document"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "tourController.js"
+    mode: "JavaScript"
+    content: '''
+      // Earlier way of creating the document
+      
+      const newTour = new Tour{};
+      newTour.save()
+      
+      // New and more efficient way of creating the documents
+      
+      Tour.create({})
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

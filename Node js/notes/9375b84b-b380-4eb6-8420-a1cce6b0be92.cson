@@ -1,0 +1,14 @@
+createdAt: "2020-04-17T23:40:31.998Z"
+updatedAt: "2020-04-17T23:50:26.169Z"
+type: "MARKDOWN_NOTE"
+folder: "551b2949636856ace4c9"
+title: "Node js"
+tags: []
+content: '''
+  # Node js
+  - Node js is a js runtime built on google's opensource v8 js engiene
+  - 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

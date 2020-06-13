@@ -1,0 +1,21 @@
+createdAt: "2020-04-22T14:58:10.453Z"
+updatedAt: "2020-04-22T22:15:33.594Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "1.v8 libuv and c++"
+tags: []
+content: '''
+  # 1.v8 libuv and c++
+  - node run time has several dependency the most important are v8 and libuv 
+  - V8 actually converts the js code into machine code that a computer can actually understand that alone is not enough to make whole server side framework like node thats why we have libuv
+  -  libuv is an open source library with strong focus on asynchronous io .This layer gives node access to the underlying computer operating system ,file system ,networking and more 
+  -  libuv also implents 2 important features of node js which are the event loop and thread pool
+  -  event loop is redponsible for handling easy task like executing callback and network io 
+  -  threapool is for more heavy work like file access or compression.
+  -  libuv is completely written in c++
+  -  node js is written is js and c++
+  -  node js doesnot only rely on vs and libuv but also on http-parser,cares,openssl,![node_v8.png](:storage/03d0d6c7-bfd7-4627-81fa-8d83b7391d5f/c8212d1e.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

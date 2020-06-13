@@ -1,0 +1,40 @@
+createdAt: "2020-05-24T11:51:15.340Z"
+updatedAt: "2020-05-24T12:15:29.800Z"
+type: "MARKDOWN_NOTE"
+folder: "575d5e100c08780cd83b"
+title: "4.DIRECTORY STRUCTURE"
+tags: []
+content: '''
+  ## 4.DIRECTORY STRUCTURE
+  - my-app - This is your project name
+    - node_modules: It contains all packages and dependencies installed
+    - public :
+      - favicon.ico: Its favicon for website
+      - index.html: This file holds the html template of our app.
+      - manifest.json: manifest.json provides metadata used when your wec app is installed on a users mobile device or desktop
+    - src:
+      - App.css : Its a css file related to App.js but its global.
+      - App.js : Its parent component of your react app
+      - App.test.js: Its test environment
+      - index.css : It is a css file related to index.js but it is global
+      - index.js : Its the js entry point
+      - logo.svg : Its the js entry point
+      - serviceWorker.js : It can help to access website offline
+    - gitignore
+    - package-lock.json
+    - package.json
+    - README.md
+  
+  ## public Folder
+  - If you put a file into the public folder it will not processed by webpack(webpack does not read the public folder;it will only read the file inside the src folder). Instead it will be copied into the build folder untouched
+  - To reference assets in public folder we need to use a special variable called PUBLIC_URL.Only files inside the public folder will be accessible by %PUBLIC_URL% prefix.
+  - When you run npm run build, Create React App will substitute %PUBLIC_URL% with a correct absolute path so your project works even if you client side routing or host it in a non root URL
+  ## note(public folder)
+  - You need a file with a specific name in the build output, such as manifest.webmanifest.
+  - You have thousands of images and need to dynamically refence their pathhs.
+  - You want to include a small script like pace.js outside the bundle code
+  - Some library may be incompatible with Webpack and you have no other option but to include it as a <script> tag
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

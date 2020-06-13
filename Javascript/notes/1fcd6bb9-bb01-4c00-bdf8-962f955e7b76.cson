@@ -1,0 +1,35 @@
+createdAt: "2020-04-12T10:29:54.416Z"
+updatedAt: "2020-04-12T10:32:41.125Z"
+type: "SNIPPET_NOTE"
+folder: "671f471a29ab48d9e7dc"
+title: "1.Asynchronous"
+tags: []
+description: "1.Asynchronous"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "asynchronous.js"
+    mode: "JavaScript"
+    content: '''
+       const second = () => {
+                  setTimeout(() => {
+                      console.log('Async Hey there');
+                  }, 2000);
+              }
+      
+              const first = () => {
+                  console.log('Hey there');
+                  second();
+                  console.log('The end');
+              }
+      
+              first();'
+      //o/p
+      Hey there
+      the end
+      Async hey there'
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,24 @@
+createdAt: "2020-04-10T14:33:42.029Z"
+updatedAt: "2020-04-28T23:34:57.354Z"
+type: "MARKDOWN_NOTE"
+folder: "f84744a17b0828a80410"
+title: "2.Execution Context"
+tags: []
+content: '''
+  # 2.Execution Context
+  
+  - All js codes needs to run in an environment .This environment are called execution context.
+  - EXECUTION CONTEXT -- A box, a container, or a wrapper which stores variables and in which a piece of our code is evaluated and executed
+  - Default excution Context is always the Global Execution context 
+  ![oie_sprJXIfGXNOG.png](:storage/79c29e00-4504-4012-b14f-e38cf066c489/979abd4b.png)
+  - But what about code which is  inside any function
+  - Each time we call a function it gets its own new executin context.
+  ![oie_d5M8IWtAAVHp.png](:storage/79c29e00-4504-4012-b14f-e38cf066c489/84fd55cd.png)
+  - When it was executing line by line all came in global context
+  - When the first() at last called it creates a new execution context as first() similarly for other function.
+  - And when a function returns it pop out from the stack.
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

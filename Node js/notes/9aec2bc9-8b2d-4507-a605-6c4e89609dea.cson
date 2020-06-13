@@ -1,0 +1,18 @@
+createdAt: "2020-05-01T14:02:44.045Z"
+updatedAt: "2020-05-01T16:42:18.889Z"
+type: "MARKDOWN_NOTE"
+folder: "002c47ea61b724725b76"
+title: "2.Mongo db queries"
+tags: []
+content: '''
+  # 2.Mongo db queries
+  -  use databaseName
+  -  use : it is used to create our first database.Also it is used to switch between the database if that database doesnot exists than it will create a new one
+  -  db.tours.insertMany()
+  -  Db: Current database
+  -  tours: Name of the collection where this database is going to live
+  -  insertMany: document
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

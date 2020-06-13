@@ -1,0 +1,23 @@
+createdAt: "2020-04-11T22:27:04.060Z"
+updatedAt: "2020-04-11T22:48:35.066Z"
+type: "MARKDOWN_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "1.What's new in ES6?"
+tags: []
+content: '''
+  # 1.What's new in ES6?
+  - Variable declaration with let and const
+  - Blocks and IIFe
+  - Stringd
+  - Arroe functions
+  - Destructuring
+  - Arrays
+  - The spread operator
+  - Rest and default parameters
+  - Maps
+  - Classes and subclasses
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

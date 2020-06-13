@@ -1,0 +1,41 @@
+createdAt: "2020-04-11T23:00:55.418Z"
+updatedAt: "2020-04-11T23:01:48.401Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "6.String"
+tags: []
+description: "6.String"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "string.js"
+    mode: "JavaScript"
+    content: '''
+      // Lecture: Strings
+      
+      
+      let firstName = 'John';
+      let lastName = 'Smith';
+      const yearOfBirth = 1990;
+      
+      function calcAge(year) {
+          return 2016 - year;
+      }
+      
+      // ES5
+      console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today, he is ' + calcAge(yearOfBirth) + ' years old.');
+      
+      // ES6
+      console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`);
+      
+      
+      const n = `${firstName} ${lastName}`;
+      console.log(n.startsWith('j')); //false
+      console.log(n.endsWith('Sm'));// false
+      console.log(n.includes('oh')); //true
+      console.log(`${firstName} `.repeat(5)); //JohnJohnJohnJohnJohn
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

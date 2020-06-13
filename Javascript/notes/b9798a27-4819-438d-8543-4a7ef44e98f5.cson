@@ -1,0 +1,19 @@
+createdAt: "2020-04-14T18:24:01.592Z"
+updatedAt: "2020-04-14T18:57:56.125Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "7.Making thr first API call"
+tags: []
+content: '''
+  # 7.Making thr first API call
+  - Api key : is like a password given to each users like a unique id that each user can use in order to make request so that api can track how many request u make per day.
+  - To make a http request a api we can use fetch 
+  - but there is a problem with fetch is that it is not supported in old browser so we will use popular http request library called axios
+  - Axios is better than fetch for example it automatically returns json ,axios is better in error handling
+  - With fetch there are 2 steps first we had to wait for data to come back and then we had to wait for it to convert to json 
+  - For crossorigin issue we can add crossorigin.me in the requestes url api or many are there jst search for cors proxy
+  - ex:https://crossorigin.me/https://google.com
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

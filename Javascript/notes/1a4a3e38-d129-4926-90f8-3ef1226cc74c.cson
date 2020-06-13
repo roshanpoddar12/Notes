@@ -1,0 +1,22 @@
+createdAt: "2020-04-11T12:08:04.413Z"
+updatedAt: "2020-04-29T14:21:16.703Z"
+type: "MARKDOWN_NOTE"
+folder: "c19e83a1679ed0fb1302"
+title: "Closure"
+tags: []
+content: '''
+  # Closure
+  
+  
+  # An inner function has always access to the variables and parameters of its outer function ,even after the outer function has been returned
+  ![1stexecContext.png](:storage/1a4a3e38-d129-4926-90f8-3ef1226cc74c/62f9ffcc.png)
+  - - After the function returns the execution context of the retirement function should be gone and with it entire variable object and scope chain should be gone
+  - Actually NO the secret to closure is even after the function returns and execution context is gone the variable object is still there its not gone it is still there in memory and it can be accessed
+  ![2ndEC.png](:storage/1a4a3e38-d129-4926-90f8-3ef1226cc74c/0a4a4382.png)
+  
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

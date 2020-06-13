@@ -1,0 +1,29 @@
+createdAt: "2020-04-14T18:07:36.606Z"
+updatedAt: "2020-04-14T18:23:59.204Z"
+type: "MARKDOWN_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "6.How to use ES6 modules?"
+tags: []
+content: '''
+  # 6.How to use ES6 modules?
+  # Default and named exports and imports.?
+  
+  - we always write js filename in small case but in models we write in uppercase as this is the convention
+  # searchView.js
+  export const add=(a,b)=>a+b;
+  export const multiply=(a,b)=>a*b;
+  export const id=23;
+  
+  # Search.js
+  export default 'Hello';
+  # index.js
+  import str from './models/Search';
+  import {add as a,multiply as m,id} from './views/searchView'
+   
+  console.log(`Using imported function ${a(id,2)}and ${m(3,4)}`);
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

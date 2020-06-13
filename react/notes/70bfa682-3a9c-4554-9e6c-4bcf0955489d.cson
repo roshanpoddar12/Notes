@@ -1,0 +1,24 @@
+createdAt: "2020-05-22T14:31:01.258Z"
+updatedAt: "2020-05-22T15:04:36.239Z"
+type: "MARKDOWN_NOTE"
+folder: "575d5e100c08780cd83b"
+title: "What is React JS?"
+tags: []
+content: '''
+  ## What is React JS?
+  - React js is a js library for building for building front end apllication and ui
+  - React allows us to create reusable ui components
+  
+  ## What is component in react?
+  -  component are the building blocks of any react app.
+  ## Advantages of react js?
+  -  Reusable components
+  -  open source
+  -  Efficient and fast
+  -  Works in browser
+  -  Large Community
+  -  ![ componentreuse.png](:storage/70bfa682-3a9c-4554-9e6c-4bcf0955489d/0d0424c9.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

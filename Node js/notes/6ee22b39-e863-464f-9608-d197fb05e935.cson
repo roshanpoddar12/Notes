@@ -1,0 +1,25 @@
+createdAt: "2020-04-28T22:57:58.527Z"
+updatedAt: "2020-04-28T23:06:10.560Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "ESLint configuration"
+tags: []
+content: '''
+  # ESLint configuration
+  - npm i
+      - eslint prettier
+    - eslint-config-prettier : this will disable formatting for eslint because we want prettier to format our code
+    - eslint-plugin-prettier : this will allow eslint to show formatting error as we type against using prettier
+    - eslint-config-airbnb : js style guide most popular one
+    - eslint-plugin-node : to find error while writting node js code
+    - 3 other package to actually make airbnb work
+    - Actually airbnb depends on this 3 packages
+    - eslint-plugin-import
+    - eslint-plugin-jsx-a11y
+    - eslint-plugin-react
+    - --save-dev
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

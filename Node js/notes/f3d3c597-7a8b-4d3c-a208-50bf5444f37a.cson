@@ -1,0 +1,87 @@
+createdAt: "2020-05-05T17:03:19.981Z"
+updatedAt: "2020-05-07T05:35:33.324Z"
+type: "SNIPPET_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "15.Virtual properties"
+tags: []
+description: "15.Virtual properties"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "virtual.js"
+    mode: "JavaScript"
+    content: '''
+      /*Suppose you have a User model. Every user has an email, but you also want the email's domain. For example, the domain portion of 'test@gmail.com' is 'gmail.com'.
+      
+      Below is one way to implement the domain property using a virtual. You define virtuals on a schema using the Schema#virtual() function.
+      */
+      const userSchema = mongoose.Schema({
+        email: String
+      });
+      // Create a virtual property `domain` that's computed from `email`.
+      userSchema.virtual('domain').get(function() {
+        return this.email.slice(this.email.indexOf('@') + 1);
+      });
+      const User = mongoose.model('User', userSchema);
+      
+      let doc = await User.create({ email: 'test@gmail.com' });
+      // `domain` is now a property on User documents.
+      doc.domain; // 'gmail.com'
+      
+      /*The Schema#virtual() function returns a VirtualType object. Unlike normal document properties, virtuals do not have any underlying value and Mongoose does not do any type coercion on virtuals. However, virtuals do have getters and setters, which make them ideal for computed properties, like the domain example above.
+      
+      Virtual Setters
+      You can also use virtuals to set multiple properties at once as an alternative to custom setters on normal properties. For example, suppose you have two string properties: firstName and lastName. You can create a virtual property fullName that lets you set both of these properties at once. The key detail is that, in virtual getters and setters, this refers to the document the virtual is attached to.
+      */
+      const userSchema = mongoose.Schema({
+        firstName: String,
+        lastName: String
+      });
+      // Create a virtual property `fullName` with a getter and setter.
+      userSchema.virtual('fullName').
+        get(function() { return `${this.firstName} ${this.lastName}`; }).
+        set(function(v) {
+          // `v` is the value being set, so use the value to set
+          // `firstName` and `lastName`.
+          const firstName = v.substring(0, v.indexOf(' '));
+          const lastName = v.substring(v.indexOf(' ') + 1);
+          this.set({ firstName, lastName });
+        });
+      const User = mongoose.model('User', userSchema);
+      
+      const doc = new User();
+      // Vanilla JavaScript assignment triggers the setter
+      doc.fullName = 'Jean-Luc Picard';
+      
+      doc.fullName; // 'Jean-Luc Picard'
+      doc.firstName; // 'Jean-Luc'
+      doc.lastName; // 'Picard'
+      /* Virtuals in JSON
+      By default, Mongoose does not include virtuals when you convert a document to JSON. For example, if you pass a document to Express' res.json() function, virtuals will not be included by default.
+      
+       To include virtuals in res.json(), you need to set the toJSON schema option to { virtuals: true }.
+      */
+      const opts = { toJSON: { virtuals: true } };
+      const userSchema = mongoose.Schema({
+        _id: Number,
+        email: String
+      }, opts);
+      // Create a virtual property `domain` that's computed from `email`.
+      userSchema.virtual('domain').get(function() {
+        return this.email.slice(this.email.indexOf('@') + 1);
+      });
+      const User = mongoose.model('User', userSchema);
+      
+      const doc = new User({ _id: 1, email: 'test@gmail.com' });
+      
+      doc.toJSON().domain; // 'gmail.com'
+      // {"_id":1,"email":"test@gmail.com","domain":"gmail.com","id":"1"}
+      JSON.stringify(doc); 
+      
+      // To skip applying virtuals, pass `virtuals: false` to `toJSON()`
+      doc.toJSON({ virtuals: false }).domain; // undefined
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

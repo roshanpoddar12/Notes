@@ -1,0 +1,48 @@
+createdAt: "2020-06-13T05:49:19.385Z"
+updatedAt: "2020-06-13T06:41:17.566Z"
+type: "MARKDOWN_NOTE"
+folder: "9fe7f16abbe6406c2e1d"
+title: "SASS -  Syntatically Awesome Stylesheets"
+tags: []
+content: '''
+  ## 1.SASS INTRODUCTION
+  - For Styling of the project we are going to use something called saas
+  - Sass is the upgraded version of css
+  # SASS -  Syntatically Awesome Stylesheets
+  - Sass stands for Syntatically Awesome stylesheets
+  - Sass is a preprocessor / CSS extension
+  - Sass allow us to use variables , nested rules, and import to css
+  # Syntax
+  # Sass includes two syntax options:
+  - 1. SCSS (sassy css) : extension .scss and is fully adjective with css syntax
+  - 2. Indented (simple called 'Sass'): using .sass file estension and indentation rather than brackets; 
+  - it is not fully adjective to css but fast to write
+  
+  # Variables
+  - Sass Variables allow you to define a value once and use it in multiple places. Variables begin with dollar signs and are -  set like CSS properties. if you wanted to set the same height for two different selectors, you could create a variable called $control-height
+  ```css
+  $control-height:40px;
+  ```
+  # Features of SASS
+  - Sass is fully css compatible
+  - It is more stable , powerfull and is elegant than  css
+  - It is based on js and is superset of css
+  - It has its own syntax and compiles to readable css
+  - It is an open-source preprocessor that is interpreted into CSS.
+  - It is an open-source preprocessor that is interpreted into CSS.
+  - It supports language extensions such as variables, nesting, and mixins.
+  - It provides many useful functions for manipulating colors and other values.
+  - It provides many advanced features like control directives for libraries.
+  - It provides well-formatted, customizable output.
+  # First we have to add sass to our project
+  ```node
+  npm add node-sass
+  ```
+  -  Create react app comes up with the configuration that the sass requires
+  -  Webpack and babel converts our sass file to css file
+  # Including the sass to the project
+  -  Just add a file name "homepage.styles.scss"
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

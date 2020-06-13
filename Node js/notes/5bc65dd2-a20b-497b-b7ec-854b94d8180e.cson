@@ -1,0 +1,17 @@
+createdAt: "2020-04-26T06:54:03.768Z"
+updatedAt: "2020-04-26T10:32:41.990Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "1.What is express ,And why use it?"
+tags: []
+content: '''
+  # 1.What is express ,And why use it?
+  - Express is a minimal node.js framework, a higher level of abstraction.
+  - Express contains a very robust set of features: Complex routing, easier handling of requests and responses,middleware and server-side rendering.
+  - Express allows for rapid development of node js application: we dont have to reinvent the wheel
+  - Express makes it easier to organise our application into the mvc architecture.
+  - 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

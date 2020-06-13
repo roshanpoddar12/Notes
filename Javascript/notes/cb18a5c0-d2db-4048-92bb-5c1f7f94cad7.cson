@@ -1,0 +1,54 @@
+createdAt: "2020-04-12T11:34:53.889Z"
+updatedAt: "2020-04-12T11:35:16.907Z"
+type: "SNIPPET_NOTE"
+folder: "671f471a29ab48d9e7dc"
+title: "8.Weather API using ajax"
+tags: []
+description: "8.Weather API using ajax"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "weatherAPi.js"
+    mode: "JavaScript"
+    content: '''
+      function getWeather(woeid) {
+                  fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+                  .then(result => {
+                      // console.log(result);
+                      return result.json();
+                  })
+                  .then(data => {
+                      // console.log(data);
+                      const today = data.consolidated_weather[0];
+                      console.log(`Temperatures today in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`);
+                  })
+                  .catch(error => console.log(error));
+              }
+              getWeather(2487956);
+              getWeather(44418);
+      
+      
+              async function getWeatherAW(woeid) {
+                  try {
+                      const result = await fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}/`);
+                      const data = await result.json();
+                      const tomorrow = data.consolidated_weather[1];
+                      console.log(`Temperatures tomorrow in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}.`);
+                      return data;
+                  } catch(error) {
+                      alert(error);
+                  }
+              }
+              getWeatherAW(2487956);
+              
+              let dataLondon;
+              getWeatherAW(44418).then(data => {
+                  dataLondon = data
+                  console.log(dataLondon);
+              });
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

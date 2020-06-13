@@ -1,0 +1,21 @@
+createdAt: "2020-04-26T10:32:48.695Z"
+updatedAt: "2020-04-26T11:17:42.783Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "3.The REST Architecture"
+tags: []
+content: '''
+  # 3.The REST Architecture
+  - Rest stands for Representational State Transfer
+  - it is basically a way of building a web api in a logical way making them easy to consume
+  - To build a restfull api which means apis following the restful architecture we just need to follow a couple of principle-:
+    - Separate API into logical resources
+    - Expose structured, resource-based URLs
+    - Use HTTP methods
+    - Send data as JSON
+    - Be stateless
+  ![rest1,2.png](:storage/82b26fcf-202c-447b-a902-d7515c71ef28/af0dff98.png)![rest3.png](:storage/82b26fcf-202c-447b-a902-d7515c71ef28/a78cecd5.png)![rest4.png](:storage/82b26fcf-202c-447b-a902-d7515c71ef28/4eb3e6eb.png)![rest5.png](:storage/82b26fcf-202c-447b-a902-d7515c71ef28/55d20743.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

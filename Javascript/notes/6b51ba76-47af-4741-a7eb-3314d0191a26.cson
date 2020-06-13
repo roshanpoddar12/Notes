@@ -1,0 +1,25 @@
+createdAt: "2020-04-10T18:59:41.286Z"
+updatedAt: "2020-04-29T14:04:54.673Z"
+type: "MARKDOWN_NOTE"
+folder: "c19e83a1679ed0fb1302"
+title: "1.Everything is an Object: Inheritance and the prototype chain."
+tags: []
+content: '''
+  # 1.Everything is an Object: Inheritance and the prototype chain.
+  - in js we have 2 big types of values
+  - ![primVSobjec.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/ed6c10f5.png)
+  ![oop.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/8f222636.png)
+  - If we were using objects then we have to make different  object for different persons
+  - but there is a better way.
+  - Imagine something is like a blueprint
+  - ![constructor and insta.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/246c385e.png)
+  - Inheritance: Inheritance is when one object is based on another object.Is one object when get access of another object properties and methods![inheritance.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/4be62598.png)
+  - Js is a prototype based language which means inheritance works by using something called prototype.
+  - Each and every js object has a prototype property.which makes inheritance possible in js
+  - Every object that we create is the instance of the object constructor which has a bunch of methods in its prototype property![inheritprototype.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/4fe9251e.png)(:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/07b5836e.png)d0191a26/956796c3.png)
+  ![summary.png](:storage/6b51ba76-47af-4741-a7eb-3314d0191a26/9317fbe7.png)
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,13 @@
+createdAt: "2020-04-27T22:39:23.608Z"
+updatedAt: "2020-04-27T22:39:51.035Z"
+type: "MARKDOWN_NOTE"
+folder: "6426ad25abcc6829d9eb"
+title: "Building a realtime chat app using node and socket.io"
+tags: []
+content: '''
+  # Building a realtime chat app using node and socket.io
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

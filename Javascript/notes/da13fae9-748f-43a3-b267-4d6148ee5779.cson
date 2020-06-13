@@ -1,0 +1,47 @@
+createdAt: "2020-04-12T10:12:27.293Z"
+updatedAt: "2020-04-12T10:15:24.283Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "14.DEFAULT Parameter"
+tags: []
+description: "14.DEFAULT Parameter"
+snippets: [
+  {
+    linesHighlighted: [
+      21
+    ]
+    name: "default.js"
+    mode: "JavaScript"
+    content: '''
+      // Lecture: Default parameters
+      
+      
+      // ES5
+      function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+          
+          lastName === undefined ? lastName = 'Smith' : lastName = lastName;
+          nationality === undefined ? nationality = 'american' : nationality = nationality;
+          
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.yearOfBirth = yearOfBirth;
+          this.nationality = nationality;
+      }
+      
+      
+      //ES6
+      function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'american') {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.yearOfBirth = yearOfBirth;
+          this.nationality = nationality;
+      }
+      
+      
+      var john = new SmithPerson('John', 1990); //passing only 2 parameters rest all will be set to uundefined by default.
+      var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish');
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

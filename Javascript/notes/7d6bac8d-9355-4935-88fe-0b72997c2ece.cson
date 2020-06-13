@@ -1,0 +1,15 @@
+createdAt: "2020-05-01T04:24:47.791Z"
+updatedAt: "2020-05-01T04:25:38.004Z"
+type: "MARKDOWN_NOTE"
+folder: "6426ad25abcc6829d9eb"
+title: "Rest API"
+tags: []
+content: '''
+  # Rest API
+  
+  - npm i --save-dev dotenv
+  - dotenv to pull the environment file
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

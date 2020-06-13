@@ -1,0 +1,42 @@
+createdAt: "2020-05-09T07:53:32.521Z"
+updatedAt: "2020-05-09T07:54:07.950Z"
+type: "SNIPPET_NOTE"
+folder: "d8227e3e221c3a074833"
+title: "4.CATCHING A ASYNC ERROR"
+tags: []
+description: "4.CATCHING A ASYNC ERROR"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "removingTryCatch.js"
+    mode: "JavaScript"
+    content: '''
+      const catchAsync = fn => {
+        // it will not work if we directly call fn
+        // fn(req, res, next).catch(err => next(err));
+        // So the solution is that we will make catch async function return another function
+        // which is then gonna be assign to create tour and that function can later be called when necessary
+        //So this is a function is going to call
+        return (req, res, next) => {
+          // fn(req, res, next).catch(err => next(err)); we can also write it as
+          fn(req, res, next).catch(next);
+        };
+      };
+      // It calls catchAsync function with all the async things . I will not do anything it will just sit \\
+      // fn and wait until express calls it express will call as soon as someone will hit a route and
+      // and that route will need this controller function
+      exports.createTour = catchAsync(async (req, res, next) => {
+        const newTour = await Tour.create(req.body);
+        res.status(201).json({
+          status: 'success',
+          data: {
+            tour: newTour
+          }
+        });
+      });
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

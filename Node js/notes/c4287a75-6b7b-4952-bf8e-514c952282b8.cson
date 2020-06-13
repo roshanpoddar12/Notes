@@ -1,0 +1,19 @@
+createdAt: "2020-04-26T10:26:17.465Z"
+updatedAt: "2020-04-26T10:32:46.970Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "2.What is an API?"
+tags: []
+content: '''
+  # 2.What is an API?
+  -  Application Programming Interface : a piece of software that can be used by the another piece of software, in order to allow application to talk to each other.
+  -  API aren't only used to send data and arent always relate to webdevelopment and js.
+  -  But, "Application" can be other things:
+      - Node js fs or http
+      - Browser DOM javascript API
+      - With object-oriented programming, when exposing methods to the public , we're creating an API.
+      
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

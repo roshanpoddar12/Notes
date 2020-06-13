@@ -1,0 +1,41 @@
+createdAt: "2020-04-11T11:30:01.599Z"
+updatedAt: "2020-04-11T11:39:14.679Z"
+type: "SNIPPET_NOTE"
+folder: "c19e83a1679ed0fb1302"
+title: "Object.create"
+tags: []
+description: "Object.create"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "object.js"
+    mode: "JavaScript"
+    content: '''
+      // Lecture: Object.create
+      
+      var personProto = {
+          calculateAge: function() {
+              console.log(2016 - this.yearOfBirth);
+        
+      };
+      
+      var john = Object.create(personProto);
+      john.name = 'John';
+      john.yearOfBirth = 1990;
+      john.job = 'teacher';
+      
+      var jane = Object.create(personProto, {
+          name: { value: 'Jane' },
+          yearOfBirth: { value: 1969 },
+          job: { value: 'designer' }
+      });
+      //Difference between object.create and function constructor
+      //Object.create builds am object that inherits directly from the one that we have passed into the first argument while on the other hand function constructor the newly created objects inherits from the constructor prototype property
+      //the main advantage of object.create is that it really allow us to implement the complex inheritance in easier way than function constructor because it allows us to directly specify which object should be a prototype.
+      //Difference between new and object.create
+      //
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

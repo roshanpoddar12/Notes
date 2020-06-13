@@ -1,0 +1,17 @@
+createdAt: "2020-05-22T15:07:54.593Z"
+updatedAt: "2020-05-28T13:53:15.022Z"
+type: "MARKDOWN_NOTE"
+folder: "575d5e100c08780cd83b"
+title: "2.How react js works"
+tags: []
+content: '''
+  ## 2.How react js works
+  - VDOM=virtual DOM
+   - React js creates a virtual dom ,whenever there is any change in data or component it creates a new virtual DOM and it is compared with the previous VDOM
+   - When there is any mismatch it updates in the actual DOM
+   - Command to create a new react application
+   npx create-react-app my-app
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,72 @@
+createdAt: "2020-05-12T11:56:31.961Z"
+updatedAt: "2020-05-12T11:56:41.269Z"
+type: "SNIPPET_NOTE"
+folder: "9980a104cbe4399cdfd6"
+title: "1. CREATING USER MODEL"
+tags: []
+description: "1. CREATING USER MODEL"
+snippets: [
+  {
+    linesHighlighted: []
+    name: ""
+    content: '''
+      const  mongoose = require('mongoose');
+      
+      const  validator = require('validator');
+      
+        
+      
+      const  userSchema = new  mongoose.Schema({
+      
+      name: {
+      
+      type:  String,
+      
+      required: \\[true, 'Please tell as your name'\\]
+      
+      },
+      
+      email: {
+      
+      type:  String,
+      
+      required: \\[true, 'Please provide your email'\\],
+      
+      unique:  true,
+      
+      lowercase:  true,
+      
+      validate: \\[validator.isEmail, 'Please provide a valid email'\\]
+      
+      },
+      
+      photo:  String,
+      
+      password: {
+      
+      type:  String,
+      
+      required: \\[true, 'Please provide a password'\\],
+      
+      minlength:  8
+      
+      },
+      
+      passwordConfirm: {
+      
+      type:  String,
+      
+      required: \\[true, 'Please provide a password'\\]
+      
+      }
+      
+      });
+      
+      const  User = mongoose.model('User', userSchema);
+      
+      module.exports = User;
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

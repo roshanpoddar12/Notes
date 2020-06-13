@@ -1,0 +1,17 @@
+createdAt: "2020-04-23T23:12:17.001Z"
+updatedAt: "2020-04-23T23:20:11.673Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "16.EXECUTION"
+tags: []
+content: '''
+  # 16.EXECUTION
+  - the code in the module wrapper function actually gets executed by the node js run time 
+  # Returning EXPORTING
+  - itd time for the require function to return something!![require3rd.png](:storage/be1c1b8f-9ff2-44fb-9901-28ea58e3689f/f365fef5.png)
+  # CACHING
+  -  Modules are actually cached after the first time they are loaded it means if require the same module multiple time u will always get the same result 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,102 @@
+createdAt: "2020-05-17T04:22:56.039Z"
+updatedAt: "2020-05-17T06:08:45.857Z"
+type: "MARKDOWN_NOTE"
+folder: "1ec2f35df0ac37630db4"
+title: "CSS"
+tags: []
+content: '''
+  ## CSS
+  - Not a programming language
+  - Styling language
+  - Used for presentation
+  - Creativity focused
+  - Elements are the lowest level selectors which is overriden by the other selectors
+  - id>class>element selector
+  - 
+  
+  ## CSS Syntax
+  ```css
+  selector {
+    property1: value;
+    property2: value;
+  }
+  ```
+  The 1st part of the syntax is selector there are different types and combinations of selectors
+  Then the 2nd part is the opening and closing bracket everything inside this is the style being applied to the particular element to which selector matches
+  - The main types of selectors are id ,element, and class selector
+  ```css
+  //element
+  h1{}
+  //class
+  .class{}
+  //id
+  #id{}
+  ```
+  ## CSS SELECTOR COMBINATION
+  - 1st way is using multiple selector without using space in between
+  .selector-1.selector-2{
+    property:value
+  }
+  ex
+  ```css
+  <h2 id = "big-blue" class = "large blue">
+    Title
+  </h2>
+  css
+  #big-blue.large.blue{
+    color: blue;
+    font-size: 200 
+  }
+  ```
+  -  2nd way is using ancestor and child with spaces
+  .ancestor .child {
+    property: value;
+  }
+  ```css
+  <div>
+    <p>Selected</p>
+    <p>Selected</p>
+  </div>
+  
+  css
+  div p{
+  COLOR: red;
+  }
+  
+  <header class = "main-header">
+    <h1 class="brown">
+      selected
+    </h1>
+  </header>
+  
+  css
+  header.main-header h1.brown {
+    color: brown;
+  }
+  ```
+  - when we want to share the particular property and values
+  ```css
+  .big {
+    font-size: 200%
+  }
+  .small{
+    font-size: 200%;
+  }
+  
+  this 2 property has the same value so we can combine by using ,
+  .big, .large{
+    font-size: 200%;
+  }
+  ```
+  
+  - There is another form of selector
+  - Everything selector which is default we want to see in whole page
+  ```css
+  *{
+    font-family: Ariel;
+  }
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

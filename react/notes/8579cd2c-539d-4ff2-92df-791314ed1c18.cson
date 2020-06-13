@@ -1,0 +1,26 @@
+createdAt: "2020-06-01T15:46:16.639Z"
+updatedAt: "2020-06-01T15:50:53.342Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "6.WHY DOES ALL MONSTER COMES WHEN SEARCH FIELD ID EMPTY?"
+tags: []
+content: '''
+  # 6.WHY DOES ALL MONSTER COMES WHEN SEARCH FIELD ID EMPTY?
+  # FILTERED LOGIC I UNDERSTOOD
+  - SO WHAT HAPPENS WHEN THE SEARCH FIELD IS EMPTY IS THAT
+  ```jsx
+  When searchField is empty, the above code statement becomes equivalent to -
+  
+  const { monsters, searchField } = this.state;
+  const filteredMonsters = monsters.filter(
+      monster => monster.name.toLowerCase().includes(''); 
+  // because searchField.toLowerCase() evaluates to '' when searchField is empty ( i.e., '').
+  So, the statement monster.name.toLowerCase().includes('') returns all the monster objects because there is nothing left to filter out.
+  
+  ```
+  - Whenever we type something in search box .The setstate will get change so it will re render.
+  - React is smart enough it handles what to show and what to hide .So we dont have to write the extensive code to hide and show.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,16 @@
+createdAt: "2020-04-12T10:32:44.749Z"
+updatedAt: "2020-04-12T11:04:26.691Z"
+type: "MARKDOWN_NOTE"
+folder: "671f471a29ab48d9e7dc"
+title: "2.Understanding Asynchronous JS:The event loop"
+tags: []
+content: '''
+  # 2.Understanding Asynchronous JS:The event loop
+  
+  ![syncVSAsync.png](:storage/d67d1529-d575-4326-92fc-e269757a08ae/de12e43c.png)
+  ![eventloop.png](:storage/d67d1529-d575-4326-92fc-e269757a08ae/7a5975d6.png)
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

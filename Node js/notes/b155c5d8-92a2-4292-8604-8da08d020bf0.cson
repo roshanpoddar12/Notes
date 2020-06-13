@@ -1,0 +1,19 @@
+createdAt: "2020-04-22T22:16:20.663Z"
+updatedAt: "2020-04-22T22:17:11.807Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "5.1st phase : Expired timer callback"
+tags: []
+content: '''
+  ## 5.1st phase : Expired timer callback
+    - it takes care of callbacks of expired timer for ex from the settimeout function
+    - So if there are callback functions from timers that jst expired this are the first one to be processed by the event loop
+    - If the timer expires later during the time when one of the other phases are in process than the callback of that timer will only be calledd as soon as the event loop comes back to the first phase .
+    - It works like this in all 4 phases.
+    - So callbacks in each queue is processed one by one untill there are no ones left in the queue and only then event loop will enter to the next phase
+    - ![1st_phase.png](:storage/b155c5d8-92a2-4292-8604-8da08d020bf0/d3fbfefb.png)
+   
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

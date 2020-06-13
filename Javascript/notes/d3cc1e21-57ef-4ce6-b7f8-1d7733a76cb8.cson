@@ -1,0 +1,58 @@
+createdAt: "2020-04-27T21:47:52.292Z"
+updatedAt: "2020-04-27T22:32:53.770Z"
+type: "MARKDOWN_NOTE"
+folder: "6426ad25abcc6829d9eb"
+title: "PIANO"
+tags: []
+content: '''
+  # PIANO
+  - How to use flexbox to center elements
+  - Using CSS variables to reduce redundant code
+  - Playing audio in the browser
+  -  How to bind click and keypress events in JavaScript
+  ------------------------------------------------
+  .piano{
+      display: flex;
+  }
+  - we wanted it tio be side by side not one in top of other so we are using flex
+  ---------------------------
+   margin-left:-30px ;
+      margin-right: -30px;
+  - We wanted to show the black line in top of the white not side by side so we set the margin left and right to negative
+  ---
+  # z-index:2
+  The z-index property specifies the stack order of an element.
+  
+  An element with greater stack order is always in front of an element with a lower stack order.
+  
+  Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky).
+  
+  ----
+  # Playing a audio
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => {
+      key.addEventListener('click',() => playNote(key))
+  })
+  
+  function playNote(key){
+      const noteAudio = document.getElementById(key.dataset.note);
+      noteAudio.play()
+  }
+  
+  ----
+  #  How to bind click and keypress events in JavaScript
+  
+  document.addEventListener('keydown',el => {
+      if(el.repeat)return;
+      const key = el.key;
+      const whiteKeyIndex = WHITE_KEYS.indexOf(key);
+      const blackKeyIndex = BLACK_KEYS.indexOf(key);
+      if(whiteKeyIndex>-1)playNote(whiteKeys[whiteKeyIndex]);
+      if(blackKeyIndex>-1)playNote(blackKeys[blackKeyIndex]);
+  
+  
+  })
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

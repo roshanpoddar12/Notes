@@ -1,0 +1,31 @@
+createdAt: "2020-04-27T00:33:58.493Z"
+updatedAt: "2020-04-27T00:49:18.296Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "5.Responding to url params"
+tags: []
+content: '''
+  # 5.Responding to url params
+  - api: /api/v1/tours/:id
+  - url:localhost:3000/api/v1/tours/1
+  - Req.params() 
+  - o/p: {id:'1'}
+  - We can have multiple url params 
+  - api: /api/v1/tours/:id/:x/:y
+  -  url:localhost:3000/api/v1/tours/1/2/3
+  -  Req.params() 
+  -  o/p: {id:'1',x:'2',y:'3'}
+  -  If in api we are expecting 3 url paramsand in url we are passing 2 params than it will not hit that api.Because it eill not match
+  -  api: /api/v1/tours/:id/:x/:y
+  -  url:localhost:3000/api/v1/tours/1/2
+  -  Req.params() 
+  -  o/p: no output
+  -  We can make a param optional so that it will not through error
+  -  api: /api/v1/tours/:id/:x/:y?
+  -  url:localhost:3000/api/v1/tours/1/2
+  -  Req.params() 
+  -  o/p:{id:'1',x:'2',y:undefined}
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

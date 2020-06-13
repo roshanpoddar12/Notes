@@ -1,0 +1,58 @@
+createdAt: "2020-05-05T17:03:45.140Z"
+updatedAt: "2020-05-08T13:39:42.999Z"
+type: "SNIPPET_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "16.DOCUMENT, QUERY, AGGREGATION MIDDLEWARE"
+tags: []
+description: "16.DOCUMENT, QUERY, AGGREGATION MIDDLEWARE"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "docmid.js"
+    mode: "JavaScript"
+    content: '''
+      
+      // we are going to use slug before every create an save query
+      // slug is basically a string that we can put in url 
+      // DOCUMENT MIDDLEWARE: runs before .save() and .create()
+      tourSchema.pre('save', function(next) {
+        this.slug = slugify(this.name, { lower: true });
+        next();
+      });
+      
+      // POST middleware are executed after the pre middleware function has been executed
+      // It also have the access to the documents that has been saved
+      tourSchema.post('save', function(doc, next) {
+        console.log(doc);
+        next();
+      })
+      
+      //QUERY MIDDLEWARE
+      // tourSchema.pre('find', function(next) {
+      tourSchema.pre(/^find/, function(next) {
+        this.find({ secretTour: { $ne: true } });
+      
+        this.start = Date.now();
+        next();
+      });
+      
+      tourSchema.post(/^find/, function(docs, next) {
+        console.log(`Query took ${Date.now() - this.start} milliseconds!`);
+        next();
+      });
+      
+      // AGGREGATION MIDDLEWARE
+      // WE ARE CHECKING IF THE SECRET TOUR IS FALSE THAT ONLY WILL GET POPULATE
+      tourSchema.pre('aggregate', function(next) {
+        this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+      
+        console.log(this.pipeline());
+        next();
+      });
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

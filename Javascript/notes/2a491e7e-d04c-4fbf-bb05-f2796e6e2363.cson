@@ -1,0 +1,15 @@
+createdAt: "2020-04-10T18:01:40.875Z"
+updatedAt: "2020-04-28T23:47:43.413Z"
+type: "MARKDOWN_NOTE"
+folder: "f84744a17b0828a80410"
+title: "5. Scoping and scope chain"
+tags: []
+content: '''
+  #5. Scoping and scope chain
+  ![scoping.png](:storage/2a491e7e-d04c-4fbf-bb05-f2796e6e2363/56f50388.png)
+  ![ScopeChain.png](:storage/2a491e7e-d04c-4fbf-bb05-f2796e6e2363/18909b2e.png)
+  ![ execStackVSScopechain.png](:storage/2a491e7e-d04c-4fbf-bb05-f2796e6e2363/8712a222.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

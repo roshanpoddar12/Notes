@@ -1,0 +1,22 @@
+createdAt: "2020-04-22T15:09:07.442Z"
+updatedAt: "2020-04-22T22:15:41.019Z"
+type: "MARKDOWN_NOTE"
+folder: "df802e4285093bb3176c"
+title: "2.Processes, Threads and thread pool"
+tags: []
+content: '''
+  # 2.Processes, Threads and thread pool
+  - when we run a node in computer that means that a node process is running .A process is just a program in execution.
+  - in that process node js runs in a single thread ,A threads is basically is just a sequence of instruction 
+  - If u run a node application it will run in jst a single thread no matter if u have 10 users or 10 million users accessing your application.
+  # What happens in a single thread when u start ur node application
+  - when a program is initiallized all the top level code is executed .Which means all the code which is not inside any callbacks
+  - ![node-process.png](:storage/fd74bc03-359c-4580-980e-87f69eb3febf/e6227f8f.png)
+  - eventloop the heart of the node js application 
+  - some task are actually too heavy they are too expensive to be executed in the event loop because they will then block the single thread so that is where threads pool comes in
+  - Thread pool gives us 4 addditional thread that are completely seperate from main single thread and actually we can configure it upto 128 threads but usually this 4 are enough 
+  - The event loop can automatically offload heavy tasks to the thread pool and all this happens automatically behind the scenes.![threadPool.png](:storage/fd74bc03-359c-4580-980e-87f69eb3febf/fa91bdaa.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

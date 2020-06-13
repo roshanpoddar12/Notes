@@ -1,0 +1,16 @@
+createdAt: "2020-04-27T01:01:31.678Z"
+updatedAt: "2020-04-27T01:02:58.272Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "6.PATCH"
+tags: []
+content: '''
+  # 6.PATCH
+  - With put we expect the application recieves the fully updated objects
+  - With patch we except only the properties to be updated in the object
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

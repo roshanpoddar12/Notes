@@ -1,0 +1,54 @@
+createdAt: "2020-04-16T15:24:45.297Z"
+updatedAt: "2020-04-16T15:26:13.233Z"
+type: "SNIPPET_NOTE"
+folder: "dc2a561bbf1f258a101a"
+title: "10.Adding Loader"
+tags: []
+description: "10.Adding Loader"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "base.js"
+    mode: "JavaScript"
+    content: '''
+      export const elementString = {
+          loader : 'loader'
+      };
+      //Loader icon from css animation
+      export const renderLoader = parent=>{
+          const loader = `
+          <div class = "${elementString.loader}">
+              <svg>
+                  <use href="img/icons.svg#icon-cw"></use?
+              </svg>
+          </div>
+              `;
+          //Inserting the loading icon rotating in UI after begin
+          parent.insertAdjacentHTML('afterbegin',loader);
+      }
+      //Clearing the loader icon once the result comes in search view
+      export const clearLoader =()=>{
+          //Taken the class of the loader icon
+          const loader = document.querySelector(`.${elementString.loader}`)
+          //removed the icon by going to its parent and removed the child
+          if(loader) loader.parentElement.removeChild(loader);
+      }
+    '''
+  }
+  {
+    name: "index.js"
+    mode: "JavaScript"
+    content: '''
+      //3)Prepare UI for results
+              searchView.clearInput();
+              searchView.clearResult();
+              renderLoader(elements.searchRes);
+      //5)Render results on UI
+              clearLoader();
+              searchView.renderResults(state.search.results);
+    '''
+    linesHighlighted: []
+  }
+]
+isStarred: false
+isTrashed: false

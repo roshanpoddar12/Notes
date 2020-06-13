@@ -1,0 +1,16 @@
+createdAt: "2020-06-01T14:37:33.776Z"
+updatedAt: "2020-06-01T14:38:03.849Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "4. THE JOB OF A REACT DEVELOPER"
+tags: []
+content: '''
+  ## 4. THE JOB OF A REACT DEVELOPER
+  
+  - Decide on components
+  - Decide the state and ehere it lives
+  - What changes when state changes
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

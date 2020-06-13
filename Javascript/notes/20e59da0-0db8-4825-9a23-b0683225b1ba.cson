@@ -1,0 +1,66 @@
+createdAt: "2020-04-12T00:32:57.597Z"
+updatedAt: "2020-04-12T00:37:37.249Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "13.Rest Parameters"
+tags: []
+description: "13.Rest Parameters"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "rest.js"
+    mode: "JavaScript"
+    content: '''
+      //Difference between the spread and the rest parameter is the place where we use them
+      //Spread operator is used in the function call while the rest operator is used in the function declaration to accept the arbitary number of parameters
+      // Lecture: Rest parameters
+      
+      
+      //ES5
+      function isFullAge5() {
+          //console.log(arguments);
+          var argsArr = Array.prototype.slice.call(arguments);
+          
+          argsArr.forEach(function(cur) {
+              console.log((2016 - cur) >= 18);
+          })
+      }
+      
+      
+      //isFullAge5(1990, 1999, 1965);
+      //isFullAge5(1990, 1999, 1965, 2016, 1987);
+      
+      
+      //ES6
+      function isFullAge6(...years) {
+          years.forEach(cur => console.log( (2016 - cur) >= 18));
+      }
+      
+      isFullAge6(1990, 1999, 1965, 2016, 1987);
+      
+      
+      //ES5
+      function isFullAge5(limit) {
+          var argsArr = Array.prototype.slice.call(arguments, 1);
+      
+          argsArr.forEach(function(cur) {
+              console.log((2016 - cur) >= limit);
+          })
+      }
+      
+      
+      //isFullAge5(16, 1990, 1999, 1965);
+      isFullAge5(1990, 1999, 1965, 2016, 1987);
+      
+      
+      //ES6
+      function isFullAge6(limit, ...years) {
+          years.forEach(cur => console.log( (2016 - cur) >= limit));
+      }
+      
+      isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

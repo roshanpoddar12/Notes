@@ -1,0 +1,15 @@
+createdAt: "2020-05-08T13:40:01.993Z"
+updatedAt: "2020-05-08T13:55:27.971Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "17.DATA VALIDATION"
+tags: []
+content: '''
+  # 17.DATA VALIDATION
+  - Validation are basiclly checking if the entered value are in the right format for each field in our document schema and also that value has been entered for all the required fields
+  - There is also one more thing called sanitisation which is to ensure that the input data is basically clean or not 
+    
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

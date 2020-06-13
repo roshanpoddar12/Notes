@@ -1,0 +1,103 @@
+createdAt: "2020-04-11T23:13:09.108Z"
+updatedAt: "2020-04-11T23:47:14.661Z"
+type: "SNIPPET_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "9.Arrow"
+tags: []
+description: "9.Arrow"
+snippets: [
+  {
+    linesHighlighted: []
+    name: "Arrow.js"
+    mode: "JavaScript"
+    content: '''
+      // ES5
+      var box5 = {
+          color: 'green',
+          position: 1,
+          clickMe: function() {//function attached to the object inside this function we can acess the color and position value
+             
+             document.querySelector('.green').addEventListener('click', function() {    //this  callback function in listener is not a method is the regular function call therefor this keyword here doesnot point to this box5 object but instead it points to window object.
+                  var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+                  alert(str);
+              });
+          }
+      }
+      //box5.clickMe();
+      //o/p this will through an error because as we discussed earlier that only in a method call this keyword actually points to that object but in regular function call this keyword always points to the global object.
+      //As in this example "see i n code"
+      //a very common pattern to avoid this is to simplt create a new variable and store this,
+      
+      // ES5
+      var box5 = {
+          color: 'green',
+          position: 1,
+          clickMe: function() {
+             
+             var self = this;  //this is the line we have added
+             document.querySelector('.green').addEventListener('click', function() {
+                  var str = 'This is box number ' + self.position + ' and it is ' + self.color;
+                  alert(str);
+              });
+          }
+      }
+      //box5.clickMe();
+      
+      // ES6
+      const box6 = {
+          color: 'green',
+          position: 1,
+          clickMe: function() {
+              document.querySelector('.green').addEventListener('click', () => {
+                  var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+                  alert(str);
+              });
+          }
+      }
+      box6.clickMe();
+      
+      const box66 = {
+          color: 'green',
+          position: 1,
+          clickMe: () => { //This again share the this keyword of surroundings and the surrounding is global .
+              document.querySelector('.green').addEventListener('click', () => {
+                  var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+                  alert(str);
+              });
+          }
+      }
+      box66.clickMe();
+      //This will again print undefined because see in code
+      function Person(name) {
+          this.name = name;
+      }
+      
+      // ES5
+      Person.prototype.myFriends5 = function(friends) { //in here we have access to this variable and this points to the name of the person and it would br john but the thing is in map we have called a another function so this keyword in that anonymous function is not going to point to the object instead it is going to point to the global object.
+          
+          var arr = friends.map(function(el) {
+             return this.name + ' is friends with ' + el; 
+          }.bind(this)); //So we have used bind to get acces to this keyword
+          
+          console.log(arr);
+      }
+      
+      var friends = ['Bob', 'Jane', 'Mark'];
+      new Person('John').myFriends5(friends);
+      
+      //name is not defined 
+      
+      // ES6
+      Person.prototype.myFriends6 = function(friends) {
+      
+          var arr = friends.map(el => `${this.name} is friends with ${el}`);
+      
+          console.log(arr);
+      }
+      
+      new Person('Mike').myFriends6(friends);
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

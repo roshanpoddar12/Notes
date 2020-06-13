@@ -1,0 +1,18 @@
+createdAt: "2020-04-11T22:29:43.440Z"
+updatedAt: "2020-04-11T22:48:23.977Z"
+type: "MARKDOWN_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "2.Variable declaration with let and const"
+tags: []
+content: '''
+  # 2.Variable declaration with let and const
+  - var are function scope
+  - let are block scoped
+  - block : block is simply all the code that is wrapped between the curly bracket {}.
+  - ex in code 
+  - In var or ES5 if a variable is used before declared it gives output as undefined
+  - In let or ES6 if a variable is used before declared it throws an error as x is not defined  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

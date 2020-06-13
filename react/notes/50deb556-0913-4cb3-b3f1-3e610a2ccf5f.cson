@@ -1,0 +1,19 @@
+createdAt: "2020-06-01T15:21:37.911Z"
+updatedAt: "2020-06-01T15:33:12.022Z"
+type: "MARKDOWN_NOTE"
+folder: "2ed7cc66630a218edbb2"
+title: "5.ONCHANGE"
+tags: []
+content: '''
+  # 5.ONCHANGE
+  - Remember it is in jsx it is not actual jsx
+  - (Remember tree diagram)
+  - When a dom changes or reacts to a user input in our case "search monster".It is going to say hey there is an eventsomebody has just typed something to an input However what react does is remember we dont manually touch DOM.If that is the case then we have might be using html onchange event like this "onchange=func()"
+  - React has something called synthetic event
+  - What are this synthetic eventds?
+  - So whenever a user types something or clicks something DOM will say hey something has been changes
+  - React intercepts that and say oh something has changed let me go and tell my react app that something has been changed and this is what synthetic event is like a fake event which will pretend is a dom event but it is something that our react robot is telling us.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

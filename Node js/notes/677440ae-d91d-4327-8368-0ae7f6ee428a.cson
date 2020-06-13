@@ -1,0 +1,28 @@
+createdAt: "2020-04-28T22:17:37.044Z"
+updatedAt: "2020-04-28T22:57:55.714Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "10.Environment Variable"
+tags: []
+content: '''
+  # 10.Environment Variable
+  - Node js or express app can run on different environment and the most important one are the development environment and the production environment
+  - Because depending upon different environment we might use different database for example we might turn debugging on or off or we might turn logging on or off 
+  - By default express sets the environment to development
+  - app.get('env') // returns development
+  - But node js also sets a lot of environment process.env //we can see the bunch of them
+  - We usee environment variables like configut=ration setting
+  - We will make a config.env file
+    -   NODE_ENV=development
+        PORT=3000
+        USERNAME=jonas
+        PASSWORD=123456
+  - We will use dotenv npm package to connect config.env to our application 
+  - While running node application through terminal we can specify the environment there alsolike
+  - NODE_ENV=production nodemon server.js 
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

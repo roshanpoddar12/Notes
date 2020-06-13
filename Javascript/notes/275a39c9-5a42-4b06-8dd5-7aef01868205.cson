@@ -1,0 +1,19 @@
+createdAt: "2020-04-12T11:10:48.530Z"
+updatedAt: "2020-04-12T11:24:44.402Z"
+type: "MARKDOWN_NOTE"
+folder: "671f471a29ab48d9e7dc"
+title: "4.Promise"
+tags: []
+content: '''
+  # 4.Promise
+  
+  - Object that keeps track about wether a certain event has happened or not
+  - Determines what happens after the event has happened
+  - Implements the concept of a future value that we're expecting
+  
+  ## A promise can have different states
+  - ![promisestate.png](:storage/275a39c9-5a42-4b06-8dd5-7aef01868205/6175b70e.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "key": "551b2949636856ace4c9",
+      "color": "#B013A4",
+      "name": "Into to node js and npm"
+    },
+    {
+      "key": "aa43735427b6adef4174",
+      "color": "#3FD941",
+      "name": "Intro to backend development"
+    },
+    {
+      "key": "df802e4285093bb3176c",
+      "color": "#E8D252",
+      "name": "How node js work"
+    },
+    {
+      "key": "3b4e100b76286074a898",
+      "color": "#2BA5F7",
+      "name": "Natours API"
+    },
+    {
+      "key": "002c47ea61b724725b76",
+      "color": "#3FD941",
+      "name": "MongoDb"
+    },
+    {
+      "key": "8d270cf5fe5372764189",
+      "color": "#FF8E00",
+      "name": "Mongoose"
+    },
+    {
+      "key": "d8227e3e221c3a074833",
+      "color": "#B013A4",
+      "name": "Error handling with express"
+    },
+    {
+      "key": "9980a104cbe4399cdfd6",
+      "color": "#E10051",
+      "name": "Authentication,Authorisation and security"
+    }
+  ],
+  "version": "1.0"
+}

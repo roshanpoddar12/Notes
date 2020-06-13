@@ -1,0 +1,55 @@
+createdAt: "2020-05-23T00:57:46.967Z"
+updatedAt: "2020-05-23T01:00:34.027Z"
+type: "MARKDOWN_NOTE"
+folder: "f84744a17b0828a80410"
+title: "4.HOISTING IS PRACTISE"
+tags: []
+content: '''
+  ## 4.HOISTING IS PRACTISE
+  ////////////// functions Hoisting//////////////////////////////
+  ```js
+  calculateAge(1965);
+  function calculateAge(year) {
+      console.log(2016 - year);
+  }
+  ```
+  
+  - this is hoisting
+  - in the creation phase of execution context which is in this case a global execution context the functioin declaration called calculateAge is stored in the variable object and even the code has been executed.This is for function declaration
+  
+  ## Function expression
+  ```js
+   retirement(1956);
+  var retirement = function(year) {
+      console.log(65 - (2016 - year));
+  }
+  ```
+  
+  - Uncaught error: requirement is not a function 
+  - because this is not a function declaration but function expression
+  - Hoisting for function only works for function declaration
+  
+  ## /Variable Hoisting /////////////////////////
+  ```js
+  console.log(age);
+  var age = 23;
+  // undefined
+  ```
+  
+  - in the creation phase of the variable object what happens is that variable is scanned for variable declaration and is set to undefined
+  ```js
+  console.log(age);  //undefined
+  var age = 23; //because this gets stored in global execution context object
+  function foo() { //this gets its own execution context
+      console.log(age);//undefined
+      var age = 65;
+      console.log(age); //65
+  }
+  foo();
+  console.log(age);//23
+  ```
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
