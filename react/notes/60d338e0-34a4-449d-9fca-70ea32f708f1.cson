@@ -1,11 +1,11 @@
 createdAt: "2020-06-13T05:49:19.385Z"
-updatedAt: "2020-06-13T06:41:17.566Z"
+updatedAt: "2020-06-14T02:13:08.992Z"
 type: "MARKDOWN_NOTE"
 folder: "9fe7f16abbe6406c2e1d"
-title: "SASS -  Syntatically Awesome Stylesheets"
+title: "1.SASS INTRODUCTION"
 tags: []
 content: '''
-  ## 1.SASS INTRODUCTION
+  # 1.SASS INTRODUCTION
   - For Styling of the project we are going to use something called saas
   - Sass is the upgraded version of css
   # SASS -  Syntatically Awesome Stylesheets
@@ -34,6 +34,18 @@ content: '''
   - It provides many useful functions for manipulating colors and other values.
   - It provides many advanced features like control directives for libraries.
   - It provides well-formatted, customizable output.
+  
+  # Sass Advantages
+  Sass facilitates you to write clean, easy and less CSS in a programming construct.
+  - It contains fewer codes so you can write CSS quicker.
+  - It is more stable, powerful, and elegant because it is an extension of CSS. So, it is easy for designers and developers to work more efficiently and quickly.
+  - It is compatible with all versions of CSS. So, you can use any available CSS libraries.
+  - It provides nesting so you can use nested syntax and useful functions like color manipulation, math functions, and other values.
+  # Sass disadvantages
+  - The developer must have enough time to learn new features present in this preprocessor before using it.
+  - Using Sass may cause losing benefits of the browser’s built-in element inspector.
+  - Code has to be compiled
+  - Difficult Troubleshooting
   # First we have to add sass to our project
   ```node
   npm add node-sass

@@ -1,0 +1,28 @@
+createdAt: "2020-08-08T03:41:34.074Z"
+updatedAt: "2020-08-08T03:42:13.503Z"
+type: "MARKDOWN_NOTE"
+folder: "bb27586f835afacb8550"
+title: "MIDDLE OF A LINK LIST"
+tags: []
+content: '''
+  # MIDDLE OF A LINK LIST
+  ```c++
+   ListNode* middleNode(ListNode* head) {
+          ListNode* fast = head;
+          ListNode* slow = head;
+          while(fast!=NULL){
+              fast = fast->next;
+              if(fast==NULL)
+                  return slow;
+              fast=fast->next;
+              slow=slow->next;
+              
+          }
+          //cout<<slow;
+          return slow;
+      }
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

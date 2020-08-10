@@ -1,18 +1,19 @@
 createdAt: "2020-04-23T22:33:32.769Z"
-updatedAt: "2020-04-23T23:12:08.897Z"
+updatedAt: "2020-07-04T18:32:30.064Z"
 type: "MARKDOWN_NOTE"
 folder: "df802e4285093bb3176c"
 title: "14.What happens when we require a module?"
 tags: []
 content: '''
   # 14.What happens when we require a module?
-  -  ![require1st.png](:storage/dfb1a89a-35e7-44e3-b4cd-32d088df20fa/c2e4796f.png)
+  ![require1st.png](:storage/dfb1a89a-35e7-44e3-b4cd-32d088df20fa/318421b6.png)
+  
   
   # Resolving and loading
-  - 1. when the require functoin recieves the module name as its inout it will first try to load core module with that name like example http module it will automatically find the path and load it
-  -  2.if the path starts with ./.. it means it is a developer module because we indicate the relative path to our file node will try to load that file ,
-  -  3.but if there is no file with that name then it will look for a folder instead and load index.js in that folder
-  -  4.finally if a required module is neither a core module nor a developer module node will assume it is from npm  
+    1. when the require functoin recieves the module name as its inout it will first try to load core module with that name like example http module it will automatically find the path and load it
+    2.if the path starts with ./.. it means it is a developer module because we indicate the relative path to our file node will try to load that file ,
+    3.but if there is no file with that name then it will look for a folder instead and load index.js in that folder
+    4.finally if a required module is neither a core module nor a developer module node will assume it is from npm  
   
   
 '''

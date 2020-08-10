@@ -1,0 +1,37 @@
+createdAt: "2020-06-14T02:12:11.797Z"
+updatedAt: "2020-06-14T03:17:04.029Z"
+type: "MARKDOWN_NOTE"
+folder: "9fe7f16abbe6406c2e1d"
+title: "3.DEmonstrate"
+tags: []
+content: '''
+  # 3.DEmonstrate
+  - We will have 3 pages in our application
+  - homepage, topic, topic/:topicId
+  ## What does react route do for us?
+  - Is that any components when it gets rendered by routes get passed 3 props
+  ## 3 properties 
+  - history
+  - location
+  - match
+  ## There are 2 ways to navigate in react-router-dom between our pages  
+  - Now we are dynamicaly typing the urls
+  - We can use link to do the same 
+  ```js
+   1) import {Route,Link}from 'react-router-dom';
+    <Link to='/topics'>Topics</link>
+    
+   2)  <button onClick={() => props.history.push('/topics')}>Topics </button>
+    
+  ```
+  - History props for navigating is only allowed in the first component in our case it is the homepage
+  - It will not be accessible in the child component of the homepage
+  - So there are two ways
+   1)We can pass history to the children so that which component wants it can have the access
+  - But this is not good practise it is called "Props tunneling" .Props will pass from all the children to reach the specific children components but what happens to the children in between . So this is called props tunnelling
+   2)React provides a component that is {withRouter}
+   -  It is basically a higher order function
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,5 +1,5 @@
 createdAt: "2020-04-22T23:49:32.319Z"
-updatedAt: "2020-04-23T00:34:24.884Z"
+updatedAt: "2020-07-04T17:55:57.082Z"
 type: "MARKDOWN_NOTE"
 folder: "df802e4285093bb3176c"
 title: "10.ThreadPool example"
@@ -11,7 +11,8 @@ content: '''
     
     
   - code with 4 threads and we are running 4 instances of crypto means it will use 4 threads and we have assigned 4 threads and by default also it have 4 thread
-    - const fs = require("fs");
+  ```js
+  const fs = require("fs");
   const crypto = require("crypto");
   const start = Date.now();
   // We can specify the number of threads in thread pool
@@ -36,6 +37,8 @@ content: '''
   });
   console.log("Hello from the top-level code");
   
+  ```
+  
   - Output
     - Hello from the top-level code
   Timer 1 finished
@@ -51,7 +54,8 @@ content: '''
   Timer 3 finished
   -------------------------------------------
   - With one thread
-    - - const fs = require("fs");
+  ```js
+  const fs = require("fs");
   const crypto = require("crypto");
   const start = Date.now();
   // We can specify the number of threads in thread pool
@@ -75,6 +79,8 @@ content: '''
     console.log(Date.now() - start, "Password encrypted");
   });
   console.log("Hello from the top-level code");
+  
+  ```
   
   - Output
     - ello from the top-level code

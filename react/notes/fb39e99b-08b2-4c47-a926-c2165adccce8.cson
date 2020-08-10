@@ -1,0 +1,27 @@
+createdAt: "2020-06-20T14:00:41.059Z"
+updatedAt: "2020-06-23T14:50:20.435Z"
+type: "MARKDOWN_NOTE"
+folder: "bc599e07a63f382e8207"
+title: "SHOP PAGE"
+tags: []
+content: '''
+  # SHOP PAGE
+  
+  - We will make shop page as a class component
+  - Created a shop page which will read all the data and send to  content-review component props which will send the data to the content-item which will then render to the the ui
+  - Shop page is class component and content-review and content -item is functional component 
+  ##  Header component
+  - So i have to add the logo in the header
+  - SVG format: is scalable vector graphics which are very small very performant looks same on how small or how large the image is expanded 
+  ```jsx
+  import { ReactComponent as Logo } from '../../assets/crown.svg';
+  //This ia special syntax in react for importing SVG. Because we are not impoting a JSX file we are importing a SVG
+  
+  ```
+  - This is a new special syntax when importing SVG in React. The ReactComponent import name is special and tells Create React App that you want a React component that renders an SVG, rather than its filename. You can read more about it here, but keep in mind that this is a React library special syntax:
+  
+  https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

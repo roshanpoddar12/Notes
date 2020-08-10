@@ -1,0 +1,26 @@
+createdAt: "2020-08-04T08:06:54.085Z"
+updatedAt: "2020-08-04T08:08:55.406Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "TYPES OF CLIENT"
+tags: []
+content: '''
+  #  TYPES OF CLIENT
+  
+  - There are 2 types of client 
+    - Thin Client
+    - Thick Client
+  
+  ## Thin Client #
+  Thin Client is the client which holds just the user interface of the application. It has no business logic of any sort. For every action, the client sends a request to the backend server. Just like in a three-tier application.
+  
+  ![client type.jpeg](:storage/ce72abe4-9cff-481f-bb85-44d92cb722e8/92b5b68a.jpeg)
+  
+  ## Thick Client #
+  On the contrary, the thick client holds all or some part of the business logic. These are the two-tier applications. We’ve already gone through this if you remember.
+  
+  The typical examples of Fat clients are utility apps, online games etc.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

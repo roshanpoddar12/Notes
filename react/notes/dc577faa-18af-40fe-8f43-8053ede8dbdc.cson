@@ -1,0 +1,24 @@
+createdAt: "2020-07-03T18:42:03.376Z"
+updatedAt: "2020-07-03T18:50:59.298Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "4.FETCHING DATA TO UI ELEMENTS"
+tags: []
+content: '''
+  ## 4.FETCHING DATA TO UI ELEMENTS
+  -  With only React, there’s actually a better way to fetch and store data. We can ask our very kind chef Shotwell to do the shopping for all his chef friends. He would drive a truck to the farms and carry back the goodies. We could fetch data from a container component, for example, the “Shot” component in the Dribbble example, and use that as the single source of truth.
+  ![redux-driver-shotwell.jpeg](:storage/dc577faa-18af-40fe-8f43-8053ede8dbdc/a04510a6.jpeg)
+  This approach is more efficient than the naive way of fetching data from every component. But how does Shotwell pass the ingredients to other chefs? How to pass the data to the components that actually render HTML elements? We pass data from outer components to inner components like the baton in a relay, all the way until the data reach the destination.
+  For example, the URL of the author avatar needs to be passed from “Shot”, to “ShotDetail”, to “Title” and finally to the <img> tag. If our chefs live in an apartment, it really looks like this:
+  
+  
+  ![redux-floor-without-redux.png](:storage/dc577faa-18af-40fe-8f43-8053ede8dbdc/3d80a873.png)
+  To deliver data to the destination, we’d have to engage all the components on the path, even if they don’t need the data at all. It’d be really annoying if there are many floors!
+  
+  What if the superstore does door-to-door delivery? With Redux1, we can plug in any data into any component, without affecting other components at all, like so:
+  ![redux-floor-with-redux.jpeg](:storage/dc577faa-18af-40fe-8f43-8053ede8dbdc/9a957ba1.jpeg)
+  Note: In the latest version of React (16.3), there’s a new “context” API that does almost the same job in terms of plugging data into components. So if this is the only reason your team is using Redux, seriously consider upgrading to React 16.3! Check out the official document for more information (warning: lots of code ahead).
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

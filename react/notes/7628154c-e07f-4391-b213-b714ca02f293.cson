@@ -1,0 +1,30 @@
+createdAt: "2020-07-03T18:32:53.527Z"
+updatedAt: "2020-07-03T18:42:14.031Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "3.FETCHING AND STORING THE DATA"
+tags: []
+content: '''
+  ## 3.FETCHING AND STORING THE DATA
+  
+  - In react ,we break down a UI element into components. Each of these components is broken down into smaller components
+  - 
+  ![redux-dribbble-components.gif](:storage/7628154c-e07f-4391-b213-b714ca02f293/dfdc93b3.gif)
+  
+  - If our UI is structured in this way , when do we fetch the data and where to store it  before populating the UI?
+  - Imagine there’s a chef living in each component. Fetching data from servers is like sourcing all the ingredients needed to prepare dishes.
+  
+  A naive way is to fetch and store the data where and when it’s needed. This is like each chef going out to buy vegetables and meats directly from far-away farms.
+  ![redux-each-chef-buy.png](:storage/7628154c-e07f-4391-b213-b714ca02f293/0acca843.png)
+  This approach is wasteful. We’d need to call the server many times from many components — even for the same data. The chefs would waste a lot of gas and time traveling back and forth.
+  
+  With Redux, we fetch data once and store it in a central place, conveniently called “store.” The data is then ready for use anytime by any component. This is not unlike having a superstore nearby where our chefs can buy all the ingredients. The superstore sends trucks to carry back vegetables and meats in bulk from farms. It’s a lot more efficient than asking individual chefs to go to the farms themselves!
+  
+  The store also serves as the single source of truth. Components always retrieve data from the store, not from anywhere else. This keeps all the UI content consistent.
+  
+  
+  ![redux-redux-store.png](:storage/7628154c-e07f-4391-b213-b714ca02f293/1bd7025d.png)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

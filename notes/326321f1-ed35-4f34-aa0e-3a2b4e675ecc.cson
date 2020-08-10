@@ -1,0 +1,46 @@
+createdAt: "2020-08-09T04:44:35.002Z"
+updatedAt: "2020-08-09T04:45:16.832Z"
+type: "MARKDOWN_NOTE"
+folder: "bb27586f835afacb8550"
+title: "SUM OF TWO NUMBERS IN LINKLIST"
+tags: []
+content: '''
+  # SUM OF TWO NUMBERS IN LINKLIST
+  ```C++
+  class Solution {
+  public:
+      ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+       int sum=0;
+          ListNode prehead(0);
+          ListNode *p=&prehead;
+          while(l1!=NULL||l2!=NULL||sum>0)
+          {
+              if(l1!=NULL)
+              {
+                  sum+=l1->val;
+                  l1=l1->next;
+              }
+              if(l2!=NULL)
+              {
+                  sum+=l2->val;
+                  l2=l2->next;
+              }
+              p->next=new ListNode(sum%10);
+              p=p->next;
+              sum/=10;
+          }        
+          return prehead.next;
+      }
+  };
+  ```
+  ```I/P
+  Your input
+  [2,4,3]
+  [5,6,4]
+  Output
+  [7,0,8]
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,92 @@
+createdAt: "2020-06-16T15:00:31.380Z"
+updatedAt: "2020-06-16T15:00:56.374Z"
+type: "MARKDOWN_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "3.LET, CONST AND VAR EX"
+tags: []
+content: '''
+  # 3.LET, CONST AND VAR EX
+  ```JS
+  // ES5
+  var name5 = 'Jane Smith';
+  var age5 = 23;
+  name5 = 'Jane Miller';
+  console.log(name5);
+  
+  // ES6
+  const name6 = 'Jane Smith';
+  let age6 = 23;
+  name6 = 'Jane Miller';
+  console.log(name6);
+  
+  
+  // ES5
+  function driversLicence5(passedTest) {
+      
+      if (passedTest) {
+          console.log(firstName);  //------undefined//
+          var firstName = 'John';
+          var yearOfBirth = 1990;
+      }
+      
+      
+      console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+  }
+  
+  driversLicence5(true);
+  //This works fine with var
+  
+  // ES6
+  function driversLicence6(passedTest) {
+      
+      //console.log(firstName) 
+      
+      if (passedTest) {
+         let firstName = 'John';
+          const yearOfBirth = 1990;
+      }
+      
+      console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+  }
+  
+  driversLicence6(true);
+  //This throws error as let is block scope and we have declared the let variable inside the block
+  //If we have declared the variable outside the block than it should have worked.
+  
+  // ES6
+  function driversLicence6(passedTest) {
+      
+      //console.log(firstName) // Uncaught error :firstName is not defined
+      let firstName;
+      const yearOfBirth = 1990;
+      if (passedTest) {
+          firstName = 'John';
+          
+      }
+      
+      console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+  }
+  
+  driversLicence6(true);
+  
+  var i = 23;
+  
+  for (var i = 0; i < 5; i++) {
+      console.log(i);
+  }
+  
+  console.log(i);
+  //output 1 2 3 4 5 because this is not block scoped
+  
+  let i = 23;
+  
+  for (let i = 0; i < 5; i++) {
+      console.log(i);
+  }
+  console.log(i);
+  //o/p: 1,2,3,4,5,23 because this is blocked scoped
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

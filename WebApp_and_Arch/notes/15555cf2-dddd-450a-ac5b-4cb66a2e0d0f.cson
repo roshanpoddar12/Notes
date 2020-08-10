@@ -1,0 +1,25 @@
+createdAt: "2020-07-27T02:04:13.037Z"
+updatedAt: "2020-07-27T02:31:47.958Z"
+type: "MARKDOWN_NOTE"
+folder: "45d4ab443987fc5aabe5"
+title: "1.WHAT IS TIER?"
+tags: []
+content: '''
+  # 1.WHAT IS TIER?
+  - Think tier as a logical seperation between the components in an application or service.
+  - seperation-- physical seperation of the component not code level
+  
+  # What do u mean by components?
+  - Database
+  - Messaging
+  - Caching
+  - User Interface 
+  - Backend server
+  
+  ## This are the different components that make up a web service
+  
+  ![5670296554045440.jpeg](:storage/15555cf2-dddd-450a-ac5b-4cb66a2e0d0f/ac37556d.jpeg)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

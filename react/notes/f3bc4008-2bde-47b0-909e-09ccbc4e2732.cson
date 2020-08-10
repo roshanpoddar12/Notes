@@ -1,0 +1,23 @@
+createdAt: "2020-07-03T19:03:47.126Z"
+updatedAt: "2020-07-03T19:06:21.274Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "6. THE REAL POWER OF REDUX"
+tags: []
+content: '''
+  ## 6. THE REAL POWER OF REDUX
+  1.Redux forces developers to follow a few strict rules, which bring Redux a lot of power (yup, the power of discipline!):
+  
+  2.All the data (application state) has to be described in clear text. You should be able to write down all the data with a pen on paper.
+  3.
+  3,Every action (change of data) has to be described in clear text. You must write down what you’ll do before changing anything. You can’t change data without leaving a mark. This process is called “dispatching an action” in Redux slang.
+  Your code that changes data must behave like a math formula. It must return the same result given the same input. The square of 4 is always 16 no matter how many times you run it.
+  
+  When you follow these rules to build apps, magic happens. It enables a lot of cool features that are otherwise difficult or expensive to implement. Here are some examples.2
+  
+  https://www.smashingmagazine.com/2018/07/redux-designers-guide/ 
+  follow this link for redux examples
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

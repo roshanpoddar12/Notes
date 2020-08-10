@@ -1,0 +1,25 @@
+createdAt: "2020-06-26T16:13:58.719Z"
+updatedAt: "2020-06-26T16:19:18.587Z"
+type: "MARKDOWN_NOTE"
+folder: "6b8df50b964f3be78956"
+title: "MAIN METHODS TO GET THE COLLECTION AND THE DOCUMENTS"
+tags: []
+content: '''
+  ## MAIN METHODS TO GET THE COLLECTION AND THE DOCUMENTS
+  
+  ```js
+  import firebase from 'firebase/app';
+  import 'firebase/firestore';
+  
+  const firestore = firebase.firestore();
+  
+  firestore.collection('userd').doc('xxxxxx').collection('cartItems').doc('xxxxxx')
+  // if we want only the doc in cart
+  firestore.doc('/users/xxxxx/cartIems/xxxxxx');
+  //if we want the collection of cart items
+  firebase.collection('/users/xxxxx/cartItems')
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

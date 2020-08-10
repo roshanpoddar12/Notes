@@ -39,6 +39,11 @@
       "key": "9980a104cbe4399cdfd6",
       "color": "#E10051",
       "name": "Authentication,Authorisation and security"
+    },
+    {
+      "key": "b230cde4e76bc5a5d19c",
+      "color": "#3FD941",
+      "name": "Architecture"
     }
   ],
   "version": "1.0"

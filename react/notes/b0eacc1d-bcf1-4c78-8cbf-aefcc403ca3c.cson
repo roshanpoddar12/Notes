@@ -1,0 +1,26 @@
+createdAt: "2020-07-02T14:37:41.354Z"
+updatedAt: "2020-07-02T14:53:39.316Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "1.REDUX OVERVIEW"
+tags: []
+content: '''
+  # 1.REDUX OVERVIEW
+  
+  - Redux allows react state to be more scaleable
+  
+  ![react with state.png](:storage/b0eacc1d-bcf1-4c78-8cbf-aefcc403ca3c/2a539104.png)
+  
+  - Red dots are the state
+  - Blue dot means there is a change if there is change then we can update the component and re render.
+  - When the app grows bigger we end up something like this in below:
+  
+  ![appgrowsbigger.png](:storage/b0eacc1d-bcf1-4c78-8cbf-aefcc403ca3c/a1e1e0e8.png)
+  
+  - With all this arrow it is grtting to more complex
+  - Kepping track of the state is getting more and more hard.
+  - So we need some form away management and REDUX solved this problem for us.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,30 @@
+createdAt: "2020-06-18T15:31:21.274Z"
+updatedAt: "2020-06-18T16:20:16.375Z"
+type: "MARKDOWN_NOTE"
+folder: "9fe7f16abbe6406c2e1d"
+title: "4.withRouter()"
+tags: []
+content: '''
+  # 4.withRouter()
+  
+  ```js
+    import {withRouter} from 'react-router-dom' 
+  ```
+  - It is a higher order component
+  - Higher order essentially is a function that takes a component as an argument and returns the modified component
+  - Like our menu item takes props and render components A higher order component is a function that takes any component and modify it in someway and returns you the new modified component
+  - So it is like a function which gives you the powered up function in this case we are powering up our menuitem
+  ```js
+    export default withRouter(MenuItem)
+  ```
+  - withRouter then return us back with the same name as menu item 
+  - it will now return us back the superpowered menution with access to the location, match and history
+  - By wrapping now we have access to history
+  \'''js
+  const MenuItem = ({title,imageUrl,size,history}) => (
+  \''' 
+  -
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

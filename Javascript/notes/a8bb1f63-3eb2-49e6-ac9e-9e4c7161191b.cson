@@ -1,5 +1,5 @@
 createdAt: "2020-04-11T23:48:50.170Z"
-updatedAt: "2020-04-11T23:52:14.117Z"
+updatedAt: "2020-06-18T04:15:01.029Z"
 type: "SNIPPET_NOTE"
 folder: "5a0c8d8f45a5e708fc1e"
 title: "10.Destructuring"
@@ -10,46 +10,8 @@ snippets: [
     linesHighlighted: []
     name: "Destructuring.js"
     mode: "JavaScript"
-    content: '''
-      // Lecture: Destructuring
-      
-      // ES5
-      var john = ['John', 26];
-      //var name = john[0];
-      //var age = john[1];
-      
-      
-      // ES6
-      const [name, age] = ['John', 26];
-      console.log(name);
-      console.log(age);
-      
-      const obj = {
-          firstName: 'John',
-          lastName: 'Smith'
-      };
-      
-      const {firstName, lastName} = obj;
-      console.log(firstName);
-      console.log(lastName);
-      
-      const {firstName: a, lastName: b} = obj; //if we dont want to use the same name as the key
-      console.log(a);
-      console.log(b);
-      
-      
-      
-      function calcAgeRetirement(year) {
-          const age = new Date().getFullYear() - year;
-          return [age, 65 - age];
-      }
-      
-      
-      const [age2, retirement] = calcAgeRetirement(1990);
-      console.log(age2);
-      console.log(retirement);
-    '''
+    content: ""
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

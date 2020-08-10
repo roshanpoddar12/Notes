@@ -1,0 +1,24 @@
+createdAt: "2020-08-04T07:49:58.893Z"
+updatedAt: "2020-08-04T07:53:26.788Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "WHAT IS WEBARCHITECTURE?"
+tags: []
+content: '''
+  # WHAT IS WEBARCHITECTURE?
+  
+  - Web architecture involves multiple components like database, message queue, cache, user interface & all running in conjunction with each other to form an online service.
+  
+  - In the introduction of this course, I already talked about why the knowledge of web architecture is important to software engineers. Now we will explore it further.
+  
+   ![WEBArch.jpeg](:storage/0b246a14-c9a0-41a2-806c-90bdbfba3609/2eec788b.jpeg)
+  
+  - This is a typical architecture of a web application, used in the majority of the applications running online.
+  
+  If we have an understanding of the components involved in this diagram, then we can always build upon this architecture for more complex requirements.
+  
+  I’ll step by step go through every component starting with the client-server architecture.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

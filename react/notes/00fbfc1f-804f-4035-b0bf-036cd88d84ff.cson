@@ -1,0 +1,46 @@
+createdAt: "2020-07-02T14:58:10.183Z"
+updatedAt: "2020-07-03T18:32:45.485Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "2. REDUX Tutorial"
+tags: []
+content: '''
+  # 2. REDUX Tutorial
+  
+  ## What is redux?
+  - At a super high level, Redux is a tool that developers use to make their life simpler, its job is "state management"
+  
+  ## Why should u care?
+  - Redux is more about the inner working of an app than its look and feel It’s a somewhat complex tool with a steep learning curve. Does that mean we, as designers, should stay far away from it?
+  
+  - No. I think we should embrace it. A car designer should understand what the engine is for, right? To successfully design app interfaces, designers should also have solid knowledge about things under the hood. We should learn about what it can do, understand why developers use it, and be aware of its advantages and implications.
+  
+  “Design is not just what it looks like and feels like. Design is how it works.”
+  
+  — Steve Jobs
+  ## What can REDUX DO?
+  - Many people use redux to manage the state in react apps . Its the most common use case in the wild and redux improves the aspect where react doesnot do well.
+  
+  ## STATE MANAGEMENT
+  
+  - state in generic term : "data"
+  - State is data that change from time to time.
+  - State determines whats displayed on the user interface.
+  
+  -  What does state management means? In general, there are 3 aspects of data that we need to manage.
+  -  1.Fetching and storing data
+  -  2.Assigning data to the UI elements
+  -  3.Changing data
+  
+  Let’s say we are building a Dribbble shot page. What is the data we want to display on the page? They include the author’s profile photo, name, the animated GIF, the number of hearts, the comments, and so on.
+  
+  ![redux-dribbble-page-data.png](:storage/00fbfc1f-804f-4035-b0bf-036cd88d84ff/df18f0d0.png)
+  
+  - First we need to fetch all this data from a server in the cloud and put it somewhere. Next ,we need to actually display the data. We need to assign pieces of this data to corresponding UI elements that represents what we actually see in the browser.
+  - Finally we need to handle the data. ex if a user adds a new comment the shot page or adds a star we need to update the html accordingly
+  - Coordinating these three aspects of state is a big part in front-end development, and React has various degree of support for this task. Sometimes the built-in facility in React works well enough. But as the app grows more complex, its state may become harder to manage with React alone. That’s why many people start using Redux as an alternative.
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

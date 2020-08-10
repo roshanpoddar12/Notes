@@ -1,0 +1,16 @@
+createdAt: "2020-07-27T02:31:23.135Z"
+updatedAt: "2020-07-27T02:40:44.916Z"
+type: "MARKDOWN_NOTE"
+folder: "45d4ab443987fc5aabe5"
+title: "4. THREE TIER APPLICATIONS"
+tags: []
+content: '''
+  # 4. THREE TIER APPLICATIONS
+  - In 3 tier application the user interface, bussiness logic and the database all lie in the different machine and thus have different tiers. they are physically separated.
+  ![3tier.jpeg](:storage/2f90b1b2-eaee-4fba-a537-8a2c0734ac17/d44eb0e5.jpeg)
+  
+  - So, if we take the example of a simple blog, the user interface would be written using Html, JavaScript, CSS, the backend application logic would run on a server like Apache & the database would be MySQL. A three-tier architecture works best for simple use cases.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

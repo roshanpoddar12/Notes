@@ -1,0 +1,60 @@
+createdAt: "2020-06-13T18:07:03.338Z"
+updatedAt: "2020-06-14T02:12:58.231Z"
+type: "MARKDOWN_NOTE"
+folder: "9fe7f16abbe6406c2e1d"
+title: "2.ROUTES IN REACT"
+tags: []
+content: '''
+  # 2.ROUTES IN REACT
+  - Routes in single page application
+  - React is not a framework it is just a libray so it does not prob=vide a router so either we have to implement our own or we have to use any library
+  - The library we are going to use is react router
+  ## INTRODUCTION
+  - You will need a React web app to add react-router
+  - If you need to create one, the easiest way to get started with a popular tool called Create react app
+  # import {BrowserRouter} from 'react-router-dom' in index.js;
+  - BrowserRouter is a component which is actually gone a wrap around our application 
+  # What does this component does?
+  - It gives the application sitting between the components all the functionality of the routing that react router provides
+  
+  ```jsx
+  function App() {
+    return (
+      <div>
+        <Route exact path component ></Route>
+      </div>
+    );
+  }
+  ```
+  -  exact: By default exact is true and if exact is true it means it will search for the exact path 
+  -  ex localhost:3000/hats it will render only the hatspage not the home page
+  -  And if we do not define exact value then first it will render '/' and then below hatspage
+  -  path : the path of the url 
+  -  component : Which component we want to render
+  
+  ```js
+   <Route exact=true path='/' component ={HomePage}/>
+  ```
+  
+  # Switch 
+  - Switch is used because it gives us more controll over our code 
+  - It allow us to follow a pattern where we know as long as one route matches that is the only we are going to render
+  - Switch is a component which will first render the route which comws first
+  - ex: url localhost:3000/hats
+  - So first / came so it will render the homepage not the hatspage
+  ```js
+    function App() {
+    return (
+      <div>
+        <Switch>
+        <Route  path='/' component ={HomePage}/>
+        <Route  path='/hats' component ={HatsPage}/>
+        </Switch>
+      </div>
+    );
+  }
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,22 +1,27 @@
 createdAt: "2020-04-22T23:02:06.370Z"
-updatedAt: "2020-04-22T23:42:40.343Z"
+updatedAt: "2020-07-04T17:52:02.694Z"
 type: "MARKDOWN_NOTE"
 folder: "df802e4285093bb3176c"
-title: "9.Why setImmediate print before setImmediate even i have given the time 0ms"
+title: "9.Why setImmediate print before setTimeout even i have given the time 0ms"
 tags: []
 content: '''
-  # 9.Why setImmediate print before setImmediate even i have given the time 0ms
+  # 9.Why setImmediate print before setTimeout even i have given the time 0ms
   - This is not inside event loop
+  ```js
   setTimeout(()=>console.log("Timer 1 finished"),0);
   setImmediate(()=>console.log("Immediate 1 finished"));
+  ```
+  
   - This is inside eventloop
+  ```js
+  
   fs.readFile('x.txt',()=>{
     console.log('xxxxxxxx');
     setTimeout(()=>console.log("Timer 2 finished"),0);
     setTimeout(()=>console.log("Timer 3 finished"),3000);
     setImmediate(()=>console.log("Immediate 2 finished"));
   })
-  
+  ```
   o/p
   Immediate 1 finished
   Timer 1 finished

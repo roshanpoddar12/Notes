@@ -1,0 +1,44 @@
+createdAt: "2020-08-04T08:24:32.988Z"
+updatedAt: "2020-08-04T08:26:12.362Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "COMMUNICATION BETWEEN CLIENT AND SERVER"
+tags: []
+content: '''
+  # COMMUNICATION BETWEEN CLIENT AND SERVER 
+  
+  ## Request-Response Model #
+  The client & the server have a request-response model. The client sends the request & the server responds with the data.
+  
+  If there is no request, there is no response. Pretty simple right?
+  
+  ## HTTP Protocol #
+  The entire communication happens over the HTTP protocol. It is the protocol for data exchange over the World Wide Web. HTTP protocol is a request-response protocol that defines how information is transmitted across the web.
+  
+  It’s a stateless protocol, every process over HTTP is executed independently & has no knowledge of previous processes.
+  
+  If you want to read more about the protocol, this is a good resource on it
+  
+  Alright, moving on…
+  
+  ## REST API & API Endpoints #
+  Speaking from the context of modern N-tier web applications, every client has to hit a REST end-point to fetch the data from the backend.
+  
+  Note: If you aren’t aware of the REST API & the API Endpoints, I have discussed it in the next lesson in detail. I’ve brought up the terms in this lesson, just to give you a heads up on how modern distributed web applications communicate.
+  
+  The backend application code has a REST-API implemented which acts as an interface to the outside world requests. Every request be it from the client written by the business or the third-party developers which consume our data have to hit the REST-endpoints to fetch the data.
+  
+  ![RESTapi.jpeg](:storage/2ada8b6d-0fd0-4656-8304-0bfbecb9faa7/b43c6233.jpeg)
+  
+  ## Real World Example Of Using A REST API #
+  For instance, let’s say we want to write an application which would keep track of the birthdays of all our Facebook friends & send us a reminder a couple of days before the event date.
+  
+  To implement this, the first step would be to get the data on the birthdays of all our Facebook friends.
+  
+  We would write a client which would hit the Facebook Social Graph API which is a REST-API to get the data & then run our business logic on the data.
+  
+  Implementing a REST-based API has several advantages. Let’s delve into it in detail to have a deeper understanding.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

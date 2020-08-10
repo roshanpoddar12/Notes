@@ -1,0 +1,62 @@
+createdAt: "2020-08-04T10:22:22.986Z"
+updatedAt: "2020-08-04T11:38:43.661Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "WHAT IS REST API?"
+tags: []
+content: '''
+  # WHAT IS REST API?
+  
+  ## WHAT IS REST? #
+  REST stands for Representational State Transfer. It’s a software architectural style for implementing web services. Web services implemented using the REST architectural style are known as the RESTful Web services.
+  
+  ## REST API #
+  A REST API is an API implementation that adheres to the REST architectural constraints. It acts as an interface. The communication between the client & the server happens over HTTP. A REST API takes advantage of the HTTP methodologies to establish communication between the client and the server. REST also enables servers to cache the response that improves the performance of the application.
+  
+  
+  ![RESTapi.jpeg](:storage/7b85884f-d62b-4fb9-a662-6d7026444293/7387c0af.jpeg)
+  The communication between the client and the server is a stateless process. And by that, I mean every communication between the client and the server is like a new one.
+  
+  There is no information or memory carried over from the previous communications. So, every time a client interacts with the backend, it has to send the authentication information to it as well. This enables the backend to figure out that the client is authorized to access the data or not.
+  
+  With the implementation of a REST API the client gets the backend endpoints to communicate with. This entirely decouples the backend & the client code.
+  
+  Let’s understand what this means.
+  
+  ## REST Endpoint #
+  An API/REST/Backend endpoint means the url of a service. For example, https://myservice.com/users/{username} is a backend endpoint for fetching the user details of a particular user from the service.
+  
+  The REST-based service will expose this url to all its clients to fetch the user details using the above stated url.
+  
+  Decoupling Clients & the Backend Service #
+  With the availability of the endpoints, the backend service does not have to worry about the client implementation. It just calls out to its multiple clients & says “Hey everyone, here is the url address of the resource/information you need. Hit it when you need it. Any client with the required authorization to access a resource can access it”.
+  
+  Developers can have different implementations with separate codebases, for different clients, be it a mobile browser, a desktop browser, a tablet or an API testing tool. Introducing new types of clients or modifying the client code has no effect on the functionality of the backend service.
+  
+  This means the clients and the backend service are decoupled.
+  
+  Application Development Before the REST API #
+  Before the REST-based API interfaces got mainstream in the industry. We often tightly coupled the backend code with the client. JSP (Java Server Pages) is one example of it.
+  
+  We would always put business logic in the JSP tags. Which made code refactoring & adding new features really difficult as the logic got spread across different layers.
+  
+  Also, in the same codebase, we had to write separate code/classes for handling requests from different types of clients. A different servlet for a mobile client and a different one for a web-based client.
+  
+  After the REST APIs became widely used, there was no need to worry about the type of the client. Just provide the endpoints & the response would contain data generally in the JSON or any other standard data transport format. And the client would handle the data in whatever way they would want.
+  
+  This cut down a lot of unnecessary work for us. Also, adding new clients became a lot easier. We could introduce multiple types of new clients without considering the backend implementation.
+  
+  In today’s industry landscape, there is hardly any online service without a REST API. Want to access public data of any social network? Use their REST API.
+  
+  ## API Gateway #
+  
+  ![ApiGateway.jpeg](:storage/7b85884f-d62b-4fb9-a662-6d7026444293/ae8dbfb0.jpeg)
+  The REST-API acts as a gateway, as a single entry point into the system. It encapsulates the business logic. Handles all the client requests, taking care of the authorization, authentication, sanitizing the input data & other necessary tasks before providing access to the application resources.
+  
+  So, now we are aware of the client-server architecture, we know what a REST API is. It acts as the interface & the communication between the client and the server happens over HTTP.
+  
+  Let’s look into the HTTP Pull & Push-based communication mechanism.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

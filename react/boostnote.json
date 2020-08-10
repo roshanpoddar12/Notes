@@ -14,6 +14,21 @@
       "key": "9fe7f16abbe6406c2e1d",
       "color": "#3FD941",
       "name": "React project u"
+    },
+    {
+      "key": "bc599e07a63f382e8207",
+      "color": "#30D5C8",
+      "name": "Master Project :Forms+Components"
+    },
+    {
+      "key": "6b8df50b964f3be78956",
+      "color": "#2BA5F7",
+      "name": "FIREBASE"
+    },
+    {
+      "key": "914f31c283c4cb355133",
+      "color": "#E8D252",
+      "name": "REDUX"
     }
   ],
   "version": "1.0"

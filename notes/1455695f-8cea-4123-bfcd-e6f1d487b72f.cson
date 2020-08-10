@@ -1,0 +1,57 @@
+createdAt: "2020-08-08T01:55:21.921Z"
+updatedAt: "2020-08-08T01:57:41.213Z"
+type: "MARKDOWN_NOTE"
+folder: "e19a294893a93431630d"
+title: "XOR Queries of a Subarray"
+tags: []
+content: '''
+  #  XOR Queries of a Subarray
+  ```c++
+  Input: arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+  Output: [2,7,14,8] 
+  Explanation: 
+  The binary representation of the elements in the array are:
+  1 = 0001 
+  3 = 0011 
+  4 = 0100 
+  8 = 1000 
+  The XOR values for queries are:
+  [0,1] = 1 xor 3 = 2 
+  [1,2] = 3 xor 4 = 7 
+  [0,3] = 1 xor 3 xor 4 xor 8 = 14 
+  [3,3] = 8
+  Example 2:
+  
+  Input: arr = [4,8,2,10], queries = [[2,3],[1,3],[0,0],[0,3]]
+  Output: [8,0,4,4]
+  ```
+  - Bruteforce Run a loop for every subquery
+  - optimized
+  - For each query [i, j],
+  if i == 0, query result = A[j]
+  if i != 0, query result = A[i - 1] ^ A[j]
+  
+  
+  Complexity
+  Time O(N)
+  O(1) extra space
+  O(Q) for output
+  ```c++
+  class Solution {
+  public:
+      vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {
+          vector<int> a;
+          for(int i=1;i<arr.size();i++){
+              arr[i]^=arr[i-1];
+          }
+          for(auto q:queries){
+              a.push_back(q[0]>0?arr[q[0]-1]^arr[q[1]]:arr[q[1]]);
+          }
+          return a;`
+      }
+  };
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

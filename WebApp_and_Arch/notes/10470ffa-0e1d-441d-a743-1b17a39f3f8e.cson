@@ -1,0 +1,26 @@
+createdAt: "2020-08-04T07:53:40.706Z"
+updatedAt: "2020-08-04T08:01:56.920Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "CLIENT SERVER ARCHITECTURE"
+tags: []
+content: '''
+  # CLIENT SERVER ARCHITECTURE
+  
+  - We’ve already learned a bit about the client-server architecture when discussing the two-tier, three-tier & the N-tier architecture. Now we look at it in detail.
+  
+  ![cli-serArch.jpeg](:storage/10470ffa-0e1d-441d-a743-1b17a39f3f8e/f92089a3.jpeg)
+  
+  - Client-Server architecture is the fundamental building block of the web.
+  
+  - The architecture works on a request-response model. The client sends the request to the server for information & the server responds with it.
+  
+  - Every website you browse, be it a Wordpress blog or a web application like Facebook, Twitter or your banking app is built on the client-server architecture.
+  
+  - A very small percent of the business websites and applications use the peer to peer architecture, which is different from the client-server.
+  
+  - I will discuss that in ahead in the course. For now, let’s focus on the client.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

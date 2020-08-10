@@ -1,0 +1,23 @@
+createdAt: "2020-08-04T08:05:10.301Z"
+updatedAt: "2020-08-04T08:05:42.940Z"
+type: "MARKDOWN_NOTE"
+folder: "f540f45a0b472167da38"
+title: "CLIENT"
+tags: []
+content: '''
+  # CLIENT
+  
+  - The client holds our user interface. The user interface is the presentation part of the application. It’s written in Html, JavaScript, CSS and is responsible for the look & feel of the application.
+  
+  - The user interface runs on the client. The client can be a mobile app, a desktop or a tablet like an iPad. It can also be a web-based console, running commands to interact with the backend server.
+  
+  - Technologies Used To Implement Clients In Web Applications #
+  - In very simple terms, a client is the window to our application. In the industry, the open-source technologies popular for writing the web-based user interface are ReactJS, AngularJS, VueJS, Jquery etc. All these libraries use JavaScript.
+  
+  - There are a plethora of other technologies for writing the front-end too, I have just listed the popular ones for now.
+  
+  - Different platforms require different frameworks & libraries to write front-end. For instance, mobile phones running Android would need a different set of tools, those running Apple or Windows OS would need a different set of tools.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,76 @@
+createdAt: "2020-06-26T16:49:59.515Z"
+updatedAt: "2020-06-27T12:17:38.864Z"
+type: "MARKDOWN_NOTE"
+folder: "6b8df50b964f3be78956"
+title: "FIREBASE UTILS JS"
+tags: []
+content: '''
+  # FIREBASE UTILS JS
+  ```JS
+  import firebase from 'firebase/app';
+  import 'firebase/firestore';
+  import 'firebase/auth';
+  ```
+  - cONFIG ACC TO FIREBASE THAT WE GOT FROM FIREBASE
+  ```JS
+  const config = {
+      apiKey: "AIzaSyCapcJCx-OSMeTuNx61j2oOxbDnh0U5kCk",
+      authDomain: "crown-db-19c96.firebaseapp.com",
+      databaseURL: "https://crown-db-19c96.firebaseio.com",
+      projectId: "crown-db-19c96",
+      storageBucket: "crown-db-19c96.appspot.com",
+      messagingSenderId: "815238862291",
+      appId: "1:815238862291:web:6e816dfe6e432d2f918b26",
+      measurementId: "G-WDDJGT0M68"
+    };
+  
+  ```
+  - SAVING THE DATA IN DATABASE BECAUSE NOW WE ARE JUST AUTHENTICATING IT SO WE HAVE TO SAVE THE USER AUTHENTICATION DETAILS IN DATABASE OF FIREBASE
+  
+  ## QUERY REFERENCE AND QUERY SNAPSHOT
+  
+  - A query is a request we make to firestore to give us something from the database
+  - Firestore returns us two types of objects : references and snapshots. Of these objects, they can be either Document or collection versions
+  
+  ## QUERY REFERENCE
+  
+  - A query reference object is an obh=ject that represents the "current" place in the database that we are querying
+  - We get them by calling either:
+    - firestore.doc('/users/:userId);
+    - firestore.collections('/users');
+  - The query reference object doesnot have the actual data of the collection or document. It instead has property that tell us about it, or the method to get the snapshot object which gives us the data we are looking for. 
+  
+  ## DOCUMENTREFERENCE AND COLLECTIONREFERENCE
+  - We use documentRef objects to perform our CRUD methods (create, retrieve, updata, delete). The documentRef methods are .set() .get(), .update(), and .delete() respectively
+  - We can also add documents to collections using the collectionRef object using the .add() method.// collectionRef.add({//value"prop})
+  - We get the snapshotObject from the referenceObject using the .get() method. ie. documentRef.get() or collectionRef.get()
+    - documentRef return a documentSnapshot object.
+    - collectionRef returns a querySnapshot object.
+  
+  ## DOCUMENT SNAPSHOT
+  - We get a documentSnapshot object from our document reference object
+  - The document snapshot allow us to check if the document exists at this query using the .exists property which returns a boolean
+  - We can also get the actual properties on the object by calling the .data() method ,which returns us a JSON object of the document
+  ```JS
+  
+  
+  ```
+  
+  - ALL THE FUNCTION FROM FIREBASE TO SIGN IN USING GOOGLE API
+  ```JS
+  firebase.initializeApp(config);
+  
+  export const auth = firebase.auth();
+  export const firestore = firebase.firestore();
+  
+  const provider = new firebase.auth.GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  export const signInWithGoogle = () => auth.signInWithPopup(provider);
+  
+  export default firebase;
+  ```
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

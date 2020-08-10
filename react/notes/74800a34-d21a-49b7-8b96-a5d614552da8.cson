@@ -1,0 +1,19 @@
+createdAt: "2020-07-03T18:53:55.809Z"
+updatedAt: "2020-07-03T19:04:00.816Z"
+type: "MARKDOWN_NOTE"
+folder: "914f31c283c4cb355133"
+title: "5.CHANGING DATA"
+tags: []
+content: '''
+  ## 5.CHANGING DATA
+  - Sometimes the logic of updating data in an app can be fairly complex. It might involve multiple steps that depend on one another. We may need to wait for the responses from multiple servers before updating the application state. We might need to update many places in the state at different times under different conditions.
+  
+  It can be overwhelming if we don’t have a good structure for all this logic. The code would be difficult to understand and maintain.
+  
+  Redux allows us to divide and conquer. It provides a standard way to break data updating logic into small “reducers”. Those reducers work harmoniously together to complete a complex action.
+  Keep an eye on the recent development of React, though. As with the “context” API, there might be a new “setState” API in a future version of React. It’d make it easier to break up complex update logic into smaller parts. Once this new API becomes available, it’s possible that you won’t be needing Redux anymore to manage this aspect of state management.
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

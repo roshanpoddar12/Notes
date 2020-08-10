@@ -1,0 +1,45 @@
+createdAt: "2020-08-08T02:47:13.102Z"
+updatedAt: "2020-08-08T03:26:25.787Z"
+type: "MARKDOWN_NOTE"
+folder: "bb27586f835afacb8550"
+title: "REVERSE A LINK LIST"
+tags: []
+content: '''
+  # REVERSE A LINK LIST
+  ## Iterarative
+  ```c++
+  ListNode reverse(ListNode *head){
+    ListNode *curr = head;
+    ListNode *next = NULL;
+    ListNode *prev = NULL;
+    while(curr!=NULL){
+      next = curr->next;
+      curr->next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return prev;
+  }
+  ```
+  - Time complexity O(n)
+  - Space complexity O(1)
+  
+  ## Recursive
+  ```c++
+  class Solution {
+  public:
+      ListNode* reverseList(ListNode* head) {
+          if(!head || !(head->next))  return head;
+      auto res = reverseList(head->next);
+      head->next->next = head;
+      head->next = NULL;
+      return res;
+      }
+  ```
+  My try to explain head->next->next:
+  eg 2->3 head: 2, head->next: 3, head->next->next: 3->next
+  so head->next->next = head; is to set 3->next = 2, ie. setting 2<-3
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

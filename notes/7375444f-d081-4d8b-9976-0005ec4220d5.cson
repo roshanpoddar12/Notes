@@ -1,0 +1,42 @@
+createdAt: "2020-08-09T04:07:50.077Z"
+updatedAt: "2020-08-09T04:09:01.695Z"
+type: "MARKDOWN_NOTE"
+folder: "bb27586f835afacb8550"
+title: "REMOVING NTH NODE FROM THE LIST"
+tags: []
+content: '''
+  # REMOVING NTH NODE FROM THE LIST
+  ```c++
+  class Solution {
+  public:
+      ListNode* removeNthFromEnd(ListNode* head, int n) {
+          ListNode *first=head, *second=head;
+          
+          for(int i=0;i<n;i++){
+              if(second->next==NULL){
+                  if(i==n-1)
+                      head = head->next;
+                  return head; 
+              }
+              second=second->next;
+          }
+          while(second->next!=NULL){
+              second=second->next;
+              first=first->next;
+          }
+          first->next = first->next->next;
+          return head;
+      }
+  };
+  ```
+  ```inp
+  Your input
+  [1,2,3,4,5]
+  2
+  Output
+  [1,2,3,5]
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
