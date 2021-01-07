@@ -1,0 +1,64 @@
+createdAt: "2020-08-11T06:02:38.691Z"
+updatedAt: "2020-08-11T06:02:40.980Z"
+type: "MARKDOWN_NOTE"
+folder: "bb27586f835afacb8550"
+title: "CHECKING IF THE LIST IS PALLINDROME OR NOT"
+tags: []
+content: '''
+  # CHECKING IF THE LIST IS PALLINDROME OR NOT
+  
+  ## METHOD 1 (Use a Stack)
+  
+  - A simple solution is to use a stack of list nodes. This mainly involves three steps.
+  - Traverse the given list from head to tail and push every visited node to stack.
+  - Traverse the list again. For every visited node, pop a node from stack and compare data of popped node with currently visited node.
+  - If all nodes matched, then return true, else false.
+  
+  ## METHOD 2 (By reversing the list)
+  This method takes O(n) time and O(1) extra space.
+  1) Get the middle of the linked list.
+  2) Reverse the second half of the linked list.
+  3) Check if the first half and second half are identical.
+  4) Construct the original linked list by reversing the second half again and attaching it back to the first half
+  
+  ```c++
+  class Solution {
+  public:
+      bool isPalindrome(ListNode* head) {
+          if(head==NULL || head->next==NULL)
+              return true;
+         ListNode *fast = head;
+          ListNode *slow = head;
+          
+          while(fast->next!=NULL && fast->next->next!=NULL){
+              fast = fast->next->next;
+              slow=slow->next;
+          }
+          
+         slow->next = reversal(slow->next);
+          slow=slow->next;
+          while(slow!=NULL){
+              if(slow->val != head->val)
+                  return false;
+              head=head->next;
+              slow=slow->next;
+          }
+      
+          return true;
+      }
+      ListNode *reversal(ListNode *head){
+          ListNode *curr = head,*prev=NULL,*next=NULL;
+          while(curr!=NULL){
+              next = curr->next;
+              curr->next = prev;
+              prev = curr;
+              curr=next;
+          }
+          return prev;
+      }
+  };
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

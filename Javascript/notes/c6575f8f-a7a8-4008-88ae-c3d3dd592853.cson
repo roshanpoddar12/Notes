@@ -1,5 +1,5 @@
 createdAt: "2020-04-11T23:07:06.326Z"
-updatedAt: "2020-06-18T04:16:35.758Z"
+updatedAt: "2020-08-15T03:42:47.517Z"
 type: "MARKDOWN_NOTE"
 folder: "5a0c8d8f45a5e708fc1e"
 title: "7.Arrow"
@@ -7,7 +7,8 @@ tags: []
 content: '''
   # 7.Arrow
   ## What is arrow function?
-  
+  -  a more concise syntax for writing function expressions
+  -   Arrow functions are anonymous and change the way this binds in functions.
   ## Advantages
   - The biggest advantage of using arrow function is that it shares the surrounding this keyword.
   - unlike normal function arrow function dont get their own this keyword.
@@ -135,6 +136,8 @@ content: '''
   
   new Person('Mike').myFriends6(friends);
   ```
+  
+  ## WHERE WE SHOULD USE ARROW FUNCTION AND WHERE NOT?
 '''
 linesHighlighted: []
 isStarred: false

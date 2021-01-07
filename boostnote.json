@@ -9,6 +9,16 @@
       "key": "bb27586f835afacb8550",
       "color": "#2BA5F7",
       "name": "Linked list"
+    },
+    {
+      "key": "8db3edb9acc1a3b8f2c2",
+      "color": "#2BA5F7",
+      "name": "2Pointers"
+    },
+    {
+      "key": "6a7904af9a8072a71b55",
+      "color": "#E8D252",
+      "name": "Recursion"
     }
   ],
   "version": "1.0"

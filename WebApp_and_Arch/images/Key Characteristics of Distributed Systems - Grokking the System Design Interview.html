@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9 -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--mui-inject-first--><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 2.4rem !important;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #5553FF;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #53ACFF;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #D42154;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+</style><style data-jss="" data-meta="MuiBox">
+
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRipple-root {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRipple-ripple {
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipple-rippleVisible {
+  opacity: 0.3;
+  animation: MuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+.MuiTouchRipple-ripplePulsate {
+  animation-duration: 200ms;
+}
+.MuiTouchRipple-child {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipple-childLeaving {
+  opacity: 0;
+  animation: MuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiTouchRipple-childPulsate {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: MuiTouchRipple-keyframes-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+@media print {
+  .MuiButtonBase-root {
+    -webkit-print-color-adjust: exact;
+  }
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiIconButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-edgeStart {
+  margin-left: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+  margin-left: -3px;
+}
+.MuiIconButton-edgeEnd {
+  margin-right: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+  margin-right: -3px;
+}
+.MuiIconButton-colorInherit {
+  color: inherit;
+}
+.MuiIconButton-colorPrimary {
+  color: #5553FF;
+}
+.MuiIconButton-colorPrimary:hover {
+  background-color: rgba(85, 83, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-colorSecondary {
+  color: #53ACFF;
+}
+.MuiIconButton-colorSecondary:hover {
+  background-color: rgba(83, 172, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-sizeSmall {
+  padding: 3px;
+  font-size: 1.125rem;
+}
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss43 {
+  border: 1px solid;
+  border-radius: 2px;
+}
+.jss43.MuiIconButton-edgeStart {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.jss44 {
+  padding: 9px;
+}
+.jss45 {
+  padding: 5px;
+}
+.jss46 {
+  border-color: transparent;
+}
+.jss47 {
+  color: #ffffff;
+  border-color: #5553FF;
+  background-color: #5553FF;
+}
+.jss47:hover {
+  border-color: #2320CC;
+  background-color: #2320CC;
+}
+.jss47.Mui-disabled {
+  border-color: transparent;
+}
+.jss48 {
+  border-color: #B0B0B7;
+}
+.jss48:hover {
+  background-color: rgba(193, 193, 198, 0.2);
+}
+</style><style data-jss="" data-meta="makeStyles">
+
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButton-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-root:hover.Mui-disabled {
+  background-color: transparent;
+}
+.MuiButton-label {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButton-text {
+  padding: 6px 8px;
+}
+.MuiButton-textPrimary {
+  color: #5553FF;
+}
+.MuiButton-textPrimary:hover {
+  background-color: rgba(85, 83, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-textSecondary {
+  color: #53ACFF;
+}
+.MuiButton-textSecondary:hover {
+  background-color: rgba(83, 172, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 15px;
+}
+.MuiButton-outlined.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiButton-outlinedPrimary {
+  color: #5553FF;
+  border: 1px solid rgba(85, 83, 255, 0.5);
+}
+.MuiButton-outlinedPrimary:hover {
+  border: 1px solid #5553FF;
+  background-color: rgba(85, 83, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlinedSecondary {
+  color: #53ACFF;
+  border: 1px solid rgba(83, 172, 255, 0.5);
+}
+.MuiButton-outlinedSecondary:hover {
+  border: 1px solid #53ACFF;
+  background-color: rgba(83, 172, 255, 0.04);
+}
+.MuiButton-outlinedSecondary.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-contained {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.06);
+  background-color: #D2D2D6;
+}
+.MuiButton-contained:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: #5B5B6A;
+}
+.MuiButton-contained.Mui-focusVisible {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButton-contained:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButton-contained.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.06);
+    background-color: #D2D2D6;
+  }
+}
+.MuiButton-contained:hover.Mui-disabled {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-containedPrimary {
+  color: #ffffff;
+  background-color: #5553FF;
+}
+.MuiButton-containedPrimary:hover {
+  background-color: #2320CC;
+}
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #5553FF;
+  }
+}
+.MuiButton-containedSecondary {
+  color: #ffffff;
+  background-color: #53ACFF;
+}
+.MuiButton-containedSecondary:hover {
+  background-color: #2078CC;
+}
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #53ACFF;
+  }
+}
+.MuiButton-disableElevation {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:hover {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-focusVisible {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:active {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-disabled {
+  box-shadow: none;
+}
+.MuiButton-colorInherit {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButton-textSizeSmall {
+  padding: 4px 5px;
+  font-size: 0.8125rem;
+}
+.MuiButton-textSizeLarge {
+  padding: 8px 11px;
+  font-size: 0.9375rem;
+}
+.MuiButton-outlinedSizeSmall {
+  padding: 3px 9px;
+  font-size: 0.8125rem;
+}
+.MuiButton-outlinedSizeLarge {
+  padding: 7px 21px;
+  font-size: 0.9375rem;
+}
+.MuiButton-containedSizeSmall {
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+}
+.MuiButton-containedSizeLarge {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+}
+.MuiButton-fullWidth {
+  width: 100%;
+}
+.MuiButton-startIcon {
+  display: inherit;
+  margin-left: -4px;
+  margin-right: 8px;
+}
+.MuiButton-startIcon.MuiButton-iconSizeSmall {
+  margin-left: -2px;
+}
+.MuiButton-endIcon {
+  display: inherit;
+  margin-left: 8px;
+  margin-right: -4px;
+}
+.MuiButton-endIcon.MuiButton-iconSizeSmall {
+  margin-right: -2px;
+}
+.MuiButton-iconSizeSmall > *:first-child {
+  font-size: 18px;
+}
+.MuiButton-iconSizeMedium > *:first-child {
+  font-size: 20px;
+}
+.MuiButton-iconSizeLarge > *:first-child {
+  font-size: 22px;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss627 {
+  border: 1px solid;
+  margin: 8px;
+  display: flex;
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss627:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss627.MuiButton-containedSecondary {
+  border-color: #53ACFF;
+}
+.jss627.MuiButton-containedPrimary {
+  border-color: #5553FF;
+}
+.jss627 .MuiButton-startIcon {
+  margin-right: 16px;
+}
+.jss627 .MuiButton-endIcon {
+  margin-left: 16px;
+}
+.jss627:focus {
+  outline: none;
+}
+.jss627.MuiButton-containedPrimary:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss627.MuiButton-containedPrimary:hover:not(:disabled) {
+  border-color: #2320CC;
+}
+.jss627.MuiButton-containedSecondary:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss627.MuiButton-containedSecondary:hover:not(:disabled) {
+  border-color: #2078CC;
+}
+.jss628 {
+  border: 1px solid;
+  margin: 8px;
+  display: flex;
+  padding: 5px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss628:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss628.MuiButton-containedSecondary {
+  border-color: #53ACFF;
+}
+.jss628.MuiButton-containedPrimary {
+  border-color: #5553FF;
+}
+.jss628:focus {
+  outline: none;
+}
+.jss628.MuiButton-containedPrimary:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss628.MuiButton-containedPrimary:hover:not(:disabled) {
+  border-color: #2320CC;
+}
+.jss628.MuiButton-containedSecondary:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss628.MuiButton-containedSecondary:hover:not(:disabled) {
+  border-color: #2078CC;
+}
+.jss629 {
+  margin: 8px;
+  display: flex;
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss629 .MuiButton-startIcon {
+  margin-right: 16px;
+}
+.jss629 .MuiButton-endIcon {
+  margin-left: 16px;
+}
+.jss629:focus {
+  outline: none;
+}
+.jss629.MuiButton-contained {
+  color: white;
+  border-color: #D42154;
+  background-color: #D42154;
+}
+.jss629.MuiButton-outlined {
+  color: #D42154;
+  border-color: #F8BACB;
+}
+.jss629.MuiButton-outlined:hover:not(:disabled) {
+  border-color: #D42154;
+  background-color: rgba(248, 186, 203, 0.2);
+}
+.jss629.MuiButton-outlined:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss629.MuiButton-contained:hover:not(:disabled) {
+  border-color: #AA174C;
+  background-color: #AA174C;
+}
+.jss629.MuiButton-contained:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss630 {
+  margin: 8px;
+  display: flex;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss630:focus {
+  outline: none;
+}
+.jss630.MuiButton-contained {
+  color: white;
+  border-color: #D42154;
+  background-color: #D42154;
+}
+.jss630.MuiButton-outlined {
+  color: #D42154;
+  border-color: #F8BACB;
+}
+.jss630.MuiButton-outlined:hover:not(:disabled) {
+  border-color: #D42154;
+  background-color: rgba(248, 186, 203, 0.2);
+}
+.jss630.MuiButton-outlined:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss630.MuiButton-contained:hover:not(:disabled) {
+  border-color: #AA174C;
+  background-color: #AA174C;
+}
+.jss630.MuiButton-contained:disabled {
+  color: white;
+  border-color: #D2D2D6;
+  background-color: #D2D2D6;
+}
+.jss631 {
+  margin: 8px;
+  display: flex;
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss631 .MuiButton-startIcon {
+  margin-right: 16px;
+}
+.jss631 .MuiButton-endIcon {
+  margin-left: 16px;
+}
+.jss631:focus {
+  outline: none;
+}
+.jss631.MuiButton-outlined:hover:not(:disabled) {
+  border-color: #202033;
+}
+.jss631.MuiButton-outlinedPrimary:hover:not(:disabled) {
+  border-color: #5553FF;
+}
+.jss632 {
+  margin: 8px;
+  display: flex;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss632:focus {
+  outline: none;
+}
+.jss632.MuiButton-outlined:hover:not(:disabled) {
+  border-color: #202033;
+}
+.jss632.MuiButton-outlinedPrimary:hover:not(:disabled) {
+  border-color: #5553FF;
+}
+.jss633 {
+  margin: 8px;
+  display: flex;
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss633 .MuiButton-startIcon {
+  margin-right: 16px;
+}
+.jss633 .MuiButton-endIcon {
+  margin-left: 16px;
+}
+.jss633:focus {
+  outline: none;
+}
+.jss633:hover {
+  background-color: #E5E5E5;
+}
+.jss634 {
+  margin: 8px;
+  display: flex;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.35px;
+  text-transform: inherit;
+}
+.jss634:focus {
+  outline: none;
+}
+.jss634:hover {
+  background-color: #E5E5E5;
+}
+@media (max-width:799.95px) {
+  .jss635 {
+    width: 100%;
+    margin: 0;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root {
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.02);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.06);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.24);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+@media print {
+  .MuiAppBar-positionFixed {
+    position: absolute;
+  }
+}
+.MuiAppBar-positionAbsolute {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic {
+  position: static;
+  transform: translateZ(0);
+}
+.MuiAppBar-positionRelative {
+  position: relative;
+}
+.MuiAppBar-colorDefault {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #F5F5F5;
+}
+.MuiAppBar-colorPrimary {
+  color: #ffffff;
+  background-color: #5553FF;
+}
+.MuiAppBar-colorSecondary {
+  color: #ffffff;
+  background-color: #53ACFF;
+}
+.MuiAppBar-colorInherit {
+  color: inherit;
+}
+.MuiAppBar-colorTransparent {
+  color: inherit;
+  background-color: transparent;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.MuiToolbar-root {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiToolbar-gutters {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiToolbar-regular {
+  min-height: 56px;
+}
+@media (min-width:320px) and (orientation: landscape) {
+  .MuiToolbar-regular {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .MuiToolbar-regular {
+    min-height: 64px;
+  }
+}
+.MuiToolbar-dense {
+  min-height: 48px;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.MuiTypography-h1 {
+  margin: 0;
+  font-size: 6rem;
+  text-align: center;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.167;
+}
+.MuiTypography-h2 {
+  font-size: 3.75rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.MuiTypography-h3 {
+  font-size: 3rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.167;
+}
+.MuiTypography-h4 {
+  font-size: 2.125rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.235;
+}
+.MuiTypography-h5 {
+  font-size: 1.5rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.334;
+}
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #5553FF;
+}
+.MuiTypography-colorSecondary {
+  color: #53ACFF;
+}
+.MuiTypography-colorTextPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError {
+  color: #D42154;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss69 {
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 92px;
+  letter-spacing: -2px;
+}
+@media(max-width: 768px) {
+  .jss69 {
+    font-size: 6rem;
+    line-height: 68px;
+    letter-spacing: -1.2px;
+  }
+}
+.jss70 {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0px;
+}
+@media(max-width: 768px) {
+  .jss70 {
+    font-size: 4rem;
+    letter-spacing: 0.25px;
+  }
+}
+.jss71 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+@media(max-width: 768px) {
+  .jss71 {
+    font-size: 3.4rem;
+  }
+}
+.jss72 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+@media(max-width: 768px) {
+  .jss72 {
+    font-size: 2.8rem;
+  }
+}
+.jss73 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+@media(max-width: 768px) {
+  .jss73 {
+    font-size: 2.2rem;
+  }
+}
+.jss74 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+@media(max-width: 768px) {
+  .jss74 {
+    font-weight: 700;
+  }
+}
+.jss75 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.jss76 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+}
+.jss77 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+}
+.jss78 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+}
+.jss79 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.35px;
+}
+.jss80 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.jss81 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.jss82 {
+  font-size: 18px;
+  font-style: normal;
+  font-family: Droid Serif;
+  font-weight: normal;
+  line-height: 28px;
+}
+</style><style data-jss="" data-meta="makeStyles">
+
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+.jss1 {
+  left: 0;
+  border: none;
+  height: 64px;
+  z-index: 12;
+  transition: 0.5s;
+  border-bottom: 1px solid #D2D2D6;
+}
+@media (max-width:479.95px) {
+  .jss1 {
+    height: 56px;
+  }
+}
+.jss2 {
+  left: 0;
+}
+.jss3 {
+  left: 90px;
+  width: calc(100% - 90px);
+}
+@media (max-width:779.95px) {
+  .jss4 {
+    left: 0;
+    width: 100%;
+  }
+}
+@media (min-width:780px) {
+  .jss4 {
+    left: 90px;
+    width: calc(100% - 90px);
+  }
+}
+.jss5 {
+  height: 100%;
+}
+.jss6 {
+  height: 100%;
+  margin: 0;
+  padding: 16px;
+  border-radius: 0;
+}
+@media (max-width:479.95px) {
+  .jss6 .MuiButton-endIcon {
+    display: none;
+  }
+}
+@media (min-width:1025px) {
+  .jss7 {
+    display: none;
+  }
+}
+@media (max-width:1024.95px) {
+  .jss8 {
+    display: none;
+  }
+}
+.jss9 {
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss584 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+</style><style data-jss="" data-meta="makeStyles">
+
+</style><style data-jss="" data-meta="makeStyles">
+.jss662 {
+  line-height: 20px;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss661 {
+  color: #5553FF;
+  font-weight: 600;
+  margin-left: 5px;
+  border-bottom: 1px solid #5553FF;
+}
+</style><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="fb:app_id" content="530312767132745"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Educative: Interactive Courses for Software Developers"><meta name="twitter:site" content="@educativeinc"><meta name="twitter:domain" content="educative.io"><link rel="shortcut icon" type="image/x-icon" href="https://www.educative.io/static/favicons/faviconV2.png" id="favicon-scheme"><script type="text/javascript" id="www-widgetapi-script" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/www-widgetapi.js" async=""></script><script type="text/javascript" async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/insight.min.js"></script><script async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/uwt.js"></script><script async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/fbevents.js"></script><script type="text/javascript" async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/analytics.js"></script><script async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/gtm.js"></script><script type="application/ld+json">{"@context":"http://schema.org/","@type":"EducationalOrganization","url":"https://www.educative.io","logo":"https://www.educative.io/static/imgs/logos/MainLogoV2.png"}</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W3ZFCR2');</script><meta name="viewport" content="width=device-width"><meta name="twitter:card" content="summary"><title>Key Characteristics of Distributed Systems - Grokking the System Design Interview</title><meta property="og:image" content="https://educative.io/api/collection/5668639101419520/5649050225344512/image/5743114304094208.png"><meta property="og:image:secure_url" content="https://educative.io/api/collection/5668639101419520/5649050225344512/image/5743114304094208.png"><meta name="twitter:image:src" content="https://educative.io/api/collection/5668639101419520/5649050225344512/image/5743114304094208.png"><meta property="og:image:width" content="1296"><meta property="og:image:height" content="1295"><meta name="description" content=""><meta property="og:description" content=""><meta name="twitter:description" content=""><meta property="og:image:alt" content="Page Logo"><meta property="og:url" content="/courses/grokking-the-system-design-interview/YQWGjlZZVz9"><meta property="og:title" content="Key Characteristics of Distributed Systems - Grokking the System Design Interview"><meta name="twitter:title" content="Key Characteristics of Distributed Systems - Grokking the System Design Interview"><script type="application/ld+json">{"@context":"http://schema.org/","@type":"TechArticle","headline":"Key Characteristics of Distributed Systems - Grokking the System Design Interview","name":"Grokking the System Design Interview","image":"https://educative.io/api/collection/5668639101419520/5649050225344512/image/5743114304094208.png"}</script><meta property="og:title" content="Key Characteristics of Distributed Systems - Grokking the System Design Interview"><meta name="next-head-count" content="18"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/77f62a345e9ccc0ee6c4.css" as="style"><link rel="stylesheet" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/77f62a345e9ccc0ee6c4.css"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/main-afda2c76c8c922a4afba.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/webpack-301abe1b38661f27a373.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/framework.141911a95a3b78923870.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/commons.08b73e789c499a4972fc.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b3dc38d4331935bc72d92a001a636490630ecf10.1e07c05bbbc7c00e020e.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/69c09a8ba805ac81e94f8903760a3bffa8a7e30b.69763e810e0d0deb4617.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ec2c9b79ded3c5444b22ee673f52301428f36f63.df86bd753c7b9e000cb8.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b5bcbbbf7162983a8fdf7d4bd611f97ba9ebcb21.97ad04451f4e429d223f.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/71512dfbe762fc44ec1f8cfa2806b62000a0479c.7fe7d68def6981596866.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/edecc2bf113566c160ba4ea7a2b97d1a66e5c49c.d94b5c0bc4d08b0c93cf.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/811da0351ae6463166c3b6b721c42369fedd5773.8cf6a0e6190b7f1a378d.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5b94177a78caa464115c70ad95aa5fc0fb96f1ae.8e9ddacdaf7d806d3f47.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3df7887c906839d877665b14b4be6460648c4023.b5e9d99826db84f90d51.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3e08e62504b7584bf93bb956c6af0351b83f82ba.8c202a6e5c263e840763.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3c397f1ef85b56a8b43aa6fa25804f60e7fb0a58.889e56493e02327537ad.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/893f93a4f8aca6f7bc8106b2a52cd17f958340ac.8c269d66d34ad93cdcc1.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/c157038c75dd70904f59b7ece89ef9caf64a4458.8d12be778b0f598fe86a.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/fe256cd3e1d5c2071d0869460ecbdee6c2446f0f.770a7eafa9491df7d7cb.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b401c41330442e47e10eb23f1a82e7f56b76455e.aafc9862af8f6fd96659.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b1542cc239bf56c8a14913c0a930efe682b5cf86.7338aeb568979415d38a.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/_app-c1275fcfa38d19b923e1.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ce639808f589804f771de7f404c089cda91f6217.3c7d2d3a29e8204ec404.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5e9097818cac2507a0944c3198e84946ab7df318.d964de2de37005d00886.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/24ba2a9eb3dbc1045a55846a34c21d1d9f109508.fbbef1a6d6eafd6ec26b.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/cd84788ea4dffaa850571677ce7fba84af89a1be.bad2d126c6860203cda7.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/e5f44c4e8aa974d48f4ae35fbd79e9c2d78d5028.13686306a450a3ff412d.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/643849d4024e13d361794db8328459faa9593cec.eb9688ffe9eb4c18b780.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/53eb31bc35a0c56fc7b07e3d0a839c96b89ddaae.95bf4c5400488383c48a.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/893fe6d67149e24d5b00d6716b3adca82c29d85e.ec6339fdc89fe3426b2d.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/dfecea8259c6cc11428bd75f36903c7fc701b10b.91e62dc7d7d296a26077.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/06429e2d35f6603eb4d3264fe71bfb5dfced98cc.28fad765cfa07db379d1.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5c524fe9151ccabbe110d42363ba0fbcf1926744.6fca9f06d1a9521fa6fa.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/69e86c84c4400e5231303bde9edefd4eeaeb4b69.d2b8c104c8da812d1ba6.js" as="script"><link rel="preload" href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/[collectionId]-f892468a02bfb9116a40.js" as="script"><style data-styled="" data-styled-version="4.3.2"></style><style>._3emE9--dark-theme .-S-tR--ff-downloader{background:rgba(30,30,30,.93);border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#fff}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{background:#3d4b52}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#131415}._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer{background:rgba(30,30,30,.93)}._2mDEx--white-theme .-S-tR--ff-downloader{background:#fff;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#314c75}._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header{font-weight:700}._2mDEx--white-theme .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{border:0;color:rgba(0,0,0,.88)}._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer{background:#fff}.-S-tR--ff-downloader{display:block;overflow:hidden;position:fixed;bottom:20px;right:7.1%;width:330px;height:180px;background:rgba(30,30,30,.93);border-radius:2px;color:#fff;z-index:99999999;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);transition:.5s}.-S-tR--ff-downloader._3M7UQ--minimize{height:62px}.-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,.-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header{display:none}.-S-tR--ff-downloader ._6_Mtt--header{padding:10px;font-size:17px;font-family:sans-serif}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{float:right;background:#f1ecec;height:20px;width:20px;text-align:center;padding:2px;margin-top:-10px;cursor:pointer}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#e2dede}.-S-tR--ff-downloader ._13XQ2--error{color:red;padding:10px;font-size:12px;line-height:19px}.-S-tR--ff-downloader ._2dFLA--container{position:relative;height:100%}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info{padding:6px 15px 0;font-family:sans-serif}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div{margin-bottom:5px;width:100%;overflow:hidden}.-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{margin-top:21px;font-size:11px}.-S-tR--ff-downloader ._10vpG--footer{width:100%;bottom:0;position:absolute;font-weight:700}.-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader{animation:n0BD1--rotation 3.5s linear forwards;position:absolute;top:-120px;left:calc(50% - 35px);border-radius:50%;border:5px solid #fff;border-top-color:#a29bfe;height:70px;width:70px;display:flex;justify-content:center;align-items:center}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar{width:100%;height:18px;background:#dfe6e9;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar ._1FVu9--progress-bar{height:100%;background:#8bc34a;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status{margin-top:10px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state{float:left;font-size:.9em;letter-spacing:1pt;text-transform:uppercase;width:100px;height:20px;position:relative}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage{float:right}</style><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/a9a7754c.3aa3f461d4c306ffde55.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/e5f44c4e8aa974d48f4ae35fbd79e9c2d78d5028.13686306a450a3ff412d.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/53eb31bc35a0c56fc7b07e3d0a839c96b89ddaae.95bf4c5400488383c48a.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/893fe6d67149e24d5b00d6716b3adca82c29d85e.ec6339fdc89fe3426b2d.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/06429e2d35f6603eb4d3264fe71bfb5dfced98cc.28fad765cfa07db379d1.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5c524fe9151ccabbe110d42363ba0fbcf1926744.6fca9f06d1a9521fa6fa.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/69e86c84c4400e5231303bde9edefd4eeaeb4b69.d2b8c104c8da812d1ba6.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5fbb3e9db0a796c21ac493e9839a0241ee9d443f.51d7ce6f50e6f4a1404b.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3cb8f91d9642eefee8294b33d1cc0cf53dab98ce.f9ee896c4800358a198f.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/eb21df791c53d763295a2fe88fef17ee418da261.83124bef9f1f17a73247.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/index-21011d3ce38eb3ac8384.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/b3e9f9461765ccc54cc615af9ed199e03c4047d9.27701900810d4bed62ef.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/628dd7fcce204445dbaf3b96c2aab7eeb813e42a.c5fb3f94e3b1d0f69807.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/d148a0ada5c13f1a71ad973823b0e68313659cf0.a139f71b00602bf23fa7.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/business-3011ca2ee6a6e782d6bd.js" rel="prefetch" as="script"><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script><script async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/hotjar-1142875.js"></script><script async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/modules.6d94817c31cfe823a518.js" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script type="text/javascript" charset="utf8" async="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/iframe_api"></script><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/learn-fd51fbbbad1685cc5c7b.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ce639808f589804f771de7f404c089cda91f6217.3c7d2d3a29e8204ec404.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5e9097818cac2507a0944c3198e84946ab7df318.d964de2de37005d00886.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/24ba2a9eb3dbc1045a55846a34c21d1d9f109508.fbbef1a6d6eafd6ec26b.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/cd84788ea4dffaa850571677ce7fba84af89a1be.bad2d126c6860203cda7.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/643849d4024e13d361794db8328459faa9593cec.eb9688ffe9eb4c18b780.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/dfecea8259c6cc11428bd75f36903c7fc701b10b.91e62dc7d7d296a26077.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/explore-023b556e7210234a14a3.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/tracks-51982b7565d2e289c7fa.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/mycourses-c50e5e853260b1ddd6bc.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/9c745f8f243c87f206e1b8da72af0c9e8ca994a9.608ec6f7a0594e746f85.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/417734cac0b6c5ee6988a9f85be9fc7b34c02ab8.c61508506f5cb486bf15.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ad342fce69271053c1dc62058c758c41383ee1c4.8824064c481cec31f76d.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ea5ef564115d1be27d9f818ce643cab64e16521e.571323ce6d4cc4c3abd4.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5a9c80a9916ad74469d723c42b28097278b479e4.b99af480e43787a205e9.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/403ae8dee0fc8a142708d6117faa6ba232380d5e.eeb199715bf9cb4aacb9.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/edpresso-8cfc49762c19a72d2143.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/refer-a-friend-c9b06b1ca5fc0c8fe127.js" rel="prefetch" as="script"><link href="https://www.educative.io/static/_next/static/chunks/pages/profile/view/%5BauthorId%5D-f20d3e22e146174c5acc.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/cb1608f2.a508a696f1ba2cf6c1cf.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/2e1efc198c62b3c5b12d4a945dcd1c95bf667347.fbaca712f429927c7eff.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/d4c99d645b0c83b498f1f29cc72b641c9dc6f027.9603dc1e5b4052a1650c.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/4f0cca1fa5675b75b3bb6c184ab6412501e9184f.1487f166b8b2b101f69f.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/21b1c75a57598716de57.css" rel="prefetch" as="style"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/[pageId]-2aeaca0044e37b9a2287.js" rel="prefetch" as="script"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/21b1c75a57598716de57.css" rel="stylesheet"><link href="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/[collectionId]-f892468a02bfb9116a40.js" rel="prefetch" as="script"><script charset="utf-8" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/30cd56ec8b4292fd1d19f6bfd4b67b1689d06305.9a0b644b17a7ec8f7ed3.js"></script><script charset="utf-8" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/228.b98387d9a87cc72a7bea.js"></script><script charset="utf-8" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/188.8da306ee1a896d250bc3.js"></script></head><body><div id="StayFocusd-infobar" style="display: none; top: 1151px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3ZFCR2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="__next"><div></div><div class="ContainerWrapper-sc-1dtkkvl-0 vextX"><div><nav id="sidebar" class="SideBar-sc-1r6ttcs-0 bguab"><ul><li><a name="Explore-button" title="Explore" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12H22" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="MuiTypography-root jss83 jss228 jss80  MuiTypography-caption">Explore</span></a></li><li><a name="Tracks-button" title="Tracks" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 17L12 22L22 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12L12 17L22 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="MuiTypography-root jss83 jss229 jss80  MuiTypography-caption">Tracks</span></a></li><li><a name="My Courses-button" title="My Courses" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg><span class="MuiTypography-root jss83 jss230 jss80  MuiTypography-caption">My Courses</span></a></li><li><a name="Edpresso-button" title="Edpresso" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8H19C20.0609 8 21.0783 8.42143 21.8284 9.17157C22.5786 9.92172 23 10.9391 23 12C23 13.0609 22.5786 14.0783 21.8284 14.8284C21.0783 15.5786 20.0609 16 19 16H18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 8H18V17C18 18.0609 17.5786 19.0783 16.8284 19.8284C16.0783 20.5786 15.0609 21 14 21H6C4.93913 21 3.92172 20.5786 3.17157 19.8284C2.42143 19.0783 2 18.0609 2 17V8Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 1V4" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 1V4" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 1V4" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="MuiTypography-root jss83 jss231 jss80  MuiTypography-caption">Edpresso</span></a></li><li><a name="refer a friend-button" title="refer a friend" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 8V14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M23 11H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="MuiTypography-root jss83 jss232 jss80  MuiTypography-caption">Refer a Friend</span></a></li><li></li><li></li><li></li><li></li><li></li><li><div style="width: 100%;"><div class="Create-bk3fx6-0 pGxSE"><div style="width: 100%;"></div><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#" title="Create" name="create-button" class="Link-sc-1sc3ctk-0 SideBar__SidebarLink-sc-1r6ttcs-1 kakJxk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="black"></path></svg><span class="MuiTypography-root jss83 jss233 jss80  MuiTypography-caption">Create</span></a></div></div></li></ul></nav></div><div class="Page-s4ccdg-0 dWEvdT"><header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorInherit jss1  jss4 
+       mui-fixed MuiPaper-outlined"><div class="MuiToolbar-root MuiToolbar-regular jss5"><button class="MuiButtonBase-root MuiIconButton-root jss49 jss234 jss43 jss44 jss46" tabindex="0" type="button" aria-label="open sidebar"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><a title="educative.io" style="margin: auto 8px;" class="Logo-sc-16vmoep-0 XJVZF"><svg height="26px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="30px"><path d="M333.33 0H66.67A66.67 66.67 0 000 66.67v266.66A66.67 66.67 0 0066.67 400h266.66A66.67 66.67 0 00400 333.33V66.67A66.67 66.67 0 00333.33 0zm28.57 325.24a36.66 36.66 0 01-36.66 36.66H74.76a36.66 36.66 0 01-36.66-36.66V161.9h323.8zm0-201.43H38.1v-49A36.66 36.66 0 0174.76 38.1h250.48a36.66 36.66 0 0136.66 36.66z" fill="#4951f5"></path><rect x="67.9" y="62.91" width="38.09" height="38.09" rx="2.38" fill="#4951f5"></rect><rect x="125.9" y="62.91" width="38.09" height="38.09" rx="2.38" fill="#4951f5"></rect><rect x="183.9" y="62.91" width="38.09" height="38.09" rx="2.38" fill="#4951f5"></rect><rect x="200" y="295.24" width="114.29" height="38.1" rx="3.33" fill="#4951f5"></rect><path d="M108.91 331.08a3.33 3.33 0 004.71-.21l61.84-67.62a3.35 3.35 0 00.09-4.4l-58.17-69.17a3.32 3.32 0 00-4.69-.4l-20.07 16.88a3.34 3.34 0 00-.41 4.7l39.6 47.14a3.34 3.34 0 01-.09 4.4l-42.37 46.27a3.33 3.33 0 00.21 4.71z" fill="#4951f5"></path></svg><svg height="16px" class="edlogo-text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 862.42 140.51"><path d="M90.14 62.4a44.12 44.12 0 00-17.27-17.17 49.25 49.25 0 00-24.17-6 48.75 48.75 0 00-25.06 6.46 45.75 45.75 0 00-17.35 18A53.22 53.22 0 000 89.63a52.5 52.5 0 006.46 26.12 45.42 45.42 0 0018.33 18q11.87 6.47 27.45 6.47a56.51 56.51 0 0022-4.07 38.73 38.73 0 0015.94-12l-11.73-14.22q-10.28 10.71-25.68 10.71-10.46 0-17.88-4.43a25.48 25.48 0 01-10.81-12.92l72.43-14.77q0-14.95-6.37-26.12zM21.43 88.52v-.19q0-14 7.52-22.33t19.75-8.31a26.07 26.07 0 0126.21 20.12zM187.65 52.34a34.9 34.9 0 00-13.35-10A43.48 43.48 0 00157 39a48.52 48.52 0 00-24.65 6.31 44.56 44.56 0 00-17.13 17.79Q109 74.6 109 89.62t6.23 26.62a44.51 44.51 0 0017.17 17.91 48.51 48.51 0 0024.65 6.3 44.33 44.33 0 0017.88-3.52c5.4-2.35 9.94-5.87 12.22-10.57v13.87h19.62V3.12h-19.12zM184.27 106a27 27 0 01-10.15 10.85 29.24 29.24 0 01-28.83 0A26.94 26.94 0 01135.15 106a34.36 34.36 0 01-3.74-16.33 34.35 34.35 0 013.74-16.32 26.94 26.94 0 0110.14-10.85 29.24 29.24 0 0128.83 0 27 27 0 0110.15 10.8A34.35 34.35 0 01188 89.62a34.36 34.36 0 01-3.73 16.38zM296.16 90.18c0 12.75-3.9 17-8.59 22.17s-11 7.7-18.95 7.7q-10.68 0-16.46-6.59c-3.86-4.39-5.19-11-5.19-19.94V39.15h-19.34v57.52q0 21.71 11 32.75c7.3 7.35 13.79 11 26.48 11a41.45 41.45 0 0017.26-3.61 37.37 37.37 0 0013.84-10.3v13.62h19.62v-101h-19.67zM384.39 58.37a26 26 0 0113.13 3.44 27.39 27.39 0 0110 10.3l16.69-10.4a37.59 37.59 0 00-15.56-17.08q-10.35-5.94-24.08-5.94a51.44 51.44 0 00-26 6.5 46.39 46.39 0 00-17.82 18 52.74 52.74 0 00-6.58 26.18 53.29 53.29 0 006.58 26.28 46 46 0 0017.91 18.1 51.55 51.55 0 0025.91 6.5 46.62 46.62 0 0023.91-6 39.12 39.12 0 0015.73-17.18l-16.69-10.4a27.42 27.42 0 01-10 10.31 26 26 0 01-13.13 3.43q-12.34 0-20.25-8.45t-7.91-22.56q0-14.1 8-22.56a26.61 26.61 0 0120.16-8.47zM584.63 121.35q-6.23 0-9.7-3.81a19 19 0 01-4.46-11c-.06-3.47 0-47.69 0-47.69h24.49l.09-19.53h-24.52V19.51h-19.62v19.74h-14.69v19.57h14.69v48.47q0 16.32 8.54 24.86c5.69 5.68 12.07 8.27 22.51 8.27a41.07 41.07 0 0011.84-1.67 26 26 0 009.52-5l-6.23-16.51a19 19 0 01-12.46 4.11zM623.59 39.19h19.18v101.07h-19.18zM711.05 114.85l-29.54-75.66h-21.72l39.64 101.06h22.66l40.75-101.06h-21.36l-30.43 75.66zM818.46 120.79q-10.5 0-18-4.45a25.59 25.59 0 01-10.85-13l72.78-14.84q0-15-6.41-26.25A44.33 44.33 0 00838.66 45a52 52 0 00-49.47.46 45.93 45.93 0 00-17.44 18.09c-4.21 7.73-7.4 16.42-7.4 26.06s3.25 18.53 7.58 26.25A45.7 45.7 0 00790.35 134q11.91 6.49 27.58 6.49a56.89 56.89 0 0022.07-4.12 38.88 38.88 0 0016-12.06L844.27 110q-10.27 10.79-25.81 10.79zM787 88.33q0-14.1 7.56-22.45t19.84-8.35a26.19 26.19 0 0126.34 20.22L787 88.51zM623.53 0h19.57v19.43h-19.57zM512.68 46.51c-7.38-5-14.9-7.88-27.89-7.88-20.46 0-34 5.45-40.36 16.23l19.05 8.93c2.72-5.41 9.35-8 20.38-8 6.94 0 12 .9 15 2.67 2.85 1.68 4.6 3.77 5.19 6.2s-.07 6.55 0 11.95h-5.23c-40.81 0-61.5 11.72-61.5 34.85a25.83 25.83 0 0010.23 21c6.67 5.32 15.24 8 25.48 8 12.61 0 23.38-3.14 32.06-9.36v9l19 .26V76.21c.07-14.56-3.79-24.55-11.41-29.7zM505.11 111a29.86 29.86 0 01-11.4 8.8 37.31 37.31 0 01-15.71 3.45c-5.78 0-10.38-1.15-13.67-3.42a10.44 10.44 0 01-4.62-9.23c0-11.61 12-17.5 35.67-17.5h9.69z" fill="#202033"></path></svg></a><div class="MuiBox-root jss10 jss9"></div></div></header><div class="styles__BannersContainer-sc-14k2cl6-1 bNLSud"></div><div id="handleScroll" class="Content-sc-4rtn2v-0 ieXCot"><div class="fade-container"><div class="fade-container"><div class="Page__SidebarPage-sc-1643uq9-4 ddpuek"><nav class="CollectionSidebar-wwgydo-0 leUOay"><a class="Title__CollectionSidebar-sc-8hsoa7-0 cgZwBE"><h4 class="MuiTypography-root jss83 jss585 jss73  MuiTypography-h4">Grokking the System Design Interview</h4></a><div class="Progress-ime66x-0 gXlPdK"><div class="Progress__ResetDiv-ime66x-1 hdYNPz"><div class="MuiBox-root jss586"><span>100%</span><span style="white-space: pre-wrap;"> completed</span></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" title="Reset Course Completion"><span class="MuiIconButton-label"><svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.65 2.35A7.958 7.958 0 008 0C3.58 0 .01 3.58.01 8S3.58 16 8 16c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 018 14c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L9 7h7V0l-2.35 2.35z" fill="#B0B0B7"></path></svg></span><span class="MuiTouchRipple-root"></span></button></div><div class="progress"><div role="progressbar" class="progress-bar progress-bar-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div></div><form class="Search-sc-1h3shs7-0 kCJIfa"><svg class="search-icon" width="12px" height="13px" viewBox="0 0 12 13" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g class="g" transform="translate(-142.000000, -102.000000)" stroke="#aaaaaa" stroke-width="1.024"><g id="Group-11" transform="translate(143.000000, 103.000000)"><ellipse cx="4.73684211" cy="4.71428571" rx="4.73684211" ry="4.71428571"></ellipse><path d="M8.02323191,8.64592634 L9.75997122,10.7616257"></path></g></g></g></svg><div class="form-group"><input aria-label="search" placeholder="Search Course" type="text" class="form-control" value=""></div></form><div class="List-sc-1h3ohnk-0 gdzQxY"><div class="CollectionSidebarCategory-sc-15b6owa-0 fyjKnj"><div class="CategoryTitleWrapper-sc-1li1i3g-0 xcvHM"><div class="CategoryTitle-d72s9k-0 jaHBlc"><div class="MuiBox-root jss587"><div class="MuiBox-root jss588"><h5 class="MuiTypography-root jss83 jss589 jss74  MuiTypography-h5">System Design Problems</h5></div></div></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="collapse category"><span class="MuiIconButton-label"><div rotate="0" color="#000" size="24" display="inline-flex" name="icon-button" class="styles__IconButton-hs2gpp-0 fjxOjt"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></div></span><span class="MuiTouchRipple-root"></span></button></div><div class="LessonList-utkb7u-0 jBPiqF"><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B8nMkqBWONo"><div><p class="MuiTypography-root jss83 jss590 jss76  MuiTypography-body1">System Design Interviews: A step by step guide</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR"><div><p class="MuiTypography-root jss83 jss591 jss76  MuiTypography-body1">Designing a URL Shortening service like TinyURL</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/3jyvQ3pg6KO"><div><p class="MuiTypography-root jss83 jss592 jss76  MuiTypography-body1">Designing Pastebin</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/m2yDVZnQ8lG"><div><p class="MuiTypography-root jss83 jss593 jss76  MuiTypography-body1">Designing Instagram</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/m22Gymjp4mG"><div><p class="MuiTypography-root jss83 jss594 jss76  MuiTypography-body1">Designing Dropbox</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B8R22v0wqJo"><div><p class="MuiTypography-root jss83 jss595 jss76  MuiTypography-body1">Designing Facebook Messenger</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/m2G48X18NDO"><div><p class="MuiTypography-root jss83 jss596 jss76  MuiTypography-body1">Designing Twitter</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/xV26VjZ7yMl"><div><p class="MuiTypography-root jss83 jss597 jss76  MuiTypography-body1">Designing Youtube or Netflix</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/mE2XkgGRnmp"><div><p class="MuiTypography-root jss83 jss598 jss76  MuiTypography-body1">Designing Typeahead Suggestion</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/3jYKmrVAPGQ"><div><p class="MuiTypography-root jss83 jss599 jss76  MuiTypography-body1">Designing an API Rate Limiter</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/xV9mMjj74gE"><div><p class="MuiTypography-root jss83 jss600 jss76  MuiTypography-body1">Designing Twitter Search</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/NE5LpPrWrKv"><div><p class="MuiTypography-root jss83 jss601 jss76  MuiTypography-body1">Designing a Web Crawler</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/gxpWJ3ZKYwl"><div><p class="MuiTypography-root jss83 jss602 jss76  MuiTypography-body1">Designing Facebook’s Newsfeed</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B8rpM8E16LQ"><div><p class="MuiTypography-root jss83 jss603 jss76  MuiTypography-body1">Designing Yelp or Nearby Friends</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQVkjp548NM"><div><p class="MuiTypography-root jss83 jss604 jss76  MuiTypography-body1">Designing Uber backend</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQyq6mBKq4n"><div><p class="MuiTypography-root jss83 jss605 jss76  MuiTypography-body1">Design Ticketmaster</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/JYlLJB6DK7g"><div><p class="MuiTypography-root jss83 jss606 jss76  MuiTypography-body1">Additional Resources</p></div></a></div></div></div></div><div class="CollectionSidebarCategory-sc-15b6owa-0 fyjKnj"><div class="CategoryTitleWrapper-sc-1li1i3g-0 xcvHM"><div class="CategoryTitle-d72s9k-0 jaHBlc"><div class="MuiBox-root jss607"><div class="MuiBox-root jss608"><h5 class="MuiTypography-root jss83 jss609 jss74  MuiTypography-h5">Glossary of System Design Basics</h5></div></div></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="collapse category"><span class="MuiIconButton-label"><div rotate="0" color="#000" size="24" display="inline-flex" name="icon-button" class="styles__IconButton-hs2gpp-0 fjxOjt"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></div></span><span class="MuiTouchRipple-root"></span></button></div><div class="LessonList-utkb7u-0 jBPiqF"><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B892KY261z2"><div><p class="MuiTypography-root jss83 jss610 jss76  MuiTypography-body1">System Design Basics</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 ilJxso"><div class="LessonWrapper-sc-1007gkz-0 imozde"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9"><div><p class="MuiTypography-root jss83 jss611 jss76  MuiTypography-body1">Key Characteristics of Distributed Systems</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/3jEwl04BL7Q"><div><p class="MuiTypography-root jss83 jss612 jss76  MuiTypography-body1">Load Balancing</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/3j6NnJrpp5p"><div><p class="MuiTypography-root jss83 jss613 jss76  MuiTypography-body1">Caching</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/mEN8lJXV1LA"><div><p class="MuiTypography-root jss83 jss614 jss76  MuiTypography-body1">Data Partitioning</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/gxkVE8NEvXj"><div><p class="MuiTypography-root jss83 jss615 jss76  MuiTypography-body1">Indexes</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/N8G9MvM4OR2"><div><p class="MuiTypography-root jss83 jss616 jss76  MuiTypography-body1">Proxies</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/xV1qvj6PKkJ"><div><p class="MuiTypography-root jss83 jss617 jss76  MuiTypography-body1">Redundancy and Replication</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK"><div><p class="MuiTypography-root jss83 jss618 jss76  MuiTypography-body1">SQL vs. NoSQL</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/RMkqx1Egxqz"><div><p class="MuiTypography-root jss83 jss619 jss76  MuiTypography-body1">CAP Theorem</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B81vnyp0GpY"><div><p class="MuiTypography-root jss83 jss620 jss76  MuiTypography-body1">Consistent Hashing</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/gx7wZzWn5Vj"><div><p class="MuiTypography-root jss83 jss621 jss76  MuiTypography-body1">Long-Polling vs WebSockets vs Server-Sent Events</p></div></a></div></div></div></div><div class="CollectionSidebarCategory-sc-15b6owa-0 fyjKnj"><div class="CategoryTitleWrapper-sc-1li1i3g-0 xcvHM"><div class="CategoryTitle-d72s9k-0 jaHBlc"><div class="MuiBox-root jss622"><div class="MuiBox-root jss623"><h5 class="MuiTypography-root jss83 jss624 jss74  MuiTypography-h5">Appendix</h5></div></div></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="collapse category"><span class="MuiIconButton-label"><div rotate="0" color="#000" size="24" display="inline-flex" name="icon-button" class="styles__IconButton-hs2gpp-0 fjxOjt"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></div></span><span class="MuiTouchRipple-root"></span></button></div><div class="LessonList-utkb7u-0 jBPiqF"><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/7nnxwPxALZj"><div><p class="MuiTypography-root jss83 jss625 jss76  MuiTypography-body1">Contact Us</p></div></a></div></div><div class="CollectionSidebarCategory__LessonWrapperContainer-sc-15b6owa-2 gczJWN"><div class="LessonWrapper-sc-1007gkz-0 bctGhL"><div class="LessonIcon-i0t9b-0 kOveJs"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="7" fill="#50CC2F"></circle></svg></div><a class="CollectionSidebarCategory__LessonTitle-sc-15b6owa-1 CollectionSidebarLessonTitle eYXgOz" id="" href="https://www.educative.io/courses/grokking-the-system-design-interview/B8OxjKw9y8k"><div><p class="MuiTypography-root jss83 jss626 jss76  MuiTypography-body1">Other courses</p></div></a></div></div></div></div><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss636 jss637 jss631   MuiButton-disableElevation" tabindex="0" type="button" title="Set Course Completion"><span class="MuiButton-label">Mark Course as Completed</span></button></div></nav><div id="view-collection-article-content-root" class="styles__ViewCollectionArticleContentStyled-sc-1o0krl5-0 bKHaHd"><div class="fade-container"><div class="fade-container"><div class="styles__ButtonsPanelStyled-ju0obm-0 cOOftI"><button aria-label="button" class="Button-sc-1i9ny0d-0 styles__PanelButton-ju0obm-1 fNuKqo"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span><span class="text enabled">Menu</span></button><button aria-label="options-button" class="Button-sc-1i9ny0d-0 styles__PanelButton-ju0obm-1 fSxhvF"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span><span class="text enabled">Options</span></button><button aria-label="button" class="Button-sc-1i9ny0d-0 styles__PanelButton-ju0obm-1 fSxhvF"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></span><span class="text enabled">Notes</span></button></div><div id="handleArticleScroll" class="Page-sc-1643uq9-0 btqfwh"><div class="ArticlePage__ArticlePageStyled-sc-1eiji3g-0 loFyXe"><div style="min-height: calc(100vh - 170px);"><div class="Page-sc-1643uq9-0 gWBHDX"><div class="PageContent-sc-8tufop-0 Page__DynamicContent-sc-1643uq9-1 fdMRdQ"><div class="summary"><div class="MuiBox-root jss658"><h1 class="jss83 jss659 jss72 " variant="h3" align="left">Key Characteristics of Distributed Systems</h1><div><div class="PageSummary__Head-der42c-18 gZvPYS"><div class="PageSummary__TopLeft-der42c-30 ccgyvm"><div class="PageSummary__Description-der42c-14 jsVJXH"><p class="MuiTypography-root jss83 jss660 jss77  MuiTypography-body1"></p></div><div class="PageSummary__Toc-der42c-33 kKIywX"><details class="styles__PageTOCStyled-sc-1u9xzlw-0 fIhOon" open=""><summary role="button" tabindex="0" class="styles__HeadingWrap-sc-1u9xzlw-1 bJONCf"><div class="styles__HeadingWrapInner-sc-1u9xzlw-2 lazzRz"><h6 class="MuiTypography-root jss83 jss669 jss75  MuiTypography-h6">We'll cover the following</h6><button class="MuiButtonBase-root MuiIconButton-root jss49 jss670 jss43 jss44 jss46" tabindex="0" type="button"><span class="MuiIconButton-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></span><span class="MuiTouchRipple-root"></span></button></div></summary><div class="MuiBox-root jss671"><div class="markdown-container-div Markdown__MarkdownContainerDiv-sc-1j2yuel-5 jeFsGl" height="auto"><div class="markdownViewer Markdown__Viewer-sc-1j2yuel-1 cEcngF" role="none"><ul data-id="428c427b7e666d15e394d849c258f482">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxscalabilitydiv">Scalability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxreliabilitydiv">Reliability</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxavailabilitydiv">Availability</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxefficiencydiv">Efficiency</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxserviceability-or-manageabilitydiv">Serviceability or Manageability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div></div></details></div></div></div><div class="PageSummary__VideoWrap-der42c-16 dDDxPp"></div></div></div></div><div class="styles__CompListStyled-sc-1c2fdm2-0 gKoFLY"><div class="styles__ViewerComponentViewStyled-sc-161y6tj-0 jZnCxm"><div><div><div><div><div class=""><div class=""><div class="markdown-container-div Markdown__MarkdownContainerDiv-sc-1j2yuel-5 jeFsGl" height="auto"><div class="markdownViewer Markdown__Viewer-sc-1j2yuel-1 gvyjDX" role="none"><p data-id="52adbde53cdf149e56abf94476232430">Key characteristics of a distributed system include Scalability, Reliability, Availability, Efficiency, and Manageability. Let’s briefly review them:</p>
+<h3 id="div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxscalabilitydiv" data-id="606356a1fd48ac2cc748cd731178ae57"><div style="color:black; background-color:#E2f4c7; border-radius:5px; padding:5px;">Scalability</div> <a class="markdownIt-Anchor" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxscalabilitydiv"><span class="anchor-link">#</span></a></h3>
+<p data-id="cf9d4ab05d14716e29c0d811cb042d6d">Scalability is the capability of a system, process, or a network to grow and manage increased demand. Any distributed system that can continuously evolve in order to support the growing amount of work is considered to be scalable.</p>
+<p data-id="338874c95cccd4e10d2d9e3044dac9ea">A system may have to scale because of many reasons like increased data volume or increased amount of work, e.g., number of transactions.  A scalable system would like to achieve this scaling without performance loss.</p>
+<p data-id="7f573cd2017ca655ea8c28536fc759f0">Generally, the performance of a system, although designed (or claimed) to be scalable, declines with the system size due to the management or environment cost. For instance, network speed may become slower because machines tend to be far apart from one another. More generally, some tasks may not be distributed, either because of their inherent atomic nature or because of some flaw in the system design. At some point, such tasks would limit the speed-up obtained by distribution. A scalable architecture avoids this situation and attempts to balance the load on all the participating nodes evenly.</p>
+<p data-id="6aa2c3b137e5f7054238196ed58343df"><strong>Horizontal vs. Vertical Scaling:</strong>
+Horizontal scaling means that you scale by adding more servers into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server.</p>
+<p data-id="2b59b6bd90498d9845f2368a3ca4d5e2">With horizontal-scaling it is often easier to scale dynamically by adding more machines into the existing pool; Vertical-scaling is usually limited to the capacity of a single server and scaling beyond that capacity often involves downtime and comes with an upper limit.</p>
+<p data-id="416449e9681372d8082a9f33d0ae51e9">Good examples of horizontal scaling are <a href="https://en.wikipedia.org/wiki/Apache_Cassandra" target="_blank">Cassandra</a> and <a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank">MongoDB</a> as they both provide an easy way to scale horizontally by adding more machines to meet growing needs. Similarly, a good example of vertical scaling is MySQL as it allows for an easy way to scale vertically by switching from smaller to bigger machines. However, this process often involves downtime.</p>
+</div></div></div></div></div></div></div></div></div><div class="styles__ViewerComponentViewStyled-sc-161y6tj-0 jZnCxm"><div><div><div><div><div class=""><div class=""><div style="margin-top: 30px; margin-bottom: 30px;"><div style="text-align: center;"><div class="styles__ImageLightbox-sc-7teybr-2 gHFwKO"><div data-rmiz-wrap="visible"><img src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5741642204053504.png" alt="widget"><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></div></div><div class="styles__CaptionStyled-pzuq02-0 fDAxae"><span class="styles__Text-pzuq02-1 gbrsYb"><p class="MuiTypography-root jss83 jss672 jss76  MuiTypography-body1">Vertical scaling vs. Horizontal scaling</p></span></div></div></div></div></div></div></div></div></div><div class="styles__ViewerComponentViewStyled-sc-161y6tj-0 jZnCxm"><div><div><div><div><div class=""><div class=""><div class="markdown-container-div Markdown__MarkdownContainerDiv-sc-1j2yuel-5 jeFsGl" height="auto"><div class="markdownViewer Markdown__Viewer-sc-1j2yuel-1 gvyjDX" role="none"><h3 id="div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxreliabilitydiv" data-id="28e911c254851e4aa1d2091209d9a2eb"><div style="color:black; background-color:#E2f4c7; border-radius:5px; padding:5px;">Reliability</div> <a class="markdownIt-Anchor" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxreliabilitydiv"><span class="anchor-link">#</span></a></h3>
+<p data-id="5a42c5d7aa8af29730100a63713b9efb">By definition, reliability is the probability a system will fail in a given period. In simple terms, a distributed system is considered reliable if it keeps delivering its services even when one or several of its software or hardware components fail. Reliability represents one of the main characteristics of any distributed system, since in such systems any failing machine can always be replaced by another healthy one, ensuring the completion of the requested task.</p>
+<p data-id="9fce6be89a10a7e4c43b4637663b4e73">Take the example of a large electronic commerce store  (like <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank">Amazon</a>), where one of the primary requirement is that any user transaction should never be canceled due to a failure of the machine that is running that transaction. For instance, if a user has added an item to their shopping cart, the system is expected not to lose it. A reliable distributed system achieves this through redundancy of both the software components and data. If the server carrying the user’s shopping cart fails, another server that has the exact replica of the shopping cart should replace it.</p>
+<p data-id="c78ce33db9e448ba352c5a8ee6c41d2c">Obviously, redundancy has a cost and a reliable system has to pay that to achieve such resilience for services by eliminating every single point of failure.</p>
+<h3 id="div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxavailabilitydiv" data-id="592edfb2bfb093d73f17b91103bd774c"><div style="color:black; background-color:#E2f4c7; border-radius:5px; padding:5px;">Availability</div> <a class="markdownIt-Anchor" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxavailabilitydiv"><span class="anchor-link">#</span></a></h3>
+<p data-id="22d2c39f3505e09fa79b8525bbddd94d">By definition, availability is the time a system remains operational to perform its required function in a specific period.  It is a simple measure of the percentage of time that a system, service, or a machine remains operational under normal conditions. An aircraft that can be flown for many hours a month without much downtime can be said to have a high availability. Availability takes into account maintainability, repair time, spares availability, and other logistics considerations. If an aircraft is down for maintenance, it is considered not available during that time.</p>
+<p data-id="4e39e5e155a85a90881838e2557147e5">Reliability is availability over time considering the full range of possible real-world conditions that can occur. An aircraft that can make it through any possible weather safely is more reliable than one that has vulnerabilities to possible conditions.</p>
+<p data-id="1f72886c5bbbb68efecadafbdaa77a81"><strong>Reliability Vs. Availability</strong><br>
+If a system is reliable, it is available. However, if it is available, it is not necessarily reliable. In other words, high reliability contributes to high availability, but it is possible to achieve a high availability even with an unreliable product by minimizing repair time and ensuring that spares are always available when they are needed. Let’s take the example of an online retail store that has 99.99% availability for the first two years after its launch. However, the system was launched without any information security testing. The customers are happy with the system, but they don’t realize that it isn’t very reliable as it is vulnerable to likely risks. In the third year, the system experiences a series of information security incidents that suddenly result in extremely low availability for extended periods of time. This results in reputational and financial damage to the customers.</p>
+<h3 id="div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxefficiencydiv" data-id="913cf654924395c0ca5109aaad625bae"><div style="color:black; background-color:#E2f4c7; border-radius:5px; padding:5px;"><span class="markdown_viewer_highlighted_content" data-id="Q3-Bm5KGDeGzpiMNPeecp">Efficiency</span></div> <a class="markdownIt-Anchor" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxefficiencydiv"><span class="anchor-link">#</span></a></h3>
+<p data-id="0bd2eb7474d87d692d30d409bcd97951">To understand how to measure the efficiency of a distributed system, let’s assume we have an operation that runs in a distributed manner and delivers a set of items as result. Two standard measures of its efficiency are the response time (or latency) that denotes the delay to obtain the first item and the throughput (or bandwidth) which denotes the number of items delivered in a given time unit (e.g., a second).  The two measures correspond to the following unit costs:</p>
+<ul data-id="fee6331080e75fa8e474c2e56a0404dd">
+<li>Number of messages globally sent by the nodes of the system regardless of the message size.</li>
+<li>Size of messages representing the volume of data exchanges.</li>
+</ul>
+<p data-id="55f917b0c7fd39d46989fc60dd64ed1a">The complexity of operations supported by distributed data structures (e.g., searching for a specific key in a distributed index) can be characterized as a function of one of these cost units. Generally speaking, the analysis of a distributed structure in terms of ‘number of messages’ is over-simplistic. It ignores the impact of many aspects, including the network topology, the network load, and its variation, the possible heterogeneity of the software and hardware components involved in data processing and routing, etc. However, it is quite difficult to develop a precise cost model that would accurately take into account all these performance factors; therefore, we have to live with rough but robust estimates of the system behavior.</p>
+<h3 id="div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxserviceability-or-manageabilitydiv" data-id="86561c8f83a22dcb46edfbf12f21968d"><div style="color:black; background-color:#E2f4c7; border-radius:5px; padding:5px;">Serviceability or Manageability</div> <a class="markdownIt-Anchor" href="https://www.educative.io/courses/grokking-the-system-design-interview/YQWGjlZZVz9#div-stylecolorblack-background-colore2f4c7-border-radius5px-padding5pxserviceability-or-manageabilitydiv"><span class="anchor-link">#</span></a></h3>
+<p data-id="614a79ec962597669443a2a048f3282c">Another important consideration while designing a distributed system is how easy it is to operate and maintain. Serviceability or manageability is the simplicity and speed with which a system can be repaired or maintained; if the time to fix a failed system increases, then availability will decrease. Things to consider for manageability are the ease of diagnosing and understanding problems when they occur, ease of making updates or modifications, and how simple the system is to operate (i.e., does it routinely operate without failure or exceptions?).</p>
+<p data-id="5d8dc35e37235859b9886ce6b212cf27">Early detection of faults can decrease or avoid system downtime. For example, some enterprise systems can automatically call a service center (without human intervention) when the system experiences a system fault.</p>
+</div></div></div></div></div></div></div></div></div></div><div><div class="styles__Pagination-iis34-4 jPBJdH"><div style="display: flex; width: 100%; justify-content: space-between;"><div class="styles__PrevNextContainer-iis34-10 hPqXFV" style="align-items: flex-start;"><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss636 jss665 jss631   MuiButton-disableElevation" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></span>Back</span></button><div class="styles__Title-iis34-7 styles__PrevTitle-iis34-9 cmcKhu">System Design Basics</div></div><div class="styles__PrevNextContainer-iis34-10 hPqXFV" style="align-items: flex-end; margin-left: auto;"><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss636 jss666 jss631   MuiButton-outlinedPrimary MuiButton-disableElevation" tabindex="0" type="button"><span class="MuiButton-label">Next<span class="MuiButton-endIcon MuiButton-iconSizeMedium"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></span></button><div class="styles__Title-iis34-7 styles__NextTitle-iis34-8 dxKBoH">Load Balancing</div></div></div><div class="styles__Checkbox-iis34-1 cnfzXQ"><svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(-860 -1386)"><g transform="translate(861 1387)"><rect stroke="#AAA" width="18" height="18" rx="4"></rect><polyline stroke="#208705" stroke-width="2.5" points="4 10.6 6.30769231 13 14 5"></polyline></g></g></g></svg><h6 class="MuiTypography-root jss83 jss667 jss79 jss662 MuiTypography-subtitle1">Completed</h6></div></div></div><div class="styles__Footer-sc-1vaynq6-5 cbAQQx"><div id="recomentation_menu_wrapper" class="styles__MenuWrapper-gatwk1-5 kRDDrd"><div id="onTop" class="PageSummary__RecommendationWrapper-der42c-32 gIrtKc"><div class="styles__Wrapper-gatwk1-4 fvhGBn"><div id="feedback_menu" role="none"><div class="MuiBox-root jss663"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg><p class="MuiTypography-root jss83 jss664 jss76  MuiTypography-body1">Report an Issue</p></div></div><a href="https://discuss.educative.io/tag/key-characteristics-of-distributed-systems__glossary-of-system-design-basics__grokking-the-system-design-interview" target="_blank" rel="noopener noreferrer" id="discourseLink"><p class="MuiTypography-root jss83 jss668 jss76  MuiTypography-body1"><span class="b-some-with-icon"><i class="b-some-with-icon-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 1.5H19C20.1 1.5 21 2.4 21 3.5V17.5C21 18.6 20.1 19.5 19 19.5H15L12 22.5L9 19.5H5C3.89 19.5 3 18.6 3 17.5V3.5C3 2.4 3.89 1.5 5 1.5ZM14.17 17.5H19V3.5H5V17.5H9.83L10.41 18.08L12 19.67L13.58 18.09L14.17 17.5ZM11 16.5V14.5H13V16.5H11ZM14 8.5C14 7.4 13.1 6.5 12 6.5C10.9 6.5 10 7.4 10 8.5H8C8 6.29 9.79 4.5 12 4.5C14.21 4.5 16 6.29 16 8.5C16 9.78292 15.21 10.4733 14.4408 11.1455C13.711 11.7833 13 12.4046 13 13.5H11C11 11.6787 11.9421 10.9566 12.7704 10.3217C13.4202 9.82361 14 9.37922 14 8.5Z" fill="black"></path></svg></i><span></span></span>Ask a Question</p></a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"meta":{"title":"Grokking the System Design Interview - Learn Interactively","name":"Grokking the System Design Interview","description":"System design questions have become a standard part of the software engineering interview process. Performance in these interviews reflects upon your ability to work with complex systems and translates into the position and salary the interviewing company offers you. Most engineers struggle with the system design interview (SDI), partly because of their lack of experience in developing large-scale systems and partly because of the unstructured nature of SDIs. Even engineers who’ve some experience building such systems aren't comfortable with these interviews, mainly due to the open-ended nature of design problems that don't have a standard answer.\n\nThis course is a complete guide to master the SDIs. It is created by hiring managers who’ve been working at Google, Facebook, Microsoft, and Amazon. We've carefully chosen a set of questions that have not only been repeatedly asked at top companies, but also provide a thorough experience to handle any system design problem.\n\nLet’s get started!","image":"https://educative.io/api/collection/5668639101419520/5649050225344512/image/5743114304094208.png","keywords":null,"author":"Design Gurus"}},"__N_SSP":true},"page":"/collection/[authorId]/[collectionId]","query":{"courseUrlSlug":"grokking-the-system-design-interview","authorId":"5668639101419520","collectionId":"5649050225344512","course_url_slug":"grokking-the-system-design-interview"},"buildId":"200825-2221-db10f5a","assetPrefix":"/static","isFallback":false,"gssp":true}</script><script nomodule="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/polyfills-ac7f63e6fcb609897a54.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/main-afda2c76c8c922a4afba.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/webpack-301abe1b38661f27a373.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/framework.141911a95a3b78923870.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/commons.08b73e789c499a4972fc.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b3dc38d4331935bc72d92a001a636490630ecf10.1e07c05bbbc7c00e020e.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/69c09a8ba805ac81e94f8903760a3bffa8a7e30b.69763e810e0d0deb4617.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ec2c9b79ded3c5444b22ee673f52301428f36f63.df86bd753c7b9e000cb8.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b5bcbbbf7162983a8fdf7d4bd611f97ba9ebcb21.97ad04451f4e429d223f.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/71512dfbe762fc44ec1f8cfa2806b62000a0479c.7fe7d68def6981596866.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/edecc2bf113566c160ba4ea7a2b97d1a66e5c49c.d94b5c0bc4d08b0c93cf.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/811da0351ae6463166c3b6b721c42369fedd5773.8cf6a0e6190b7f1a378d.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5b94177a78caa464115c70ad95aa5fc0fb96f1ae.8e9ddacdaf7d806d3f47.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3df7887c906839d877665b14b4be6460648c4023.b5e9d99826db84f90d51.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3e08e62504b7584bf93bb956c6af0351b83f82ba.8c202a6e5c263e840763.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3c397f1ef85b56a8b43aa6fa25804f60e7fb0a58.889e56493e02327537ad.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/893f93a4f8aca6f7bc8106b2a52cd17f958340ac.8c269d66d34ad93cdcc1.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/c157038c75dd70904f59b7ece89ef9caf64a4458.8d12be778b0f598fe86a.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/fe256cd3e1d5c2071d0869460ecbdee6c2446f0f.770a7eafa9491df7d7cb.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b401c41330442e47e10eb23f1a82e7f56b76455e.aafc9862af8f6fd96659.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/b1542cc239bf56c8a14913c0a930efe682b5cf86.7338aeb568979415d38a.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/_app-c1275fcfa38d19b923e1.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ce639808f589804f771de7f404c089cda91f6217.3c7d2d3a29e8204ec404.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5e9097818cac2507a0944c3198e84946ab7df318.d964de2de37005d00886.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/24ba2a9eb3dbc1045a55846a34c21d1d9f109508.fbbef1a6d6eafd6ec26b.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/cd84788ea4dffaa850571677ce7fba84af89a1be.bad2d126c6860203cda7.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/e5f44c4e8aa974d48f4ae35fbd79e9c2d78d5028.13686306a450a3ff412d.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/643849d4024e13d361794db8328459faa9593cec.eb9688ffe9eb4c18b780.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/53eb31bc35a0c56fc7b07e3d0a839c96b89ddaae.95bf4c5400488383c48a.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/893fe6d67149e24d5b00d6716b3adca82c29d85e.ec6339fdc89fe3426b2d.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/dfecea8259c6cc11428bd75f36903c7fc701b10b.91e62dc7d7d296a26077.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/06429e2d35f6603eb4d3264fe71bfb5dfced98cc.28fad765cfa07db379d1.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5c524fe9151ccabbe110d42363ba0fbcf1926744.6fca9f06d1a9521fa6fa.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/69e86c84c4400e5231303bde9edefd4eeaeb4b69.d2b8c104c8da812d1ba6.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/[collectionId]-f892468a02bfb9116a40.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/_buildManifest.js" async=""></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/_ssgManifest.js" async=""></script>    
+    <script type="text/javascript" id="">(function(a,c,e,f,d,b){a.hj=a.hj||function(){(a.hj.q=a.hj.q||[]).push(arguments)};a._hjSettings={hjid:1142875,hjsv:6};d=c.getElementsByTagName("head")[0];b=c.createElement("script");b.async=1;b.src=e+a._hjSettings.hjid+f+a._hjSettings.hjsv;d.appendChild(b)})(window,document,"https://static.hotjar.com/c/hotjar-",".js?sv\x3d");</script>
+
+    
+    <script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1637285686566701");fbq("track","PageView");</script>
+    
+
+    
+    <script type="text/javascript" id="">!function(d,e,f,a,b,c){d.twq||(a=d.twq=function(){a.exe?a.exe.apply(a,arguments):a.queue.push(arguments)},a.version="1.1",a.queue=[],b=e.createElement(f),b.async=!0,b.src="//static.ads-twitter.com/uwt.js",c=e.getElementsByTagName(f)[0],c.parentNode.insertBefore(b,c))}(window,document,"script");twq("init","nz5z7");twq("track","PageView");</script>
+    
+
+    
+    <script type="text/javascript" id="" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/17085.js"></script>
+
+    
+    <script type="text/javascript" id="">_linkedin_partner_id="1107276";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);(function(){var b=document.getElementsByTagName("script")[0],a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";b.parentNode.insertBefore(a,b)})();</script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/cb1608f2.a508a696f1ba2cf6c1cf.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/2e1efc198c62b3c5b12d4a945dcd1c95bf667347.fbaca712f429927c7eff.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/d4c99d645b0c83b498f1f29cc72b641c9dc6f027.9603dc1e5b4052a1650c.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/4f0cca1fa5675b75b3bb6c184ab6412501e9184f.1487f166b8b2b101f69f.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/[pageId]-2aeaca0044e37b9a2287.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/9c745f8f243c87f206e1b8da72af0c9e8ca994a9.608ec6f7a0594e746f85.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/417734cac0b6c5ee6988a9f85be9fc7b34c02ab8.c61508506f5cb486bf15.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ad342fce69271053c1dc62058c758c41383ee1c4.8824064c481cec31f76d.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/ea5ef564115d1be27d9f818ce643cab64e16521e.571323ce6d4cc4c3abd4.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5a9c80a9916ad74469d723c42b28097278b479e4.b99af480e43787a205e9.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/403ae8dee0fc8a142708d6117faa6ba232380d5e.eeb199715bf9cb4aacb9.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/edpresso-8cfc49762c19a72d2143.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/a9a7754c.3aa3f461d4c306ffde55.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/5fbb3e9db0a796c21ac493e9839a0241ee9d443f.51d7ce6f50e6f4a1404b.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/3cb8f91d9642eefee8294b33d1cc0cf53dab98ce.f9ee896c4800358a198f.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/eb21df791c53d763295a2fe88fef17ee418da261.83124bef9f1f17a73247.js"></script><script src="./Key Characteristics of Distributed Systems - Grokking the System Design Interview_files/learn-fd51fbbbad1685cc5c7b.js"></script></body></html>

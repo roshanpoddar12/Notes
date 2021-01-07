@@ -9,6 +9,11 @@
       "key": "f540f45a0b472167da38",
       "color": "#3FD941",
       "name": "Web Architecture"
+    },
+    {
+      "key": "1d1f092683d13caaa6da",
+      "color": "#30D5C8",
+      "name": "SystemDesign"
     }
   ],
   "version": "1.0"

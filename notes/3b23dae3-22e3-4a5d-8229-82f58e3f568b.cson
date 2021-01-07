@@ -1,0 +1,105 @@
+createdAt: "2020-08-15T18:39:43.271Z"
+updatedAt: "2020-08-15T18:51:38.151Z"
+type: "MARKDOWN_NOTE"
+folder: "6a7904af9a8072a71b55"
+title: "DIRECT VS INDIRECT RECURSION"
+tags: []
+content: '''
+  # DIRECT VS INDIRECT RECURSION
+  
+  ## Direct Recursion #
+  Direct recursion occurs when a function calls itself.
+  
+  This results in a one-step recursive call, meaning that the function makes a recursive call inside its own function body.
+  
+  ```c++
+  Syntax of Direct Recursion #
+  def function1(p1, p2, ..., pn) :
+    # Some code here
+    function1(p1, p2, ..., pn)
+    # Some code here
+  Printing Natural Numbers from 11 to nn Using Direct Recursion #
+  Let’s take a look at an example of a function that prints natural numbers from 11 to nn:
+  ```
+  
+  12345678910111213
+  ```c++
+  def printNaturalNumbers(lowerRange, upperRange):
+    # Base Case
+    if lowerRange > upperRange :
+      return
+      
+    print(lowerRange)
+  
+    # Recursive Case
+    printNaturalNumbers(lowerRange + 1, upperRange);
+  ```
+  
+  
+  Printing numbers from 1 to n using direct recursion
+  
+  In the code snippet above, if lowerRange is less than upperRange, we print the lowerRange, increase it, and call the function again. If lowerRange is greater than upperRange, we halt all function calls.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ## Indirect Recursion #
+  Indirect recursion (also called mutual recursion) occurs when a function calls another function until the original function is called, again.
+  
+  For example, if function function1() calls another function, function2(), function2() eventually calls the original function function1() - This completes the process of indirect recursion.
+  
+  ```c++
+  Syntax of Indirect Recursion #
+  def function1(p1, p2, ..., pn) :
+    # Some code here
+    function2(p1, p2, ..., pn)
+    # Some code here
+   
+  def function2(p1, p2, ..., pn) :
+    # Some code here
+    function1(p1, p2, ..., pn)
+    # Some code here
+  Printing Natural Numbers from 11 to nn Using Indirect Method #
+  Let’s take a look at an example that prints natural numbers from 11 to nn:
+  ```
+  12345678910111213141516171819
+  ```c++
+  def printNaturalNumbers(lowerRange, upperRange) :
+  	if lowerRange <= upperRange :
+  	  print(lowerRange)
+  	  lowerRange += 1
+  	  helperFunction(lowerRange, upperRange)
+  	else :
+  		return
+  
+  def helperFunction(lowerRange, upperRange) :
+    if lowerRange <= upperRange :
+  ```
+  
+  Printing numbers from 1 to n using indirect recursion
+  
+  In this code snippet, we have two functions: printNaturalNumbers() and helperFunction(). Both functions will check if lowerRange is greater than upperRange. If not, they will lowerRange and call the other function.
+  
+  This may not look like recursion at first, but, if we analyze the code flow, we see that the first function always calls itself indirectly.
+  
+  $printNaturalNumbers() -> helperFunction() -> printNaturalNumbers -> … $
+  
+  
+  
+  
+  
+  
+  
+  Now that we have gone over the concept of direct and indirect recursion, let’s move on to the next lesson and find out when we should use recursion.
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

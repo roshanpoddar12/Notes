@@ -1,0 +1,38 @@
+createdAt: "2020-08-11T03:00:31.729Z"
+updatedAt: "2020-08-11T03:01:25.704Z"
+type: "MARKDOWN_NOTE"
+folder: "8db3edb9acc1a3b8f2c2"
+title: "REMOVING DUPLICATES FROM SORTED ARRAY"
+tags: []
+content: '''
+  # REMOVING DUPLICATES FROM SORTED ARRAY
+  
+  ```c++
+  class Solution {
+  public:
+      int removeDuplicates(vector<int>& nums) {
+          int len = nums.size();
+          if(len==0)
+              return 0;
+          int c=1;
+          for(int i=1;i<nums.size();){
+              if(nums[i]==nums[i-1]){
+                  nums.erase(nums.begin()+i);
+              }
+              else{
+                  i++;
+                  c++;
+              }
+                  
+          }
+          return c;
+      }
+  };
+  // Time : O(n)
+  //Space : O(1)
+  
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
