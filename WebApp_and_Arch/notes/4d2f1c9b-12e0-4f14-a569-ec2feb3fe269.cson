@@ -1,0 +1,42 @@
+createdAt: "2021-02-13T16:09:08.213Z"
+updatedAt: "2021-02-13T16:18:29.585Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "5.Features of NO-SQL Database"
+tags: []
+content: '''
+  ## 5.Features of NO-SQL Database
+  
+  ### Pros Of NoSQL Databases #
+  Besides the design part, NoSQL databases are also developer-friendly. What do I mean by that?
+  
+  - #### Gentle Learning Curve #
+  
+  First, the learning curve is less than that of relational databases. When working with relational databases a big chunk of our time goes into learning how to design well-normalized tables, setting up relationships, trying to minimize joins and stuff.
+  
+  - #### Schemaless
+  
+  One needs to be pretty focused when designing the schema of a relational database to avoid running into any issues in the future.
+  
+  Think of relational databases as a strict headmaster. Everything has to be in place, neat and tidy, things need to be consistent. But NoSQL databases are a bit of chilled out & relaxed.
+  
+  There are no strict enforced schemas, work with the data as you want. You can always change stuff, spread things around. Entities have no relationships. Thus, things are flexible & you can do stuff your way.
+  
+  Wonderful Right?
+  
+  Not always!! This flexibility is good and bad at the same time. Being so flexible, developer-friendly, having no joins and relationships etc. makes it good.
+  
+  ### Cons of NOSQL Database
+  - #### Inconsistency
+  
+  But it introduces a risk of entities being inconsistent at the same time. Since an entity is spread throughout the database one has to update the new values of the entity at all places.
+  
+  Failing to do so, makes the entity inconsistent. This is not a problem with relational databases since they keep the data normalized. An entity resides at one place only.
+  
+  - #### No support for ACID Transaction
+  
+  Also, NoSQL distributed databases don’t provide ACID transactions. A few that claim to do that, don’t support them globally. They are just limited to a certain entity hierarchy or a small region where they can lock down nodes to update them.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

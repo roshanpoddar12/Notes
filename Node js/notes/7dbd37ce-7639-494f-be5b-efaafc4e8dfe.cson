@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T17:00:27.282Z"
-updatedAt: "2020-05-05T17:00:43.436Z"
+updatedAt: "2021-01-26T08:04:37.690Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "9.Importing Development data"
@@ -13,4 +13,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

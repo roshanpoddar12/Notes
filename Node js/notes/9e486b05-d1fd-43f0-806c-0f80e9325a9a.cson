@@ -1,0 +1,23 @@
+createdAt: "2021-01-26T05:17:09.883Z"
+updatedAt: "2021-01-26T05:19:19.069Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "7.Another way of creating Documents"
+tags: []
+content: '''
+  # 7.Another way of creating Documents
+  
+  ```
+  const newTour = new Tour({})
+  newTour.save
+  ```
+  - 
+  - Another way
+  ```
+  Tour.create({})
+  ```
+  - We are calling the method directly on Tour.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

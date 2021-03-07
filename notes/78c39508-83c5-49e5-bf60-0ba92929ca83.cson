@@ -1,0 +1,50 @@
+createdAt: "2021-03-05T15:43:39.871Z"
+updatedAt: "2021-03-05T15:47:44.746Z"
+type: "MARKDOWN_NOTE"
+folder: "7b65fd49052b7a668e86"
+title: "Averages of levels in Binary tree"
+tags: []
+content: '''
+  ## Averages of levels in Binary tree
+  
+  ```python
+  Input:
+      3
+     / \\
+    9  20
+      /  \\
+     15   7
+  Output: [3, 14.5, 11]
+  Explanation:
+  The average value of nodes on level 0 is 3,  on level 1 is 14.5, and on level 2 is 11. Hence return [3, 14.5, 11].
+  # Definition for a binary tree node.
+  # class TreeNode:
+  #     def __init__(self, val=0, left=None, right=None):
+  #         self.val = val
+  #         self.left = left
+  #         self.right = right
+  import queue
+  class Solution:
+      def averageOfLevels(self, root: TreeNode) -> List[float]:
+          q = queue.Queue()
+          q.put(root)
+          res=[]
+          while q.empty() != True:
+              sum = 0;
+              size = q.qsize()
+              for i in range(size):
+                  temp = q.get()
+                  sum=sum+temp.val
+                  if temp.left != None:
+                      q.put(temp.left)
+                  if temp.right != None:
+                      q.put(temp.right)
+              res.append(sum/size)
+          return res;
+          
+  
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

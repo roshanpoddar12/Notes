@@ -1,0 +1,76 @@
+createdAt: "2021-01-26T13:16:27.772Z"
+updatedAt: "2021-01-28T00:48:39.216Z"
+type: "MARKDOWN_NOTE"
+folder: "9980a104cbe4399cdfd6"
+title: "2.Managing the password"
+tags: []
+content: '''
+  # 2.Managing the password
+  
+  
+  > ADDING A VALIDATOR TO THE PASSWORDCONFIRM FIELD in userModel.js
+  ```js
+  validate: {
+        // This only works on the SAVE and CREATE!!
+        validator: function(el) {
+          return el === this.password;
+        },
+        message: 'The passwords are not the same'
+      }
+    }
+  ```
+  
+  > If then the passwords are stored in plain text in there,then he can simply login as any user and then do whatever he really wants and cause a lot of damage in some cases, oay?
+  And so we need to absolutely prevent that.
+  And so let's now go ahead and implement this.
+  Now, where is the best place to actually do that?
+  Well, I would argue that the model is always the best place
+  to do this kind of functionality.
+  So in this case, the encryption
+  because it really has to do with the data itself
+  and so it should be on the model
+  and not in the controller, okay?
+  So again, keep the fat models, thin controllers
+  philosophy in mind here.
+  All right?
+  So how are we gonna now implement this encryption?
+  Well, this is another perfect use case
+  for using Mongoose middleware.
+  And the one that we're gonna use
+  is a pre-save middleware.
+  
+  > We will use prehook
+    userSchema.pre('save')
+    
+  > And the reason why we're doing it like this
+  is that the middleware function
+  that we're gonna specify here, so the encryption,
+  is then gonna be happened between the moment
+  that we receive that data and the moment
+  where it's actually persisted to the database, okay?
+  So that's where the pre-save middleware runs.
+  Between getting the data and saving it to the database.
+  And so that's the perfect time to manipulate the data.
+  
+  > ADDING A MOIDDLE WARE TO HASH THE PASSWORS TO SECURE
+  
+  ```js
+  userSchema.pre('save', async function(next) {
+  ```
+  > Only run this function if password is actually modified
+  
+  ```js
+  
+    if (!this.isModified('password')) return next();
+    // Hash the function at the cost of 12
+    this.password = bcrypt.hash(this.password, 12);
+    // Delete password confirm field
+    this.passwordConfirm = undefined;
+  
+    next();
+  });
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

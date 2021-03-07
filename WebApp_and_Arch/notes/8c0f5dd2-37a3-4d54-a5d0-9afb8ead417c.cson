@@ -1,0 +1,29 @@
+createdAt: "2021-02-26T05:46:20.440Z"
+updatedAt: "2021-02-26T06:00:37.109Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "13.Different Types of databases"
+tags: []
+content: '''
+  ## 13.Different Types of databases
+  
+  There are quite a number of different types of databases available to the application developers, catering to specific use cases.
+  
+  Such as the:
+  
+  Document-Oriented database
+  Key-value datastore
+  Wide-column database
+  Relational database
+  Graph database
+  Time-Series database
+  Databases dedicated to mobile apps
+  In the polyglot persistence lesson, we went through the need for different types of databases. We have also covered relational databases in-depth when to pick a relational one & stuff in the previous lessons.
+  
+  Now we will have insights into the other remaining types of databases and the use cases which fit them.
+  
+  So, without any further ado. Let’s get on with it.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

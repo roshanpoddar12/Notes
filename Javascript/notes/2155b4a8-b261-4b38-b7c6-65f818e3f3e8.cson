@@ -1,0 +1,79 @@
+createdAt: "2021-03-06T11:47:46.688Z"
+updatedAt: "2021-03-06T11:53:23.366Z"
+type: "MARKDOWN_NOTE"
+folder: "b10fb8759ad52fb9d741"
+title: "Object:entries() and values()"
+tags: []
+content: '''
+  ## Object:entries() and values()
+  ES8 introduces the following new methods to the built-in Object type −
+  
+  - Object.entries − The Object.entries() method can be used to access all the properties of an object.
+  
+  - Object.values() − The Object.values() method can be used to access values of all properties of an object.
+  
+  - Object.getOwnPropertyDescriptors() − This method returns an object containing all own property descriptors of an object. An empty object may be returned if the object doesn't have any properties.
+  - A descriptor is a set of attributes of a property, and it’s composed by a subset of the following:
+  
+  value: the value of the property
+  writable: true the property can be changed
+  get: a getter function for the property, called when the property is read
+  set: a setter function for the property, called when the property is set to a value
+  configurable: if false, the property cannot be removed nor any attribute can be changed, except its value
+  enumerable: true if the property is enumerable
+  Object.getOwnPropertyDescriptors(obj) accepts an object, and returns an object with the set of descriptors.
+  ```js
+  
+  Example
+  <script>
+     const student ={
+        firstName:'Kannan',
+        lastName:'Sudhakaran'
+     }
+     console.log(Object.entries(student))
+     console.log(Object.values(student))
+  </script>
+  The output of the above code will be as follows −
+  
+  [
+  ["firstName", "Kannan"],
+  ["lastName", "Sudhakaran"],
+  ]
+  ["Kannan", "Sudhakaran"]
+  Example
+  <script>
+     const marks = [10,20,30,40]
+     console.log(Object.entries(marks))
+     console.log(Object.values(marks))
+  </script>
+  The output of the above code will be as given below −
+  
+  ["0", 10],
+  ["1", 20],
+  ["2", 30],
+  ["3", 40]
+  ]
+  [10, 20, 30, 40]
+  Example
+  <script>
+     const student = {
+        firstName : 'Mohtashim',
+        lastName: 'Mohammad',
+        get fullName(){
+           return this.firstName + ':'+ this.lastName
+        }
+     }
+     console.log(Object.getOwnPropertyDescriptors(student))
+  </script>
+  The output of the above code will be as mentioned below −
+  
+  {firstName: {value: "Mohtashim", writable: true, enumerable: true, configurable: true}
+  fullName: {get: ƒ, set: undefined, enumerable: true, configurable: true}
+  lastName: {value: "Mohammad", writable: true, enumerable: true, configurable: true}
+  }
+  
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

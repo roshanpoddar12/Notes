@@ -1,0 +1,31 @@
+createdAt: "2021-02-13T16:26:11.070Z"
+updatedAt: "2021-02-13T16:29:25.238Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "7.Is NoSql More perfomant than SQL?"
+tags: []
+content: '''
+  ## 7.Is NoSql More perfomant than SQL?
+  
+  Is NoSQL more performant than SQL? This question is asked all the time. And I have a one-word answer for this.
+  
+  No!!
+  
+  From a technology benchmarking standpoint, both relational and non-relational databases are equally performant.
+  
+  More than the technology, it’s how we design our systems using the technology that affects the performance.
+  
+  Both SQL & NoSQL tech have their use cases. We have already gone through them in the lessons When to pick a relational database? & When to pick a NoSQL database?
+  
+  So, don’t get confused with all the hype. Understand your use case and then pick the technology accordingly.
+  
+  #### Real World Case Studies #
+  Facebook uses MySQL for storing its social graph of millions of users. Though it did have to change the DB engine and make some tweaks but MySQL fits best for its use case.
+  
+  Quora uses MySQL pretty efficiently by partitioning the data at the application level. This is an interesting read on it.
+  
+  Note: A well-designed SQL data store will always be more performant than a not so well-designed NoSQL store.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

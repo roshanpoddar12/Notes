@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T16:57:01.650Z"
-updatedAt: "2020-05-05T16:57:20.766Z"
+updatedAt: "2021-01-26T02:26:08.201Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "4.Creating Documents and Testing them"
@@ -13,4 +13,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

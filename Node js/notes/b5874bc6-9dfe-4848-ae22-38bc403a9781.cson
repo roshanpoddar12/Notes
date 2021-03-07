@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T16:56:40.810Z"
-updatedAt: "2020-05-05T16:56:53.255Z"
+updatedAt: "2021-01-26T02:11:15.949Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "3. Creating a simple tour model"
@@ -13,4 +13,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

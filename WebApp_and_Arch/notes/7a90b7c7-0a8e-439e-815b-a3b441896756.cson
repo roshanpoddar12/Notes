@@ -1,0 +1,42 @@
+createdAt: "2021-02-06T13:12:49.176Z"
+updatedAt: "2021-02-06T14:48:05.271Z"
+type: "MARKDOWN_NOTE"
+folder: "bafa11d5550c02d05208"
+title: "Which type of approach is right for our app?"
+tags: []
+content: '''
+  ## Which type of approach is right for our app?
+  
+  ### Pros and Cons of Vertical and Horizontal Scaling
+  
+  Vertical scaling for obvious reasons is simpler in comparison to scaling horizontally as we do not have to touch the code or make any complex distributed system configurations. It takes much less administrative, monitoring, management efforts as opposed to when managing a distributed environment.
+  
+  A major downside of vertical scaling is availability risk. The servers are powerful but few in number, there is always a risk of them going down & the entire website going offline which doesn’t happen when the system is scaled horizontally. It becomes more highly available.
+  
+  ### What about the code? Why does the code need to change when it has to run on multiple machines?
+  
+  If you need to run the code in a distributed environment, it needs to be stateless. There should be no state in the code. What do I mean by that?
+  
+  No static instances in the class. Static instances hold application data & if a particular server goes down all the static data/state is lost. The app is left in an inconsistent state.
+  
+  Rather, use a persistent memory like a key-value store to hold the data & to remove all the state/static variable from the class. This is why functional programming got so popular with distributed systems. The functions don’t retain any state.
+  
+  Always have a ballpark estimate on mind when designing your app. How much traffic will it have to deal with?
+  
+  Development teams today are adopting a distributed micro-services architecture right from the start & the workloads are meant to be deployed on the cloud. So, inherently the workloads are horizontally scaled out on the fly.
+  
+  ### Which Scalability Approach is Right for your app?\\
+  
+  If you need to run the code in a distributed environment, it needs to be stateless. There should be no state in the code. What do I mean by that?
+  
+  No static instances in the class. Static instances hold application data & if a particular server goes down all the static data/state is lost. The app is left in an inconsistent state.
+  
+  Rather, use a persistent memory like a key-value store to hold the data & to remove all the state/static variable from the class. This is why functional programming got so popular with distributed systems. The functions don’t retain any state.
+  
+  Always have a ballpark estimate on mind when designing your app. How much traffic will it have to deal with?
+  
+  Development teams today are adopting a distributed micro-services architecture right from the start & the workloads are meant to be deployed on the cloud. So, inherently the workloads are horizontally scaled out on the fly.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

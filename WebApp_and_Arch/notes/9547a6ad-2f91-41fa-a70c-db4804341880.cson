@@ -1,0 +1,38 @@
+createdAt: "2021-02-13T12:04:12.994Z"
+updatedAt: "2021-02-13T16:09:06.181Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "3.Why should you pick a Relational Database"
+tags: []
+content: '''
+  ## 3.Why should you pick a Relational Database
+  
+  If you are writing a stock trading, banking or a Finance-based app or you need to store a lot of relationships, for instance, when writing a social network like Facebook. Then you should pick a relational database. Here is why –
+  
+  #### Transaction and Data Consistancy
+  
+  If you are writing a software which has anything to do with money or numbers, that makes transactions, ACID, data consistency super important to you.
+  
+  Relational DBs shine when it comes to transactions & data consistency. They comply with the ACID rule, have been around for ages & are battle-tested.
+  
+  #### Large Community
+  
+  Also, they have a larger community. Seasoned engineers on the tech are easily available, you don’t have to go too far looking for them.
+  
+  #### Storing Relationships
+  
+  If your data has a lot of relationships like which friends of yours live in a particular city? Which of your friend already ate at the restaurant you plan to visit today? etc. There is nothing better than a relational database for storing this kind of data.
+  
+  Relational databases are built to store relationships. They have been tried & tested & are used by big guns in the industry like Facebook as the main user-facing database.
+  
+  #### Popular Relationa; Databases
+  
+  Some of the popular relational databases used in the industry are MySQL - it’s an open-source relationship database written in C, C++ been around since 1995.
+  
+  Others are Microsoft SQL Server, a proprietary RDBMS written by Microsoft in C, C++. PostgreSQL an open-source RDBMS written in C. MariaDB, Amazon Aurora, Google Cloud SQL etc.
+  
+  Well, that’s all on the relational databases. Moving on to non-relational databases.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

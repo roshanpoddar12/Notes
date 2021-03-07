@@ -1,0 +1,28 @@
+createdAt: "2021-01-24T13:42:57.630Z"
+updatedAt: "2021-01-24T13:46:37.941Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "How to chain multiple middleware function for the same route."
+tags: []
+content: '''
+  # How to chain multiple middleware function for the same route.
+  
+  ```
+  Router.post(tourController.checkBody, tourController.createTour);
+  
+  exports.checkBody = (req, res, next) => {
+    if (!req.body.name || !req.body.price) {
+      return res.status(400).json({
+        status: 'fail',
+        message: 'Missing name or price'
+      });
+    }
+    next();
+  };
+  ```
+  
+  - First it will go to check body middleware then to the createTour middleware.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

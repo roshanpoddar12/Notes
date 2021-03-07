@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T16:58:53.720Z"
-updatedAt: "2020-05-05T16:59:07.177Z"
+updatedAt: "2021-01-26T05:17:06.277Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "7.Another way of creating documents"
@@ -13,4 +13,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

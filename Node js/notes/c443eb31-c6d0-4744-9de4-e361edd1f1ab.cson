@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T16:57:24.870Z"
-updatedAt: "2020-05-05T16:58:46.737Z"
+updatedAt: "2021-01-26T03:43:55.106Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "6.Refactoring of MVC"
@@ -13,4 +13,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

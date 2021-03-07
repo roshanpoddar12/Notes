@@ -1,0 +1,37 @@
+createdAt: "2021-01-24T13:18:25.571Z"
+updatedAt: "2021-01-24T13:20:11.920Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "9.Creating our own middleware"
+tags: []
+content: '''
+  # 9.Creating our own middleware
+  
+  - Middleware will be called before any route is executed because middleware
+  - we have used at top
+  - This middleware will be attached to each and every request
+  ```
+  app.use((req,res,next)=>{
+    console.log("hello to everyone");
+    next();
+  })
+  ```
+  
+  app.get();
+  - every other route
+  
+  - Now suppose we will be using middleware after some route
+  - So all the route before middleware doesnot include the middleware in request comming to the route
+  - So here req res cycle of the before route has been already completed
+  
+  ```
+  app.get('x',(req,res))
+  middleware
+  app.post()
+  ```
+  - So for the first route it will never include the middleware
+  - Order really matters in express
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,17 +1,28 @@
 createdAt: "2020-05-01T14:02:44.045Z"
-updatedAt: "2020-05-01T16:42:18.889Z"
+updatedAt: "2021-01-24T16:40:09.337Z"
 type: "MARKDOWN_NOTE"
 folder: "002c47ea61b724725b76"
 title: "2.Mongo db queries"
 tags: []
 content: '''
   # 2.Mongo db queries
-  -  use databaseName
-  -  use : it is used to create our first database.Also it is used to switch between the database if that database doesnot exists than it will create a new one
-  -  db.tours.insertMany()
-  -  Db: Current database
-  -  tours: Name of the collection where this database is going to live
-  -  insertMany: document
+  > ##### use "databaseName"
+  
+  ### Database => Collection => Document
+  
+  > use : it is used to create our first database.Also it is used to switch between the database if that database doesnot exists than it will create a new one
+  
+  >  ##### db.tours.insertMany()
+   > ###### db - Currently used database
+   > ###### tours - Name of the collection where this database is going to live
+   > ###### insertMany: document
+  
+  > ##### db.tours.insertOne({name:'',price:''})
+  
+  > ##### db.tours.find() 
+  > ###### Shows all the documents in the collection
+  
+  > ##### show dbs
 '''
 linesHighlighted: []
 isStarred: false

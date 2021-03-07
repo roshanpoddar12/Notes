@@ -1,19 +1,19 @@
 createdAt: "2020-04-27T01:24:52.551Z"
-updatedAt: "2020-04-27T22:48:20.676Z"
+updatedAt: "2021-01-24T12:57:49.521Z"
 type: "MARKDOWN_NOTE"
 folder: "3b4e100b76286074a898"
 title: "8.Middleware and the request response cycle"
 tags: []
 content: '''
   # 8.Middleware and the request response cycle
-  # Request response cycle
+  ## Request response cycle
   - Our express app recieves a request when some one hits a server for which it will then create a req and res object 
   - That data will then be used in processed in order to generate and send back a meaning ful response
   - In order to process that data we use somrthing called middleware which can manipulate the request or the response object or really execute any other code that we like
-  - ![middleware1.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/6152a52e.png)
-  ![middleware2.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/3d70a8f1.png)
-  ![middleware3.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/a81059cc.png)
-  ![middleware4.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/bdf3c614.png)
+  ![middleware1.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/6cc6e1ca.png)
+  ![middleware2.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/8d1ecb35.png)
+  ![middleware3.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/f7f24073.png)
+  ![middleware4.png](:storage/42dd5b59-9c29-4e2e-9159-de1d23228765/cedee92a.png)
 '''
 linesHighlighted: []
 isStarred: false

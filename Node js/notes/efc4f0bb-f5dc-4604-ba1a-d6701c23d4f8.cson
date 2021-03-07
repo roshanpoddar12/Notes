@@ -1,11 +1,16 @@
 createdAt: "2020-05-25T00:56:32.744Z"
-updatedAt: "2020-05-27T01:13:10.700Z"
+updatedAt: "2021-01-30T14:48:32.076Z"
 type: "MARKDOWN_NOTE"
 folder: "9980a104cbe4399cdfd6"
 title: "7.Authorization: User Roles and Permission"
 tags: []
 content: '''
   ## 7.Authorization: User Roles and Permission
+  
+  - Suppose in delete tour we will add the middleware,
+    - To check if the user is login (authcontroller.protect)
+    - If the user has the access to delete the data (authcontroller.restrictTo)
+  
   ```js
   //authcontroller.js add a middleware in tourroute
   exports.restrictTo = (...roles) => {

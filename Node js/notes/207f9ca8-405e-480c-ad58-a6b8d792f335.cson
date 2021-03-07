@@ -1,0 +1,52 @@
+createdAt: "2021-01-26T02:11:20.415Z"
+updatedAt: "2021-01-26T02:37:18.958Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "3. Creating a simple tour model and testing them"
+tags: []
+content: '''
+  # 3. Creating a simple tour model and testing them
+  
+  ```
+  const tourSchema = new mongoose.Schema({
+    name: {
+      type: String,
+      required: [true, 'A tour must have a name'],
+      unique: true
+    },
+    rating: {
+      type: Number,
+      default: 4.5
+    },
+    price: {
+      type: Number,
+      required: [true, 'A tour must have a price']
+    }
+  });
+  const Tour = mongoose.model('Tour',tourSchema)
+  ```
+  
+  #### Testing
+  ```
+  const testTour = new Tour({
+    name:'The Forest Hiker',
+    rating: 4.7,
+    price: 497
+  });
+  
+  testTour
+  .save()
+  .then(doc=>{
+    console.log(doc);
+  .catch(err => {
+    console.log(err)
+  })
+  })
+  ```
+  
+  - testTour.save()=> this will save it to the tour collection in Database
+  - Suppose we have saved the document to the collection if we try to push the same data again it will through the error as duplicate keys because we have used unique propertie in name while defing the schema.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

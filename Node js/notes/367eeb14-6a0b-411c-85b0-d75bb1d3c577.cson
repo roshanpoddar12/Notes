@@ -1,0 +1,18 @@
+createdAt: "2021-01-24T16:41:43.570Z"
+updatedAt: "2021-01-24T16:44:56.938Z"
+type: "MARKDOWN_NOTE"
+folder: "002c47ea61b724725b76"
+title: "CRUD"
+tags: []
+content: '''
+  # CRUD
+  ### Creating Documents
+  
+  > ##### db.tours.insertMany([{ name:'x',price:10},{name:'y',price:20},{name:'z',price:30}])
+  
+  ### Reading Documents
+  > 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

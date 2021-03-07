@@ -1,10 +1,20 @@
 createdAt: "2020-05-05T16:57:43.383Z"
-updatedAt: "2020-05-05T16:58:27.677Z"
+updatedAt: "2021-01-26T03:38:04.501Z"
 type: "MARKDOWN_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "5.Intro to Backend architecture MVC, Types of logic, and more"
 tags: []
-content: "# 5.Intro to Backend architecture MVC, Types of logic, and more"
+content: '''
+  # 5.Intro to Backend architecture MVC, Types of logic, and more
+  
+  
+  request -> Router(tourRouter.js, userRouter.js) -> Controller(tourController.js)->Response
+  |
+  v
+  Model
+  
+  ![ApplicationVSBuisseness.png](:storage/8009c88a-9873-4195-85a0-be965e617846/1dff08f7.png)
+'''
 linesHighlighted: []
 isStarred: false
 isTrashed: false

@@ -14,6 +14,26 @@
       "key": "1d1f092683d13caaa6da",
       "color": "#30D5C8",
       "name": "SystemDesign"
+    },
+    {
+      "key": "bafa11d5550c02d05208",
+      "color": "#E8D252",
+      "name": "Scazlabilty"
+    },
+    {
+      "key": "096d1539a5f693e0c2bf",
+      "color": "#30D5C8",
+      "name": "Database"
+    },
+    {
+      "key": "c02907027bc0250d0e43",
+      "color": "#E8D252",
+      "name": "LOAD BALANCING"
+    },
+    {
+      "key": "c2ff119c6815018d1ed4",
+      "color": "#30D5C8",
+      "name": "caching"
     }
   ],
   "version": "1.0"

@@ -1,5 +1,5 @@
 createdAt: "2020-04-27T00:33:58.493Z"
-updatedAt: "2020-04-27T00:49:18.296Z"
+updatedAt: "2021-01-23T18:49:01.474Z"
 type: "MARKDOWN_NOTE"
 folder: "3b4e100b76286074a898"
 title: "5.Responding to url params"
@@ -25,6 +25,8 @@ content: '''
   -  url:localhost:3000/api/v1/tours/1/2
   -  Req.params() 
   -  o/p:{id:'1',x:'2',y:undefined}
+  
+  
 '''
 linesHighlighted: []
 isStarred: false

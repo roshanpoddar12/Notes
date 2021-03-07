@@ -1,0 +1,18 @@
+createdAt: "2021-01-28T13:36:15.469Z"
+updatedAt: "2021-01-28T13:40:21.859Z"
+type: "MARKDOWN_NOTE"
+folder: "4fa6482bb4bff4618414"
+title: "Questions"
+tags: []
+content: '''
+  # Questions
+  
+  #### How to convert Http to Https?
+  #### How to handle exceptions in api?
+  #### How to handle when the Databse server is down and u got a request?
+  #### Caching?
+  #### If in a api a processsing is taking 1 min to process then how to optimize it? what should we check?
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

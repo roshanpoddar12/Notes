@@ -44,6 +44,16 @@
       "key": "6426ad25abcc6829d9eb",
       "color": "#30D5C8",
       "name": "JS Projects"
+    },
+    {
+      "key": "0d8a962cb2866810e30b",
+      "color": "#30D5C8",
+      "name": "Interview Question"
+    },
+    {
+      "key": "b10fb8759ad52fb9d741",
+      "color": "#E10051",
+      "name": "ES7 & 8"
     }
   ],
   "version": "1.0"

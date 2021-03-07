@@ -1,0 +1,22 @@
+createdAt: "2021-01-24T13:33:08.798Z"
+updatedAt: "2021-01-24T13:39:48.239Z"
+type: "MARKDOWN_NOTE"
+folder: "3b4e100b76286074a898"
+title: "Param middleware"
+tags: []
+content: '''
+  # Param middleware
+  - Param middleware will only run for certain parameter.
+  - Suppose we want to write the middleware only for the middleware which has the parameter id.
+  - So we cannot do that directly so we do like this:
+  ```
+  router.param('id',(req,res,next,val) => {
+    console.log(`id is ${val}`)
+  })
+  ```
+  
+  - Each router is mainly a sub application for each resource.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

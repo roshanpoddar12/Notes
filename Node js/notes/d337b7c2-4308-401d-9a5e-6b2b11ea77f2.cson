@@ -1,5 +1,5 @@
 createdAt: "2020-05-05T16:59:14.877Z"
-updatedAt: "2020-05-05T16:59:53.860Z"
+updatedAt: "2021-01-26T07:40:32.006Z"
 type: "SNIPPET_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "8.Reading,Updating,Deleting the tours"
@@ -16,4 +16,4 @@ snippets: [
   }
 ]
 isStarred: false
-isTrashed: false
+isTrashed: true

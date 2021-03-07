@@ -1,0 +1,14 @@
+createdAt: "2021-01-26T03:43:58.274Z"
+updatedAt: "2021-01-26T05:16:57.580Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "6.Refactoring MVC"
+tags: []
+content: '''
+  # 6.Refactoring MVC
+  
+  Separated the data base schema to different file named as tourModel.js
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

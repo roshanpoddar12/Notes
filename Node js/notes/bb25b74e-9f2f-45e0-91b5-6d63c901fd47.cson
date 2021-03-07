@@ -1,0 +1,61 @@
+createdAt: "2021-02-18T15:17:51.146Z"
+updatedAt: "2021-02-19T16:10:05.845Z"
+type: "MARKDOWN_NOTE"
+folder: "9980a104cbe4399cdfd6"
+title: "8. Password reset funtioality: Reset Token"
+tags: []
+content: '''
+  ## 8. Password reset funtioality: Reset Token
+  
+  #### authController.js
+  ```js
+  exports.forgotPassword  = catchAsync(async (req,res)=>{
+  //1)Get users based on posted email
+    const user = await User.findOne({email: req.body.email});
+    //Verify if the user exists
+    if(!user){
+      return next(new AppError('There is no user with email address.',404))
+      //404 -- not found
+      
+    }
+  
+  //2)Generate the random reset token
+   const resteToken = user.createPasswordResetToken();
+   //validateBeforeSave -- we are using this so it will remove the mandate variable
+   await user.save({validateBeforeSave: false})
+  //3)Send it to the users email
+  })
+  exports.resetPassword  = (req,res)=>{}
+  ```
+  
+  #### Generate the random token 
+  So for that we create a new instance method and the best place is the mongoose
+  #### userRoutes.js
+  ```js
+  router.post('/forgotPassword',authController.forgotPassword)
+  router.post('/resetPassword',authController.resetPassword)
+  ```
+  Generate a random token.Need not to be crytographically strong
+  #### userModel.js
+  ```js
+  let crypto = require('crypto');
+  passwordResetToken : String,
+  passwordResetExpires: Date,
+  //This is the token we are going to send the user so it is like a reset password only which user can use to create a real password .Only the user will have the access to it so it will behave really like a password only.
+  userSchema.methods.createPasswordResetToken = function(){
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    this.passwordResetToken = crypto
+      .createHash('sha256')
+      .update(resetToken)
+      .digest('hex');
+      
+    this.passwordResetExpires = Date.now() + 10*60*1000;
+    //We will send in mail the un encrypted token
+    return resetToken;
+  }
+  ```
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

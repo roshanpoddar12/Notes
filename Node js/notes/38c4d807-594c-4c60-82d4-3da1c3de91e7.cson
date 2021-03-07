@@ -1,5 +1,5 @@
 createdAt: "2020-05-12T12:33:53.391Z"
-updatedAt: "2020-05-12T12:52:21.649Z"
+updatedAt: "2021-01-27T16:36:40.199Z"
 type: "MARKDOWN_NOTE"
 folder: "9980a104cbe4399cdfd6"
 title: "3.JWT"
@@ -10,7 +10,10 @@ content: '''
   - which is perfect for the restfull api .Restfull should be stateless
   - Alternative is to just store the user data using the session 
   
-  ![jwt.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/4620fe3c.png)![howjwtlookslike.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/40595b66.png)![howjwtsigningandverifyingworks.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/2a7047ef.png)
+  ![jwt.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/4620fe3c.png)![howjwtlookslike.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/40595b66.png)!
+  > Once a server recieves a JWT to grant access to protected route it needs to be verified, in order to determine if the user really is who he claimed to be.
+  
+  [howjwtsigningandverifyingworks.png](:storage/38c4d807-594c-4c60-82d4-3da1c3de91e7/2a7047ef.png)
 '''
 linesHighlighted: []
 isStarred: false

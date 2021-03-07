@@ -1,0 +1,108 @@
+createdAt: "2021-03-06T11:49:53.297Z"
+updatedAt: "2021-03-06T11:51:20.247Z"
+type: "MARKDOWN_NOTE"
+folder: "b10fb8759ad52fb9d741"
+title: "Async and Await"
+tags: []
+content: '''
+  ## Async and Await
+  Async/Await is a very important feature in ES8.It is a syntactic sugar for Promises in JavaScript. The await keyword is used with promises. This keyword can be used to pause the execution of a function till a promise is settled. The await keyword returns value of the promise if the promise is resolved while it throws an error if the promise is rejected. The await function can only be used inside functions marked as async. A function that is declared using the async keyword always returns a promise.
+  
+  Syntax
+  The syntax of async function with await is given below −
+  ```js
+  async function function_name(){
+     let result_of_functionCall = await longRunningMethod();
+  }
+  //invoking async function
+  
+  function_name().then(()=>{})
+     .catch(()=>{})
+  Consider an example that has an asynchronous function that takes two seconds to execute and returns a string value. The function can be invoked in two ways as shown below
+  
+  Using promise.then()
+  Using aync/await.
+  The below code shows invoking the asynchronous function using the traditional ES6 syntax - promise.then()
+  
+  <script>
+     function fnTimeConsumingWork(){
+        return new Promise((resolve,reject)=>{
+           setTimeout(() => {
+              resolve('response is:2 seconds have passed')
+           }, 2000);
+        })
+     }
+  
+     fnTimeConsumingWork().then(resp=>{
+        console.log(resp)
+     })
+     console.log('end of script')
+  </script>
+  The output of the above code will be as follows −
+  
+  end of script
+  response is:2 seconds have passed
+  The below code shows a cleaner way of invoking the asynchronous function using ES8 syntax - async/await
+  
+  <script>
+     function fnTimeConsumingWork(){
+        return new Promise((resolve,reject)=>{
+           setTimeout(() => {
+              resolve('response is:2 seconds have passed')
+           }, 2000);
+        })
+     }
+     async function my_AsyncFunc(){
+        console.log('inside my_AsyncFunc')
+        const response = await fnTimeConsumingWork();// clean and readable
+        console.log(response)
+     }
+     my_AsyncFunc();
+     console.log("end of script")
+  </script>
+  The output of the above code will be as mentioned below −
+  
+  inside my_AsyncFunc
+  end of script
+  response is:2 seconds have passe
+  ```
+  ## Promise chaining with Async/await
+  The following example implements promise chaining using the async/await syntax.
+  
+  In this example, add_positivenos_async() function adds two numbers asynchronously and rejects if negative values are passed. The result from the current asynchronous function call is passed as parameter to the subsequent function calls.
+  ```js
+  <script>
+     function add_positivenos_async(n1, n2) {
+        let p = new Promise(function (resolve, reject) {
+           if (n1 >= 0 && n2 >= 0) {
+              //do some complex time consuming work
+              resolve(n1 + n2)
+           } else
+              reject('NOT_Postive_Number_Passed')
+        })
+        return p;
+     }
+     async function addInSequence() {
+        let r1 = await add_positivenos_async(10, 20)
+        console.log("first result", r1);
+        let r2 = await add_positivenos_async(r1, r1);
+        console.log("second result", r2)
+        let r3 = await add_positivenos_async(r2, r2);
+        console.log("third result", r3)
+        return "Done Sequence"
+     }
+     addInSequence().then((r)=>console.log("Async :",r));
+     console.log('end')
+  </script>
+  The output of the above code will be as given below−
+  
+  end
+  first result 30
+  second result 60
+  third result 120
+  Async : Done Sequence
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

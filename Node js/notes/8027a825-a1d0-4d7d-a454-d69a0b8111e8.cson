@@ -1,10 +1,35 @@
 createdAt: "2020-05-05T16:55:34.734Z"
-updatedAt: "2020-05-05T16:56:09.019Z"
+updatedAt: "2021-01-26T02:04:02.312Z"
 type: "MARKDOWN_NOTE"
 folder: "8d270cf5fe5372764189"
 title: "1.Connecting our Database with the express App"
 tags: []
-content: "# 1.Connecting our Database with the express App"
+content: '''
+  # 1.Connecting our Database with the express App
+  
+  #### Server.js 
+  > Connecting to the database by replacing the password
+  
+  > Options we are giving inside "mongoose.connect" to deal with the deprecation errors
+  
+  > We can also connect to the local database.By
+  - process.env,DATABASE_LOCAL 
+  
+  ```
+  const DB = process.env.DATABASE.replace(
+    '<PASSWORD>',
+    process.env.DATABASE_PASSWORD
+  );
+  
+  mongoose
+    .connect(DB, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    })
+    .then(() => console.log('DB connection successful!'));
+  ```
+'''
 linesHighlighted: []
 isStarred: false
 isTrashed: false

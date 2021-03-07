@@ -1,0 +1,37 @@
+createdAt: "2021-01-26T07:40:35.709Z"
+updatedAt: "2021-01-26T07:47:39.092Z"
+type: "MARKDOWN_NOTE"
+folder: "8d270cf5fe5372764189"
+title: "8.READING, UPDATING AND DELETING THE DOCUMENT FROM DATABASE"
+tags: []
+content: '''
+  # 8.READING, UPDATING AND DELETING THE DOCUMENT FROM DATABASE
+  
+  #### Create
+  ```
+  const newTour = await Tour.create(req.body);
+  ```
+  #### ReadingAll
+  ```
+      const tours = await Tour.find();
+  
+  ```
+  #### ReadOne
+  ```
+  const tour = await Tour.findById(req.params.id);
+  ```
+  #### updating
+  ```
+  const tour = await Tour.findByIdAndUpdate(req.params.id, req.byod, {
+        new: true,
+        runValidators: true
+      });
+  ```
+  #### Deleting
+  ```
+  await Tour.findByIdAndDelete(req.params.id);
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

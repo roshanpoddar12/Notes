@@ -1,10 +1,22 @@
 createdAt: "2020-05-05T16:56:16.199Z"
-updatedAt: "2020-05-05T16:56:31.034Z"
+updatedAt: "2021-01-26T02:10:15.631Z"
 type: "MARKDOWN_NOTE"
 folder: "8d270cf5fe5372764189"
-title: "2.What is mongoose"
+title: "2.What is Mongoose"
 tags: []
-content: "# 2.What is mongoose"
+content: '''
+  # 2.What is Mongoose
+  
+  > Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js, a higher level of abstraction.
+  
+  > Mongoose allows for rapid and simple development of mongoDB database interactions.
+  
+  > Features: schemas to model data and relationships, easy data validation, simple wuery API, middleware etc.
+  
+  > Mongoose schema:  where we model our data, by describing the structure of the data, defalult values, and validation.
+  
+  > Mongoose model: a wrapper for the schema, providing an interface to the database for CRUD operations
+'''
 linesHighlighted: []
 isStarred: false
 isTrashed: false

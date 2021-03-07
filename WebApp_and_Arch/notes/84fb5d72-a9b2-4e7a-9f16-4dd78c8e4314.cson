@@ -1,0 +1,42 @@
+createdAt: "2021-02-26T06:00:40.389Z"
+updatedAt: "2021-02-26T06:03:27.019Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "14.Document Oriented Database"
+tags: []
+content: '''
+  ## 14.Document Oriented Database
+  #### What Is A Document Oriented Database? #
+  Document Oriented databases are the main types of NoSQL databases. They store data in a document-oriented model in independent documents. The data is generally semi-structured & stored in a JSON-like format.
+  
+  The data model is similar to the data model of our application code, so it’s easier to store and query data for developers.
+  
+  Document oriented stores are suitable for Agile software development methodology as it’s easier to change things with evolving demands when working with them.
+  
+  #### Popular Document Oriented Databases #
+  Some of the popular document-oriented stores used in the industry are MongoDB, CouchDB, OrientDB, Google Cloud Datastore, Amazon Document DB
+  
+  #### When Do I Pick A Document Oriented Data Store for My Project? #
+  If you are working with semi-structured data, need a flexible schema which would change often. You ain’t sure about the database schema when you start writing the app. There is a possibility that things might change over time. You are in need of something flexible which you could change over time with minimum fuss. Pick a Document-Oriented data store.
+  
+  Typical use cases of Document oriented databases are the following:
+  
+  - Real-time feeds
+  - Live sports apps
+  - Writing product catalogues
+  - Inventory management
+  - Storing user comments
+  - Web-based multiplayer games
+  
+  Being in the family of NoSQL databases these provide horizontal scalability, performant read-writes as they cater to CRUD - Create Read Update Delete use cases. Where there isn’t much relational logic involved & all we need is just quick persistence & retrieval of data.
+  
+  Real Life Implementations #
+  Here are some of the good real-life implementations of the tech below -
+  
+  - SEGA uses Mongo-DB to improve the experience for millions of mobile gamers
+  
+  - Coinbase scaled from 15k requests per min to 1.2 million requests per minute with MongoDB
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

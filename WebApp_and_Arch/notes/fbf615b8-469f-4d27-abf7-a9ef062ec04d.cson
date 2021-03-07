@@ -1,0 +1,55 @@
+createdAt: "2021-02-19T07:57:20.311Z"
+updatedAt: "2021-02-19T14:34:25.042Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "10.Eventual Consistancy"
+tags: []
+content: '''
+  ## 10.Eventual Consistancy
+  
+  ### What is eventual consistancy?
+  Eventual consistency is a consistency model which enables the data store to be highly available. It is also known as optimistic replication & is key to distributed systems.
+  
+  So, how exactly does it work?
+  
+  We’ll understand this with the help of a use case.
+  
+  ## Real world use cases
+  Think of a popular microblogging site deployed across the world in different geographical regions like Asia, America, Europe. Moreover, each geographical region has multiple data centre zones: North, East, West, South. Furthermore, each of the zones has multiple clusters which have multiple server nodes running.
+  
+  So, we have many datastore nodes spread across the world which the micro-blogging site uses for persisting data.
+  
+  Since there are so many nodes running, there is no single point of failure. The data store service is highly available. Even if a few nodes go down the persistence service as a whole is still up.
+  
+  Alright, now let’s say a celebrity makes a post on the website which everybody starts liking around the world.
+  
+  At a point in time, a user in Japan likes the post which increases the “Like” count of the post from say 100 to 101. At the same point in time, a user in America, in a different geographical zone clicks on the post and he sees the “Like” count as 100, not 101.
+  
+  Why did this happen?
+  
+  Simply, because the new updated value of the Post “Like” counter needs some time to move from Japan to America and update the server nodes running there.
+  
+  Though the value of the counter at that point in time was 101, the user in America sees the old inconsistent value.
+  
+  But when he refreshes his web page after a few seconds the “Like” counter value shows as 101. So, the data was initially inconsistent but eventually got consistent across the server nodes deployed around the world. This is what eventual consistency is
+  
+  ![eventualConsistancy.jpeg](:storage/fbf615b8-469f-4d27-abf7-a9ef062ec04d/bca637b1.jpeg)
+  Let’s take it one step further, what if at the same point in time both the users in Japan and America Like the post, and a user in another geographic zone say Europe accesses the post.
+  
+  All the nodes in different geographic zones have different post values. And they will take some time to reach a consensus.
+  
+  The upside of eventual consistency is that the system can add new nodes on the fly without the need to block any of them, the nodes are available to the end-users to make an update at all times.
+  
+  Millions of users across the world can update the values at the same time without having to wait for the system to reach a common final value across all nodes before they make an update. This feature enables the system to be highly available.
+  
+  Eventual consistency is suitable for use cases where the accuracy of values doesn’t matter much like in the above-discussed use case.
+  
+  Other use cases of eventual consistency can be when keeping the count of users watching a Live video stream online. When dealing with massive amounts of analytics data. A couple of counts up and down won’t matter much.
+  
+  But there are use cases where the data has to be laser accurate like in banking, stock markets. We just cannot have our systems to be Eventually Consistent, we need Strong Consistency.
+  
+  Let’s discuss it in the next lesson.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,20 +1,54 @@
 createdAt: "2020-05-13T03:07:51.303Z"
-updatedAt: "2020-05-25T00:56:13.690Z"
+updatedAt: "2021-01-28T00:48:04.476Z"
 type: "MARKDOWN_NOTE"
 folder: "9980a104cbe4399cdfd6"
 title: "5.LOGGING IN USER"
 tags: []
 content: '''
   # 5.LOGGING IN USER
-  - If we dont want to show anythin to user as output then we add a parameter to that element in the model as "select: false"
-  - // 2) Check if user exists && password is correct
-    // const user = User.findOne({email: email});
-    const user = User.findOne({ email });
-    - Now we need to check if the password is correct or not so we need to explicitly select 
-    - const user = User.findOne({ email }).select..
-    - In this we wanted to select a field which is not selected or set to false in model so we need to add a plus and the name of the field
-    - `` 
+  - If we dont want to show anythin to user as output then we add a parameter to that element in the model as "select: false" in user mode
+  ```js
+  exports.login = catchAsync( async(req,res,next) => {
+      const {email, password} = req.body;
   
+      //1) Check if email and password exists
+      if(!email || !password){
+          return next(new AppError('Please provide email and password'));
+      }
+      //2) Check if user exists and password is correct or not
+      // In this we wanted to select a field which is not selected or set to false in model so we need to add a plus and the name of the field
+      const user = await User.findOne({ email: email }).select('+password');
+      // we will again use the bcrypt to decrypt the hash password to match it.
+      // There is one more problem if user doesnot exist then the user will be empty
+      // So we can put the correctPassword in if condition
+  
+      if(!user || !await user.correctPassword(password, user.password)){
+          return next(new AppError('Incorrect email or password',401));
+      }
+  
+  
+      //3) If everything is correct send to client
+      const token = signToken(user._id);
+      console.log(token)
+      res.status(200).json({
+          status:'success',
+          token
+      })
+  });
+  
+  ```
+  #### UserModel.js
+  ```js
+  // we are going to use instance method.
+  // Instance method is basically be available to all documents of a certain collection
+  
+  userSchema.methods.correctPassword = async function(
+    candidatePassword, 
+    userPassword
+    ){
+    return await bcrypt.compare(candidatePassword,userPassword)
+  }
+  ```
 '''
 linesHighlighted: []
 isStarred: false

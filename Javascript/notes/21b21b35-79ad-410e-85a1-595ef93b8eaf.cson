@@ -1,0 +1,56 @@
+createdAt: "2021-01-25T07:22:04.377Z"
+updatedAt: "2021-01-25T07:31:58.796Z"
+type: "MARKDOWN_NOTE"
+folder: "5a0c8d8f45a5e708fc1e"
+title: "CALL ,APPLY and BIND"
+tags: []
+content: '''
+  # CALL ,APPLY and BIND
+  
+  ###### We use .bind() when we want that function to later be called with a certain context,useful in events.
+  
+  ###### We use .call() .apply() when we want to invoke the function immediately, and modify the context.
+  
+  ##### Call/Apply call the function immediately ,whereas bind returns a function that, when later executed, will have the correct context set for calling the original function.
+  
+  Assume we have multiplication function
+  ```
+  function multiplication(a,b){
+  console.log(a*b);
+  }
+  ```
+  
+  Lets create some standard functions using bind
+  
+  ###### var multiby2 = multiplication.bind(this,2);
+  
+  Now multiby2(b) is equal to multiplication(2,b);
+  
+  ###### multiby2(3); //6
+  ###### multiby2(4); //8
+  What if I pass both the parameters in bind
+  
+  ###### var getSixAlways = multiplication.bind(this,3,2);
+  Now getSixAlways() is equal to multiplication(3,2);
+  
+  ###### getSixAlways();//6
+  even passing parameter returns 6; getSixAlways(12); //6
+  
+  ###### var magicMultiplication = multiplication.bind(this);
+  This create a new multiplication function and assigns it to magicMultiplication.
+  
+  Oh no, we are hiding the multiplication functionality into magicMultiplication.
+  
+  calling magicMultiplication returns a blank function b()
+  
+  on execution it works fine magicMultiplication(6,5); //30
+  
+  How about call and apply?
+  
+  ###### magicMultiplication.call(this,3,2); //6
+  
+  ###### magicMultiplication.apply(this,[5,2]); //10
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

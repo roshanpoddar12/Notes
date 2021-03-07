@@ -1,0 +1,26 @@
+createdAt: "2021-02-19T07:44:50.190Z"
+updatedAt: "2021-02-19T07:56:40.055Z"
+type: "MARKDOWN_NOTE"
+folder: "096d1539a5f693e0c2bf"
+title: "9. Multi-Model Databases"
+tags: []
+content: '''
+  ## 9. Multi-Model Databases
+  
+  ### What are the multi-model databases?
+  Until now the databases supported only one data model, it could either be a relational database, a graph database or any other database with a certain specific data model.
+  
+  But with the advent of multi-model databases, we have the ability to use different data models in a single database system.
+  
+  Multi-model databases support multiple data models like Graph, Document-Oriented, Relational etc. as opposed to supporting only one data model.
+  
+  They also avert the need for managing multiple persistence technologies in a single service. They reduce the operational complexity by notches. With multi-model databases, we can leverage different data models via a single API.
+  ![multimodelDB.jpeg](:storage/7f1cb1dc-7401-423f-86d9-dd9e85ab22cc/30d9c6b4.jpeg)
+  ## Popular multi model databases 
+  Some of the popular multi-model databases are Arango DB, Cosmos DB, Orient DB, Couchbase etc.
+  
+  So, by now we are clear on what NoSQL databases are & when to pick them and stuff. Now let’s understand concepts like Eventual Consistency, Strong Consistency which are key to understanding distributed systems.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
